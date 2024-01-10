@@ -18,6 +18,10 @@ module.exports = withStoreConfig({
       },
       {
         protocol: "https",
+        hostname: "medusajs-server.fra1.digitaloceanspaces.com",
+      },
+      {
+        protocol: "https",
         hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
       },
       {
