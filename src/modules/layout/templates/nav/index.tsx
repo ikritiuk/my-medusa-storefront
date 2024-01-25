@@ -50,7 +50,7 @@ const Nav = () => {
                 />
               )}
               <Link className="hover:text-ui-fg-base" href="/account">
-                Account
+                Аккаунт
               </Link>
             </div>
             <CartDropdown />
