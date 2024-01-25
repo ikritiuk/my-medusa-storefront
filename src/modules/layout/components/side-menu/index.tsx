@@ -6,11 +6,11 @@ import { Text, clx, useToggleState } from "@medusajs/ui"
 import CountrySelect from "../country-select"
 
 const SideMenuItems = {
-  Home: "/",
-  Store: "/store",
-  Search: "",
-  Account: "/account",
-  Cart: "/cart",
+  Главная: "/",
+  Магазин: "/store",
+  Поиск: "",
+  Аккаунт: "/account",
+  Корзина: "/cart",
 }
 
 const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
@@ -53,7 +53,7 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                     <ul className="flex flex-col gap-6 items-start justify-start">
                       {Object.entries(SideMenuItems).map(([name, href]) => {
                         if (
-                          name === "Search" &&
+                          name === "Поиск" &&
                           process.env.FEATURE_SEARCH_ENABLED
                         ) {
                           return (
