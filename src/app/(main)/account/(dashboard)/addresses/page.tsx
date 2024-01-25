@@ -2,7 +2,7 @@ import AddressesTemplate from "@modules/account/templates/addresses-template"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Addresses",
+  title: "Адрес",
   description: "View your addresses",
 }
 
