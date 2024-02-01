@@ -6,6 +6,6 @@ export const metadata: Metadata = {
   description: "FAQ",
 }
 
-export default function Account() {
+export default function Faq() {
   return <FaqTemplate />
 }
