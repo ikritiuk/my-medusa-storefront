@@ -43,7 +43,7 @@ const faqs = [
 const FaqTemplate = () => {
   const [openState, setOpenState] = useState({})
 
-  const toggleAnswer = (index: any) => {
+  const toggleAnswer = (index) => {
     setOpenState((prevOpenState) => ({
       ...prevOpenState,
       [index]: !prevOpenState[index],
