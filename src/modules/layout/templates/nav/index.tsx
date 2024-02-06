@@ -32,11 +32,8 @@ const Nav = () => {
           </div>
 
           <div className="flex items-center h-full">
-            <Link
-              href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
-            >
-              Medusa Store
+            <Link href="/" className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase">
+              Rolex Store
             </Link>
           </div>
 
@@ -49,7 +46,13 @@ const Nav = () => {
                   open={searchModalOpen}
                 />
               )}
-              <Link className="hover:text-ui-fg-base" href="/account">
+              <Link href="/faq" className="hover:text-ui-fg-base">
+                Вопросы
+              </Link>
+              <Link href="/about-us" className="hover:text-ui-fg-base">
+                О нас
+              </Link>
+              <Link href="/account" className="hover:text-ui-fg-base">
                 Аккаунт
               </Link>
             </div>
@@ -59,7 +62,7 @@ const Nav = () => {
         <MobileMenu />
       </header>
     </div>
-  )
+  );
 }
 
 export default Nav
