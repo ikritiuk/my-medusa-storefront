@@ -43,12 +43,12 @@ const faqs = [
 const FaqTemplate = () => {
   const [openState, setOpenState] = useState({})
 
-  const toggleAnswer = (index) => {
+  const toggleAnswer = (index: any) => {
     setOpenState((prevOpenState) => ({
       ...prevOpenState,
       [index]: !prevOpenState[index],
-    }))
-  }
+    }));
+  };
 
   return (
     <div className="py-12">
