@@ -32,7 +32,7 @@ const AboutUsPage = () => {
           </p>
 
 
-          <div className="flex justify-between mt-8 ">
+          <div className="flex flex-col md:flex-row md:flex-wrap md:-mx-2 lg:-mx-4">
             {[
               {
                 src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/1-im-detail.jpg",
@@ -50,7 +50,7 @@ const AboutUsPage = () => {
                 title: "Премиум качество",
               },
             ].map((photo, index, array) => (
-              <div key={index} className={`w-1/3 text-center ${index !== array.length - 1 ? "mr-4" : ""}`}>
+              <div key={index} className={`w-full md:w-1/3 lg:w-1/3 md:px-2 lg:px-4 mb-8 `}>
                 <h3 className="text-lg mt-2 font-bold mb-6">{photo.title}</h3>
                 <img
                   src={photo.src}
@@ -63,7 +63,7 @@ const AboutUsPage = () => {
           </div>
 
 
-          <div className="flex justify-between mt-8 ">
+          <div className="flex flex-col md:flex-row md:flex-wrap md:-mx-2 lg:-mx-4">
             {[
               {
                 src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/5-im-detail.jpg",
@@ -80,8 +80,8 @@ const AboutUsPage = () => {
                 alt: "Photo 7",
                 title: "Гравировка на корпусе",
               },
-            ].map((photo, index, array) => (
-              <div key={index} className={`w-1/3 text-center ${index !== array.length - 1 ? "mr-4" : ""}`}>
+            ].map((photo, index) => (
+              <div key={index} className={`w-full md:w-1/3 lg:w-1/3 md:px-2 lg:px-4 mb-8 `}>
                 <h3 className="text-lg mt-2 font-bold mb-6">{photo.title}</h3>
                 <img
                   src={photo.src}
@@ -93,7 +93,7 @@ const AboutUsPage = () => {
             ))}
           </div>
 
-          <div className="flex justify-between mt-8 ">
+          <div className="flex flex-col md:flex-row md:flex-wrap md:-mx-2 lg:-mx-4">
             {[
               {
                 src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/7-im-detail.jpg",
@@ -111,7 +111,7 @@ const AboutUsPage = () => {
                 title: "Точность",
               },
             ].map((photo, index, array) => (
-              <div key={index} className={`w-1/3 text-center ${index !== array.length - 1 ? "mr-4" : ""}`}>
+              <div key={index} className={`w-full md:w-1/3 lg:w-1/3 md:px-2 lg:px-4 mb-8 `}>
                 <h3 className="text-lg mt-2 font-bold mb-6">{photo.title}</h3>
                 <img
                   src={photo.src}
