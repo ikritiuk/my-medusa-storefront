@@ -39,11 +39,13 @@ const faqs = [
     ),
   },
 ]
+type OpenStateType = Record<number, boolean>;
+
 
 const FaqTemplate = () => {
-  const [openState, setOpenState] = useState({})
+  const [openState, setOpenState] = useState<OpenStateType>({});
 
-  const toggleAnswer = (index: any) => {
+  const toggleAnswer = (index: number) => {
     setOpenState((prevOpenState) => ({
       ...prevOpenState,
       [index]: !prevOpenState[index],
