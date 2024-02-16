@@ -37,7 +37,7 @@ const AboutUsPage = () => {
               {
                 src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/1-im-detail.jpg",
                 alt: "Photo 1",
-                title: "Высококачественные материалы",
+                title: "Лучшие материалы",
               },
               {
                 src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/2-im-detail.jpg",
@@ -68,7 +68,7 @@ const AboutUsPage = () => {
               {
                 src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/5-im-detail.jpg",
                 alt: "Photo 5",
-                title: "Микрогравировка в форме короны",
+                title: "Микрогравировка",
               },
               {
                 src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/6-im-detail.jpg",
