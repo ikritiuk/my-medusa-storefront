@@ -31,8 +31,8 @@ const Nav = () => {
               <SideMenu searchModalOpen={searchModalOpen}/>
             </div>
           </div>
-          <div className="flex items-center h-screen md:h-1/2" style={{ width: "30%", height: "auto" }}>
-            <img className="w-full h-auto" src="logo.svg" alt="Logo"/>
+          <div className="flex items-center h-screen md:h-1/2">
+            <img className="w-full h-auto md:w-1/2 mx-auto" src="logo.svg" alt="Logo"/>
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
