@@ -32,9 +32,7 @@ const Nav = () => {
           </div>
 
           <div className="flex items-center h-full">
-            <Link href="/" className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase">
-              Rolex Store
-            </Link>
+            <img src="logo.svg" alt="logo"/>
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
