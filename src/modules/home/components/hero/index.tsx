@@ -5,7 +5,7 @@ const Hero = () => {
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-2">
           <div className="flex items-center mb-2">
             <img
-              src="hero-rolex.jpeg" // Use the larger image for the first one
+              src="hero-rolex.jpg" // Use the larger image for the first one
               alt="Logo"
               className="m-1 w-1/2" // Two times bigger than the others, but not exceeding parent width
             />
