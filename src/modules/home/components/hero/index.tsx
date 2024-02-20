@@ -20,15 +20,6 @@ const Hero = () => {
               className="m-1 w-1/4"
             />
           </div>
-          <div className="flex flex-wrap justify-between gap-1">
-            <a href="/store" className="hover:no-underline">
-              <button
-                className="border-ui-border-base bg-ui-bg-subtle border text-small-regular h-10 rounded-rounded p-2 flex-1 hover:shadow-elevation-card-rest transition-shadow ease-in-out duration-150"
-              >
-                Магазин
-              </button>
-            </a>
-          </div>
         </div>
       </div>
     </div>
