@@ -2,6 +2,7 @@ const Hero = () => {
   return (
     <div className="relative bg-ui-bg-subtle">
       <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
+
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-2 hidden lg:flex">
           <div className="flex items-center mb-2">
             <img
@@ -26,22 +27,29 @@ const Hero = () => {
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
         <div
           className="flex flex-col items-center mb-2"
+          style={{
+            minHeight: '50vh',
+            '@media (max-width: 640px)': { minHeight: 'auto' },
+          }}
         >
           <img
             src="hero-rolex.jpg"
             alt="hero-image-1"
-            className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full"
+            className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none"
+            style={{ height: '100%' }}
           />
           <div className="flex items-center justify-between w-full">
             <img
               src="hero-piguet.jpg"
               alt="hero-image-2"
-              className="w-1/2 h-full"
+              className="w-1/2"
+              style={{ height: '100%' }}
             />
             <img
               src="hero-patek.jpg"
               alt="hero-image-3"
-              className="m-1 w-1/2 h-full"
+              className="m-1 w-1/2"
+              style={{ height: '100%' }}
             />
           </div>
         </div>
@@ -51,3 +59,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
