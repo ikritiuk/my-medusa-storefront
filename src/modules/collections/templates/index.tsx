@@ -11,7 +11,7 @@ import { useCart } from "medusa-react"
 import React, { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 import { ProductCollection } from "@medusajs/medusa"
-import { Link } from 'react-router-dom';
+
 const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
   collection,
 }) => {
@@ -57,7 +57,7 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
   }, [inView, hasNextPage])
 
   return (
-    <div className="content-container py-6" id={collection.handle}>
+    <div className="content-container py-6">
       <div className="mb-8 text-2xl-semi">
         <h1>{collection.title}</h1>
       </div>
@@ -80,9 +80,6 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
       >
         <span ref={ref}></span>
       </div>
-      <Link to={`#${collection.handle}`}>
-        Go to {collection.handle}
-      </Link>
     </div>
   )
 }
