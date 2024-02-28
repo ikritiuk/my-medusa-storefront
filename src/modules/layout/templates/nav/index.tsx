@@ -32,7 +32,10 @@ const Nav = () => {
             </div>
           </div>
           <div>
-            <img className="w-full h-auto md:w-1/2 mx-auto" src="logo.svg" alt="Logo"/>
+            <a
+              href="/">
+              <img className="w-full h-auto md:w-1/2 mx-auto" src="/logo.svg" alt="Logo"/>
+            </a>
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
