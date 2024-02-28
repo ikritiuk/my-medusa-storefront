@@ -4,7 +4,6 @@ import clsx from "clsx"
 import { useCollections, useProductCategories } from "medusa-react"
 import { Text } from "@medusajs/ui"
 import Link from "next/link"
-import MedusaCTA from "../medusa-cta"
 
 const FooterNav = () => {
   const { collections } = useCollections()
@@ -50,7 +49,7 @@ const FooterNav = () => {
               </div>
             )}
             <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">Medusa</span>
+              <span className="txt-small-plus txt-ui-fg-base">About us</span>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
                 <li>
                   <a
@@ -88,9 +87,8 @@ const FooterNav = () => {
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
           <Text className="txt-compact-small">
-            © {new Date().getFullYear()} Medusa Store. All rights reserved.
+            © {new Date().getFullYear()} Royal Replica. All rights reserved.
           </Text>
-          <MedusaCTA />
         </div>
       </div>
     </div>
