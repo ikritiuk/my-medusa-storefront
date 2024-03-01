@@ -3,7 +3,7 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Войти в аккаунт",
-  description: "Sign in to your Medusa Store account.",
+  description: "Sign in to your Royal-Replica account.",
 }
 
 export default function Login() {
