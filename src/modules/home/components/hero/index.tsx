@@ -28,7 +28,7 @@ const Hero = () => {
             <Link href="/collections/piguet" className="m-2 w-1/2 h-full">
                 <img src="hero-piguet.jpg" alt="hero-image-2" />
             </Link>
-            <Link href="/collections/patek" lassName="m-2 w-1/2 h-full">
+            <Link href="/collections/patek" className="m-2 w-1/2 h-full">
                 <img src="hero-patek.jpg" alt="hero-image-3" />
             </Link>
           </div>
