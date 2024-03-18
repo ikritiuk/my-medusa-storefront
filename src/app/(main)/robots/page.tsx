@@ -1,11 +1,15 @@
-import { Metadata } from "next"
-import Robots from "@modules/account/templates/robots"
+import React from 'react';
 
-export const metadata: Metadata = {
-  title: "Robots.txt",
-  description: "Robots.txt",
+const getRobots = () => `User-agent: *
+Disallow: /_next/static/
+`;
+
+class Robots extends React.Component {
+  public static async getInitialProps({ res }) {
+    res.setHeader('Content-Type', 'text/plain');
+    res.write(getRobots());
+    res.end();
+  }
 }
 
-export default function Sitemap() {
-  return <Robots/>
-}
+export default Robots;
