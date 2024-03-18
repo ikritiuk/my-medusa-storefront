@@ -13,8 +13,6 @@ import React, { useEffect, useState } from "react"
 import { useCartDropdown } from "./cart-dropdown-context"
 import { useSearchParams } from "next/navigation"
 
-export const metadata: Metadata = { metadataBase: new URL(${process.env.NEXT_PUBLIC_BASE_URL}), robots: { index: true, follow: true, nocache: true, googleBot: { index: true, follow: true, noimageindex: false, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1, }, }, }
-
 interface VariantInfoProps {
   variantId: string
   quantity: number
@@ -61,7 +59,9 @@ export const StoreProvider = ({ children }: StoreProps) => {
   const adjustLineItem = useUpdateLineItem(cart?.id!)
 
   // check if the user is onboarding and sets the onboarding session storage
-  const searchParams = useSearchParams()
+  const searchParams = new URLSearchParams(
+    typeof window !== 'undefined' ? window.location.search : '',
+  );
   const onboardingCartId = searchParams.get("cart_id")
   const isOnboarding = searchParams.get("onboarding")
 
