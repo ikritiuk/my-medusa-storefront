@@ -13,6 +13,8 @@ import React, { useEffect, useState } from "react"
 import { useCartDropdown } from "./cart-dropdown-context"
 import { useSearchParams } from "next/navigation"
 
+export const metadata: Metadata = { metadataBase: new URL(${process.env.NEXT_PUBLIC_BASE_URL}), robots: { index: true, follow: true, nocache: true, googleBot: { index: true, follow: true, noimageindex: false, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1, }, }, }
+
 interface VariantInfoProps {
   variantId: string
   quantity: number
