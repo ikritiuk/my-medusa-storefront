@@ -2,7 +2,7 @@ import CartTemplate from "@modules/cart/templates"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Корзина",
+  title: "Cart",
   description: "View your cart",
 }
 
