@@ -48,13 +48,13 @@ const Nav = () => {
                 />
               )}
               <Link href="/faq" className="hover:text-ui-fg-base">
-                FAQ
+                Вопросы
               </Link>
               <Link href="/about-us" className="hover:text-ui-fg-base">
-                About us
+                О нас
               </Link>
               <Link href="/account" className="hover:text-ui-fg-base">
-                Account
+                Аккаунт
               </Link>
             </div>
             <CartDropdown/>
