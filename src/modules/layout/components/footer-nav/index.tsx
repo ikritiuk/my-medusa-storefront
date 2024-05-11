@@ -22,32 +22,34 @@ const FooterNav = () => {
             </Link>
           </div>
           <div className="text-small-regular grid grid-cols-3 gap-x-10 md:gap-x-16">
-            {collections && (
-              <div className="flex flex-col gap-y-2">
+            <div className="flex flex-col gap-y-2">
+              {collections && (
+                <div className="flex flex-col gap-y-2">
                 <span className="txt-small-plus txt-ui-fg-base">
                   Collections
                 </span>
-                <ul
-                  className={clsx(
-                    "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
-                    {
-                      "grid-cols-2": (collections?.length || 0) > 3,
-                    }
-                  )}
-                >
-                  {collections?.slice(0, 6).map((c) => (
-                    <li key={c.id}>
-                      <Link
-                        className="hover:text-ui-fg-base"
-                        href={`/collections/${c.handle}`}
-                      >
-                        {c.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+                  <ul
+                    className={clsx(
+                      "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
+                      {
+                        "grid-cols-2": (collections?.length || 0) > 3,
+                      }
+                    )}
+                  >
+                    {collections?.slice(0, 6).map((c) => (
+                      <li key={c.id}>
+                        <Link
+                          className="hover:text-ui-fg-base"
+                          href={`/collections/${c.handle}`}
+                        >
+                          {c.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
