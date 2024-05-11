@@ -30,7 +30,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
 
   return (
     <FilterRadioGroup
-      title="Сортировать"
+      title="Sort by"
       items={sortOptions}
       value={sortBy}
       handleChange={handleChange}
