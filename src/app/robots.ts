@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://royal-replica.ru/sitemap.xml',
+    sitemap: 'https://royal-replica.shop/sitemap.xml',
   }
 }
