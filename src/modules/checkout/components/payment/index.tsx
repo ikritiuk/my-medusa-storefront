@@ -1,17 +1,17 @@
-import { useCheckout } from "@lib/context/checkout-context"
-import PaymentContainer from "../payment-container"
-import { Button, Container, Heading, Text, Tooltip, clx } from "@medusajs/ui"
-import { RadioGroup } from "@headlessui/react"
-import PaymentStripe from "../payment-stripe"
-import Divider from "@modules/common/components/divider"
-import { useForm } from "react-hook-form"
-import { useCart, useSetPaymentSession } from "medusa-react"
-import { ErrorMessage } from "@hookform/error-message"
-import { CreditCard, CheckCircleSolid } from "@medusajs/icons"
-import Spinner from "@modules/common/icons/spinner"
-import Ideal from "@modules/common/icons/ideal"
-import Bancontact from "@modules/common/icons/bancontact"
-import { useState } from "react"
+import { useCheckout } from "@lib/context/checkout-context";
+import PaymentContainer from "../payment-container";
+import { Button, Container, Heading, Text, Tooltip, clx } from "@medusajs/ui";
+import { RadioGroup } from "@headlessui/react";
+import PaymentStripe from "../payment-stripe";
+import Divider from "@modules/common/components/divider";
+import { useForm } from "react-hook-form";
+import { useCart, useSetPaymentSession, SetPaymentSessionMutationData } from "medusa-react";
+import { ErrorMessage } from "@hookform/error-message";
+import { CreditCard, CheckCircleSolid } from "@medusajs/icons";
+import Spinner from "@modules/common/icons/spinner";
+import Ideal from "@modules/common/icons/ideal";
+import Bancontact from "@modules/common/icons/bancontact";
+import { useState } from "react";
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
@@ -88,36 +88,23 @@ const Payment = () => {
 
   const setPaymentSession = (providerId: string) => {
     if (cart) {
-      const paymentSession = cart.payment_sessions.find(
-        (session) => session.provider_id === providerId
-      );
-
-      if (paymentSession) {
-        setPaymentSessionMutation(
-          {
-            provider_id: providerId,
-            cart_id: cart.id,
-            cart,
-            is_selected: paymentSession.is_selected,
-            is_initiated: paymentSession.is_initiated,
-            // Include other properties of PaymentSession as needed
+      setPaymentSessionMutation(
+        { provider_id: providerId, cart_id: cart.id } as SetPaymentSessionMutationData,
+        {
+          onSuccess: ({ cart }) => {
+            setCart(cart);
           },
-          {
-            onSuccess: ({ cart }) => {
-              setCart(cart);
-            },
-            onError: () =>
-              setError(
-                "paymentSession",
-                {
-                  type: "validate",
-                  message: "An error occurred while selecting this payment method. Please try again.",
-                },
-                { shouldFocus: true }
-              ),
-          }
-        );
-      }
+          onError: () =>
+            setError(
+              "paymentSession",
+              {
+                type: "validate",
+                message: "An error occurred while selecting this payment method. Please try again.",
+              },
+              { shouldFocus: true }
+            ),
+        }
+      );
     }
   };
 
@@ -241,7 +228,7 @@ const Payment = () => {
       </div>
       <Divider className="mt-8" />
     </div>
-  )
+  );
 }
 
-export default Payment
+export default Payment;
