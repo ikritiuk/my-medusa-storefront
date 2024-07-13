@@ -11,7 +11,6 @@ import { CreditCard, CheckCircleSolid } from "@medusajs/icons"
 import Spinner from "@modules/common/icons/spinner"
 import Ideal from "@modules/common/icons/ideal"
 import Bancontact from "@modules/common/icons/bancontact"
-import { useElements } from "@stripe/react-stripe-js"
 import { useState } from "react"
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
@@ -89,23 +88,36 @@ const Payment = () => {
 
   const setPaymentSession = (providerId: string) => {
     if (cart) {
-      setPaymentSessionMutation(
-        { provider_id: providerId },
-        {
-          onSuccess: ({ cart }) => {
-            setCart(cart);
-          },
-          onError: () =>
-            setError(
-              "paymentSession",
-              {
-                type: "validate",
-                message: "An error occurred while selecting this payment method. Please try again.",
-              },
-              { shouldFocus: true }
-            ),
-        }
+      const paymentSession = cart.payment_sessions.find(
+        (session) => session.provider_id === providerId
       );
+
+      if (paymentSession) {
+        setPaymentSessionMutation(
+          {
+            provider_id: providerId,
+            cart_id: cart.id,
+            cart,
+            is_selected: paymentSession.is_selected,
+            is_initiated: paymentSession.is_initiated,
+            // Include other properties of PaymentSession as needed
+          },
+          {
+            onSuccess: ({ cart }) => {
+              setCart(cart);
+            },
+            onError: () =>
+              setError(
+                "paymentSession",
+                {
+                  type: "validate",
+                  message: "An error occurred while selecting this payment method. Please try again.",
+                },
+                { shouldFocus: true }
+              ),
+          }
+        );
+      }
     }
   };
 
