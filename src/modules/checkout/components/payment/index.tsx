@@ -5,7 +5,7 @@ import { RadioGroup } from "@headlessui/react";
 import PaymentStripe from "../payment-stripe";
 import Divider from "@modules/common/components/divider";
 import { useForm } from "react-hook-form";
-import { useCart, useSetPaymentSession, SetPaymentSessionMutationData } from "medusa-react";
+import { useCart, useSetPaymentSession } from "medusa-react";
 import { ErrorMessage } from "@hookform/error-message";
 import { CreditCard, CheckCircleSolid } from "@medusajs/icons";
 import Spinner from "@modules/common/icons/spinner";
@@ -38,6 +38,11 @@ export const paymentInfoMap: Record<
     title: "Robokassa",
     icon: <CreditCard />, // You can replace this with an appropriate icon if you have one
   },
+};
+
+type SetPaymentSessionMutationData = {
+  provider_id: string;
+  cart_id: string;
 };
 
 const Payment = () => {
