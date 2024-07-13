@@ -18,7 +18,7 @@ import { useState } from "react"
 export const paymentInfoMap: Record<
   string,
   { title: string; icon: JSX.Element }
-> = {
+  > = {
   stripe: {
     title: "Credit card",
     icon: <CreditCard />,
@@ -35,8 +35,11 @@ export const paymentInfoMap: Record<
     title: "Test payment",
     icon: <CreditCard />,
   },
-  // Add more payment providers here
-}
+  robokassa: {
+    title: "Robokassa",
+    icon: <CreditCard />, // You can replace this with an appropriate icon if you have one
+  },
+};
 
 const Payment = () => {
   const {
@@ -47,87 +50,74 @@ const Payment = () => {
     addressReady,
     shippingReady,
     paymentReady,
-  } = useCheckout()
+  } = useCheckout();
 
-  const { setCart } = useCart()
+  const { setCart } = useCart();
 
   const [cardFormState, setCardFormState] = useState({
     cardNumberComplete: false,
     cardExpiryComplete: false,
     cardCvcComplete: false,
-  })
+  });
 
-  const { cardNumberComplete, cardExpiryComplete, cardCvcComplete } =
-    cardFormState
+  const { cardNumberComplete, cardExpiryComplete, cardCvcComplete } = cardFormState;
 
-  const cardFormComplete =
-    cardNumberComplete && cardExpiryComplete && cardCvcComplete
+  const cardFormComplete = cardNumberComplete && cardExpiryComplete && cardCvcComplete;
 
-  const {
-    mutate: setPaymentSessionMutation,
-    isLoading: settingPaymentSession,
-  } = useSetPaymentSession(cart?.id!)
+  const { mutate: setPaymentSessionMutation, isLoading: settingPaymentSession } = useSetPaymentSession(cart?.id!);
 
   const handleEdit = () => {
-    open()
-    closeAddresses()
-    closeShipping()
-  }
+    open();
+    closeAddresses();
+    closeShipping();
+  };
 
-  const editingOtherSteps = addressesIsOpen || shippingIsOpen
+  const editingOtherSteps = addressesIsOpen || shippingIsOpen;
 
   const handleSubmit = () => {
-    close()
-  }
+    close();
+  };
 
   const handleChange = (value: string) => {
-    setPaymentSession(value)
-    clearErrors("paymentSession")
-  }
+    setPaymentSession(value);
+    clearErrors("paymentSession");
+  };
 
-  const useFormState = useForm({ mode: "onChange", reValidateMode: "onChange" })
+  const useFormState = useForm({ mode: "onChange", reValidateMode: "onChange" });
 
-  const {
-    setError,
-    formState: { errors, isValid },
-    clearErrors,
-  } = useFormState
+  const { setError, formState: { errors, isValid }, clearErrors } = useFormState;
 
   const setPaymentSession = (providerId: string) => {
     if (cart) {
       setPaymentSessionMutation(
-        {
-          provider_id: providerId,
-        },
+        { provider_id: providerId },
         {
           onSuccess: ({ cart }) => {
-            setCart(cart)
+            setCart(cart);
           },
           onError: () =>
             setError(
               "paymentSession",
               {
                 type: "validate",
-                message:
-                  "An error occurred while selecting this payment method. Please try again.",
+                message: "An error occurred while selecting this payment method. Please try again.",
               },
               { shouldFocus: true }
             ),
         }
-      )
+      );
     }
-  }
+  };
 
   return (
     <div className="bg-white px-4 small:px-8">
-      <div className="flex flex-row items-center justify-between mb-6">
+      <div className="flex flex-row items-center justify-between mb6">
         <Heading
           level="h2"
           className={clx(
             "flex flex-row text-3xl-regular gap-x-2 items-baseline",
             {
-              "opacity-50 pointer-events-none select-none":
-                !isOpen && !paymentReady,
+              "opacity-50 pointer-events-none select-none": !isOpen && !paymentReady,
             }
           )}
         >
@@ -151,7 +141,7 @@ const Payment = () => {
             >
               {cart.payment_sessions
                 .sort((a, b) => {
-                  return a.provider_id > b.provider_id ? 1 : -1
+                  return a.provider_id > b.provider_id ? 1 : -1;
                 })
                 .map((paymentSession) => {
                   return (
@@ -159,23 +149,24 @@ const Payment = () => {
                       paymentInfoMap={paymentInfoMap}
                       paymentSession={paymentSession}
                       key={paymentSession.id}
-                      selectedPaymentOptionId={
-                        cart.payment_session?.provider_id || null
-                      }
+                      selectedPaymentOptionId={cart.payment_session?.provider_id || null}
                     />
-                  )
+                  );
                 })}
+              <PaymentContainer
+                paymentInfoMap={paymentInfoMap}
+                paymentSession={{ provider_id: "robokassa" }}
+                selectedPaymentOptionId={cart.payment_session?.provider_id || null}
+              />
             </RadioGroup>
             <ErrorMessage
               errors={errors}
               name="paymentSession"
-              render={({ message }) => {
-                return (
-                  <div className="pt-2 text-rose-500 text-small-regular">
-                    <span>{message}</span>
-                  </div>
-                )
-              }}
+              render={({ message }) => (
+                <div className="pt-2 text-rose-500 text-small-regular">
+                  <span>{message}</span>
+                </div>
+              )}
             />
             {cart.payment_session?.provider_id === "stripe" && (
               <div className="pt-8">
@@ -193,8 +184,7 @@ const Payment = () => {
               className="mt-6"
               disabled={
                 !cart.payment_session?.provider_id ||
-                (cart.payment_session?.provider_id === "stripe" &&
-                  !cardFormComplete)
+                (cart.payment_session?.provider_id === "stripe" && !cardFormComplete)
               }
               isLoading={settingPaymentSession}
             >
@@ -206,7 +196,6 @@ const Payment = () => {
             <Spinner />
           </div>
         )}
-
         <div className={!editingOtherSteps && isOpen ? "hidden" : "block"}>
           {cart && cart.payment_session && (
             <div className="flex items-start gap-x-1 w-full">
@@ -215,16 +204,11 @@ const Payment = () => {
                   Payment method
                 </Text>
                 <Text className="txt-medium text-ui-fg-subtle">
-                  {paymentInfoMap[cart.payment_session.provider_id]?.title ||
-                    cart.payment_session.provider_id}
+                  {paymentInfoMap[cart.payment_session.provider_id]?.title || cart.payment_session.provider_id}
                 </Text>
-                {process.env.NODE_ENV === "development" &&
-                  !Object.hasOwn(
-                    paymentInfoMap,
-                    cart.payment_session.provider_id
-                  ) && (
-                    <Tooltip content="You can add a user-friendly name and icon for this payment provider in 'src/modules/checkout/components/payment/index.tsx'" />
-                  )}
+                {process.env.NODE_ENV === "development" && !Object.hasOwn(paymentInfoMap, cart.payment_session.provider_id) && (
+                  <Tooltip content="You can add a user-friendly name and icon for this payment provider in 'src/modules/checkout/components/payment/index.tsx'" />
+                )}
               </div>
               <div className="flex flex-col w-1/3">
                 <Text className="txt-medium-plus text-ui-fg-base mb-1">
@@ -232,14 +216,10 @@ const Payment = () => {
                 </Text>
                 <div className="flex gap-2 txt-medium text-ui-fg-subtle items-center">
                   <Container className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
-                    {paymentInfoMap[cart.payment_session.provider_id]?.icon || (
-                      <CreditCard />
-                    )}
+                    {paymentInfoMap[cart.payment_session.provider_id]?.icon || <CreditCard />}
                   </Container>
                   <Text>
-                    {cart.payment_session.provider_id === "stripe"
-                      ? "**** **** **** ****"
-                      : "Another step will appear"}
+                    {cart.payment_session.provider_id === "stripe" ? "**** **** **** ****" : "Another step will appear"}
                   </Text>
                 </div>
               </div>
