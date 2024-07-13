@@ -13,6 +13,8 @@ import Ideal from "@modules/common/icons/ideal";
 import Bancontact from "@modules/common/icons/bancontact";
 import { useState } from "react";
 
+import type { PaymentSession } from "medusa-react"; // Adjust this import if needed
+
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
   string,
@@ -113,6 +115,22 @@ const Payment = () => {
     }
   };
 
+  // Mock Robokassa PaymentSession object
+  const robokassaSession: PaymentSession = {
+    id: "robokassa-session-id",
+    provider_id: "robokassa",
+    cart_id: cart?.id ?? "",
+    cart: cart ?? {},
+    is_selected: true,
+    is_initiated: true,
+    data: null,
+    amount: 0,
+    currency_code: "USD",
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    deleted_at: null,
+  };
+
   return (
     <div className="bg-white px-4 small:px-8">
       <div className="flex flex-row items-center justify-between mb6">
@@ -159,7 +177,7 @@ const Payment = () => {
                 })}
               <PaymentContainer
                 paymentInfoMap={paymentInfoMap}
-                paymentSession={{ provider_id: "robokassa" }}
+                paymentSession={robokassaSession}
                 selectedPaymentOptionId={cart.payment_session?.provider_id || null}
               />
             </RadioGroup>
