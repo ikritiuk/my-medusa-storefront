@@ -13,7 +13,21 @@ import Ideal from "@modules/common/icons/ideal";
 import Bancontact from "@modules/common/icons/bancontact";
 import { useState } from "react";
 
-import type { PaymentSession } from "medusa-react"; // Adjust this import if needed
+/* Define the PaymentSession type locally */
+type PaymentSession = {
+  id: string;
+  provider_id: string;
+  cart_id: string;
+  cart: any;
+  is_selected: boolean | null;
+  is_initiated: boolean;
+  data: any;
+  amount: number;
+  currency_code: string;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+};
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
@@ -252,6 +266,6 @@ const Payment = () => {
       <Divider className="mt-8" />
     </div>
   );
-}
+};
 
 export default Payment;
