@@ -12,7 +12,10 @@ import Spinner from "@modules/common/icons/spinner";
 import Ideal from "@modules/common/icons/ideal";
 import Bancontact from "@modules/common/icons/bancontact";
 import { useState } from "react";
-import { Cart, PaymentSession } from "@medusajs/medusa";
+import { Cart as MedusaCart, PaymentSession } from "@medusajs/medusa";
+
+// Define a partial type for Cart
+type PartialCart = Omit<MedusaCart, "afterLoad" | "beforeInsert">;
 
 export const paymentInfoMap: Record<
   string,
@@ -114,7 +117,7 @@ const Payment = () => {
       id: "robokassa-session-id",
       provider_id: "robokassa",
       cart_id: cart.id,
-      cart: cart,
+      cart: cart as PartialCart,
       is_selected: true,
       is_initiated: true,
       data: null,
