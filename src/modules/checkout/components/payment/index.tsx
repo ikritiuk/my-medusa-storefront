@@ -117,7 +117,7 @@ const Payment = () => {
       cart: cart as unknown as Cart,
       is_selected: true,
       is_initiated: true,
-      data: null,
+      data: {}, // Changed from null to an empty object
       amount: 0,
       currency_code: "USD",
       created_at: new Date().toISOString(),
