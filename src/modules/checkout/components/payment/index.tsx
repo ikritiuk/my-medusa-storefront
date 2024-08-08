@@ -14,7 +14,6 @@ import Bancontact from "@modules/common/icons/bancontact";
 import { useState } from "react";
 import { Cart, PaymentSession } from "@medusajs/medusa";
 
-/* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
   string,
   { title: string; icon: JSX.Element }
@@ -37,7 +36,7 @@ export const paymentInfoMap: Record<
   },
   robokassa: {
     title: "Robokassa",
-    icon: <CreditCard />, // You can replace this with an appropriate icon if you have one
+    icon: <CreditCard />,
   },
 };
 
@@ -84,7 +83,7 @@ const Payment = () => {
   };
 
   const useFormState = useForm({ mode: "onChange", reValidateMode: "onChange" });
-  const { setError, formState: { errors, isValid }, clearErrors } = useFormState;
+  const { setError, formState: { errors }, clearErrors } = useFormState;
 
   const setPaymentSession = (providerId: string) => {
     if (cart) {
@@ -108,7 +107,6 @@ const Payment = () => {
     }
   };
 
-  // Mock Robokassa PaymentSession object with the correct type
   let robokassaSession: PaymentSession | null = null;
 
   if (cart) {
