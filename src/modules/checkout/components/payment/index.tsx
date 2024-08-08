@@ -12,26 +12,7 @@ import Spinner from "@modules/common/icons/spinner";
 import Ideal from "@modules/common/icons/ideal";
 import Bancontact from "@modules/common/icons/bancontact";
 import { useState } from "react";
-
-/* Define the PaymentSession type locally */
-type PaymentSession = {
-  id: string;
-  provider_id: string;
-  cart_id: string;
-  cart: any;
-  is_selected: boolean | null;
-  is_initiated: boolean;
-  data: any;
-  amount: number;
-  currency_code: string;
-  created_at: string;
-  updated_at: string;
-  deleted_at: string | null;
-  status: string;
-  idempotency_key: string | null;
-  payment_authorized_at: string | null;
-  beforeInsert?: () => void;  // Optional hook that may exist in the original type
-};
+import { PaymentSession } from "@medusajs/medusa/dist/models/payment-session"; // Importing the correct PaymentSession type
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
@@ -133,7 +114,7 @@ const Payment = () => {
     }
   };
 
-  // Mock Robokassa PaymentSession object
+  // Mock Robokassa PaymentSession object with the correct type
   const robokassaSession: PaymentSession = {
     id: "robokassa-session-id",
     provider_id: "robokassa",
@@ -148,7 +129,7 @@ const Payment = () => {
     updated_at: new Date().toISOString(),
     deleted_at: null,
     status: "pending",
-    idempotency_key: null,
+    idempotency_key: "", // Providing a non-null string as per the correct type
     payment_authorized_at: null,
   };
 
