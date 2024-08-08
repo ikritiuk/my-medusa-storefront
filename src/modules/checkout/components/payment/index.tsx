@@ -27,10 +27,17 @@ type PaymentSession = {
   created_at: string;
   updated_at: string;
   deleted_at: string | null;
+  status: string;
+  idempotency_key: string | null;
+  payment_authorized_at: string | null;
+  beforeInsert?: () => void;  // Optional hook that may exist in the original type
 };
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
-export const paymentInfoMap: Record<string, { title: string; icon: JSX.Element }> = {
+export const paymentInfoMap: Record<
+  string,
+  { title: string; icon: JSX.Element }
+  > = {
   stripe: {
     title: "Credit card",
     icon: <CreditCard />,
@@ -49,7 +56,7 @@ export const paymentInfoMap: Record<string, { title: string; icon: JSX.Element }
   },
   robokassa: {
     title: "Robokassa",
-    icon: <CreditCard />, // Replace with an appropriate icon if available
+    icon: <CreditCard />, // You can replace this with an appropriate icon if you have one
   },
 };
 
@@ -78,6 +85,7 @@ const Payment = () => {
   });
 
   const { cardNumberComplete, cardExpiryComplete, cardCvcComplete } = cardFormState;
+
   const cardFormComplete = cardNumberComplete && cardExpiryComplete && cardCvcComplete;
 
   const { mutate: setPaymentSessionMutation, isLoading: settingPaymentSession } = useSetPaymentSession(cart?.id!);
@@ -94,7 +102,16 @@ const Payment = () => {
     close();
   };
 
-  const handleSetPaymentSession = (providerId: string) => {
+  const handleChange = (value: string) => {
+    setPaymentSession(value);
+    clearErrors("paymentSession");
+  };
+
+  const useFormState = useForm({ mode: "onChange", reValidateMode: "onChange" });
+
+  const { setError, formState: { errors, isValid }, clearErrors } = useFormState;
+
+  const setPaymentSession = (providerId: string) => {
     if (cart) {
       setPaymentSessionMutation(
         { provider_id: providerId, cart_id: cart.id } as SetPaymentSessionMutationData,
@@ -116,13 +133,6 @@ const Payment = () => {
     }
   };
 
-  const handleChange = (value: string) => {
-    handleSetPaymentSession(value);
-    clearErrors("paymentSession");
-  };
-
-  const { setError, formState: { errors }, clearErrors } = useForm({ mode: "onChange", reValidateMode: "onChange" });
-
   // Mock Robokassa PaymentSession object
   const robokassaSession: PaymentSession = {
     id: "robokassa-session-id",
@@ -137,6 +147,9 @@ const Payment = () => {
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
     deleted_at: null,
+    status: "pending",
+    idempotency_key: null,
+    payment_authorized_at: null,
   };
 
   return (
@@ -173,14 +186,16 @@ const Payment = () => {
                 .sort((a, b) => {
                   return a.provider_id > b.provider_id ? 1 : -1;
                 })
-                .map((paymentSession) => (
-                  <PaymentContainer
-                    paymentInfoMap={paymentInfoMap}
-                    paymentSession={paymentSession}
-                    key={paymentSession.id}
-                    selectedPaymentOptionId={cart.payment_session?.provider_id || null}
-                  />
-                ))}
+                .map((paymentSession) => {
+                  return (
+                    <PaymentContainer
+                      paymentInfoMap={paymentInfoMap}
+                      paymentSession={paymentSession}
+                      key={paymentSession.id}
+                      selectedPaymentOptionId={cart.payment_session?.provider_id || null}
+                    />
+                  );
+                })}
               <PaymentContainer
                 paymentInfoMap={paymentInfoMap}
                 paymentSession={robokassaSession}
@@ -199,7 +214,7 @@ const Payment = () => {
             {cart.payment_session?.provider_id === "stripe" && (
               <div className="pt-8">
                 <PaymentStripe
-                  useFormState={{ setError, formState: { errors }, clearErrors }}
+                  useFormState={useFormState}
                   setState={setCardFormState}
                   state={cardFormState}
                 />
@@ -253,9 +268,9 @@ const Payment = () => {
               </div>
             </div>
           )}
+          <Divider />
         </div>
       </div>
-      <Divider className="mt-8" />
     </div>
   );
 };
