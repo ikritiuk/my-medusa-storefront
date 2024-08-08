@@ -1,4 +1,4 @@
-mport { useCheckout } from "@lib/context/checkout-context";
+import { useCheckout } from "@lib/context/checkout-context";
 import PaymentContainer from "../payment-container";
 import { Button, Container, Heading, Text, Tooltip, clx } from "@medusajs/ui";
 import { RadioGroup } from "@headlessui/react";
