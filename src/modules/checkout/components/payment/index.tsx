@@ -1,4 +1,4 @@
-import { useCheckout } from "@lib/context/checkout-context";
+mport { useCheckout } from "@lib/context/checkout-context";
 import PaymentContainer from "../payment-container";
 import { Button, Container, Heading, Text, Tooltip, clx } from "@medusajs/ui";
 import { RadioGroup } from "@headlessui/react";
@@ -12,10 +12,7 @@ import Spinner from "@modules/common/icons/spinner";
 import Ideal from "@modules/common/icons/ideal";
 import Bancontact from "@modules/common/icons/bancontact";
 import { useState } from "react";
-import { Cart as MedusaCart, PaymentSession } from "@medusajs/medusa";
-
-// Define a partial type for Cart
-type PartialCart = Omit<MedusaCart, "afterLoad" | "beforeInsert">;
+import { Cart, PaymentSession } from "@medusajs/medusa";
 
 export const paymentInfoMap: Record<
   string,
@@ -117,7 +114,7 @@ const Payment = () => {
       id: "robokassa-session-id",
       provider_id: "robokassa",
       cart_id: cart.id,
-      cart: cart as PartialCart,
+      cart: cart as unknown as Cart,
       is_selected: true,
       is_initiated: true,
       data: null,
