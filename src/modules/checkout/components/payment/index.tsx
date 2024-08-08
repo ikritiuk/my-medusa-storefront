@@ -12,7 +12,7 @@ import Spinner from "@modules/common/icons/spinner";
 import Ideal from "@modules/common/icons/ideal";
 import Bancontact from "@modules/common/icons/bancontact";
 import { useState } from "react";
-import { PaymentSession } from "@medusajs/medusa/dist/models/payment-session"; // Importing the correct PaymentSession type
+import { Cart, PaymentSession } from "@medusajs/medusa";
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
@@ -56,19 +56,14 @@ const Payment = () => {
     shippingReady,
     paymentReady,
   } = useCheckout();
-
   const { setCart } = useCart();
-
   const [cardFormState, setCardFormState] = useState({
     cardNumberComplete: false,
     cardExpiryComplete: false,
     cardCvcComplete: false,
   });
-
   const { cardNumberComplete, cardExpiryComplete, cardCvcComplete } = cardFormState;
-
   const cardFormComplete = cardNumberComplete && cardExpiryComplete && cardCvcComplete;
-
   const { mutate: setPaymentSessionMutation, isLoading: settingPaymentSession } = useSetPaymentSession(cart?.id!);
 
   const handleEdit = () => {
@@ -89,7 +84,6 @@ const Payment = () => {
   };
 
   const useFormState = useForm({ mode: "onChange", reValidateMode: "onChange" });
-
   const { setError, formState: { errors, isValid }, clearErrors } = useFormState;
 
   const setPaymentSession = (providerId: string) => {
@@ -115,23 +109,27 @@ const Payment = () => {
   };
 
   // Mock Robokassa PaymentSession object with the correct type
-  const robokassaSession: PaymentSession = {
-    id: "robokassa-session-id",
-    provider_id: "robokassa",
-    cart_id: cart?.id ?? "",
-    cart: cart ?? {},
-    is_selected: true,
-    is_initiated: true,
-    data: null,
-    amount: 0,
-    currency_code: "USD",
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString(),
-    deleted_at: null,
-    status: "pending",
-    idempotency_key: "", // Providing a non-null string as per the correct type
-    payment_authorized_at: null,
-  };
+  let robokassaSession: PaymentSession | null = null;
+
+  if (cart) {
+    robokassaSession = {
+      id: "robokassa-session-id",
+      provider_id: "robokassa",
+      cart_id: cart.id,
+      cart: cart,
+      is_selected: true,
+      is_initiated: true,
+      data: null,
+      amount: 0,
+      currency_code: "USD",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      deleted_at: null,
+      status: "pending",
+      idempotency_key: "",
+      payment_authorized_at: null,
+    };
+  }
 
   return (
     <div className="bg-white px-4 small:px-8">
@@ -177,11 +175,13 @@ const Payment = () => {
                     />
                   );
                 })}
-              <PaymentContainer
-                paymentInfoMap={paymentInfoMap}
-                paymentSession={robokassaSession}
-                selectedPaymentOptionId={cart.payment_session?.provider_id || null}
-              />
+              {robokassaSession && (
+                <PaymentContainer
+                  paymentInfoMap={paymentInfoMap}
+                  paymentSession={robokassaSession}
+                  selectedPaymentOptionId={cart.payment_session?.provider_id || null}
+                />
+              )}
             </RadioGroup>
             <ErrorMessage
               errors={errors}
