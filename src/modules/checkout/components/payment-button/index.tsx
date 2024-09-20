@@ -14,14 +14,10 @@ type PaymentButtonProps = {
 const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
   const { cart } = useCart()
 
-  const notReady =
-    !cart ||
+  const notReady = !cart ||
     !cart.shipping_address ||
     !cart.billing_address ||
-    !cart.email ||
-    cart.shipping_methods.length < 1
-      ? true
-      : false
+    !cart.email;
 
   switch (paymentSession?.provider_id) {
     case "stripe":
@@ -40,9 +36,9 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
 }
 
 const StripePaymentButton = ({
-  session,
-  notReady,
-}: {
+                               session,
+                               notReady,
+                             }: {
   session: PaymentSession
   notReady: boolean
 }) => {
@@ -73,10 +69,7 @@ const StripePaymentButton = ({
         payment_method: {
           card: card,
           billing_details: {
-            name:
-              cart.billing_address.first_name +
-              " " +
-              cart.billing_address.last_name,
+            name: cart.billing_address.first_name + " " + cart.billing_address.last_name,
             address: {
               city: cart.billing_address.city ?? undefined,
               country: cart.billing_address.country_code ?? undefined,
@@ -141,9 +134,9 @@ const StripePaymentButton = ({
 const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || ""
 
 const PayPalPaymentButton = ({
-  session,
-  notReady,
-}: {
+                               session,
+                               notReady,
+                             }: {
   session: PaymentSession
   notReady: boolean
 }) => {
@@ -175,6 +168,7 @@ const PayPalPaymentButton = ({
         setSubmitting(false)
       })
   }
+
   return (
     <PayPalScriptProvider
       options={{
