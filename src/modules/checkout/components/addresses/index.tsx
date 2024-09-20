@@ -76,6 +76,7 @@ const Addresses = () => {
             </div>
           )}
           <Button
+            disabled={notReady}
             isLoading={submitting}
             onClick={handleClick}
             size="large"
