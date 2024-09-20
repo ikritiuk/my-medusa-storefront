@@ -21,8 +21,6 @@ const Addresses = () => {
 
   const handleEdit = () => {
     open()
-    closeShipping()
-    closePayment()
   }
   const [submitting, setSubmitting] = useState(false)
   const { onPaymentCompleted } = useCheckout()
