@@ -12,17 +12,16 @@ type PaymentButtonProps = {
 }
 
 const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
-  const [submitting, setSubmitting] = useState(false)
-
-  const handlePayment = async () => {
-    setSubmitting(true)
-  }
   const { cart } = useCart()
 
-  const notReady = !cart ||
+  const notReady =
+    !cart ||
     !cart.shipping_address ||
     !cart.billing_address ||
-    !cart.email;
+    !cart.email ||
+    cart.shipping_methods.length < 1
+      ? true
+      : false
 
   switch (paymentSession?.provider_id) {
     case "stripe":
@@ -30,14 +29,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
         <StripePaymentButton session={paymentSession} notReady={notReady} />
       )
     case "manual":
-      return  <Button
-        disabled={notReady}
-        isLoading={submitting}
-        onClick={handlePayment}
-        size="large"
-      >
-        Place order
-      </Button>
+      return <ManualTestPaymentButton notReady={notReady} />
     case "paypal":
       return (
         <PayPalPaymentButton notReady={notReady} session={paymentSession} />
@@ -81,7 +73,10 @@ const StripePaymentButton = ({
         payment_method: {
           card: card,
           billing_details: {
-            name: cart.billing_address.first_name + " " + cart.billing_address.last_name,
+            name:
+              cart.billing_address.first_name +
+              " " +
+              cart.billing_address.last_name,
             address: {
               city: cart.billing_address.city ?? undefined,
               country: cart.billing_address.country_code ?? undefined,
@@ -180,7 +175,6 @@ const PayPalPaymentButton = ({
         setSubmitting(false)
       })
   }
-
   return (
     <PayPalScriptProvider
       options={{
