@@ -18,6 +18,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
     !cart.shipping_address ||
     !cart.billing_address ||
     !cart.email;
+  const [submitting, setSubmitting] = useState(false)
 
   switch (paymentSession?.provider_id) {
     case "stripe":
