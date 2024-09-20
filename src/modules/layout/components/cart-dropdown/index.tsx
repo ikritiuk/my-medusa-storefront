@@ -74,7 +74,7 @@ const CartDropdown = () => {
                                 </h3>
                                 <></>
                                 <LineItemOptions variant={item.variant} />
-                                <span>Quantity: {item.quantity}</span>
+                                <span>Количество: {item.quantity}</span>
                               </div>
                               <div className="flex justify-end">
                                 <LineItemPrice
