@@ -18,7 +18,6 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
     !cart.shipping_address ||
     !cart.billing_address ||
     !cart.email;
-  const [submitting, setSubmitting] = useState(false)
 
   switch (paymentSession?.provider_id) {
     case "stripe":
@@ -28,7 +27,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
     case "manual":
       return  <Button
         disabled={notReady}
-        isLoading={submitting}
+        isLoading={true}
         onClick={handlePayment}
         size="large"
       >
