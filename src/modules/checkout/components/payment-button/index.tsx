@@ -12,6 +12,11 @@ type PaymentButtonProps = {
 }
 
 const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
+  const [submitting, setSubmitting] = useState(false)
+
+  const handlePayment = async () => {
+    setSubmitting(true)
+  }
   const { cart } = useCart()
 
   const notReady = !cart ||
@@ -25,7 +30,14 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
         <StripePaymentButton session={paymentSession} notReady={notReady} />
       )
     case "manual":
-      return <ManualTestPaymentButton notReady={notReady} />
+      return  <Button
+        disabled={notReady}
+        isLoading={submitting}
+        onClick={handlePayment}
+        size="large"
+      >
+        Place order
+      </Button>
     case "paypal":
       return (
         <PayPalPaymentButton notReady={notReady} session={paymentSession} />
