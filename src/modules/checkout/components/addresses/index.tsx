@@ -40,9 +40,6 @@ const Addresses = () => {
   };
   const { cart } = useCart()
 
-  const notReady = !cart ||
-    !cart.shipping_address ||
-    !cart.email;
   return (
 
     <div className="bg-white px-4 small:px-8">
@@ -79,7 +76,6 @@ const Addresses = () => {
             </div>
           )}
           <Button
-            disabled={notReady}
             isLoading={submitting}
             onClick={handleClick}
             size="large"
