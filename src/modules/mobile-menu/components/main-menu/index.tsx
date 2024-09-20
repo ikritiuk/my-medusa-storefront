@@ -143,7 +143,7 @@ const MainMenu = () => {
                 <div className="flex items-center gap-x-2">
                   <ReactCountryFlag countryCode={countryCode || "us"} svg />
                   <span className="normal-case">
-                    Shipping to{" "}
+                    Доставка в{" "}
                     {countries?.find((c) => c.country === countryCode)?.label}
                   </span>
                 </div>
