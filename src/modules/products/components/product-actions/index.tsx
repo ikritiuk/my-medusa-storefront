@@ -22,7 +22,6 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
 
   const selectedPrice = useMemo(() => {
     const { variantPrice, cheapestPrice } = price
-
     return variantPrice || cheapestPrice || null
   }, [price])
 
@@ -50,6 +49,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
 
       {selectedPrice ? (
         <div className="flex flex-col text-ui-fg-base">
+          {/* Current Price */}
           <span
             className={clsx("text-xl-semi", {
               "text-ui-fg-interactive": selectedPrice.price_type === "sale",
@@ -57,16 +57,20 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           >
             {selectedPrice.calculated_price}
           </span>
+
+          {/* Old Price and Sale Percentage */}
           {selectedPrice.price_type === "sale" && (
             <>
-              <p>
-                <span className="text-ui-fg-subtle">Original: </span>
-                <span className="line-through">
+              <div className="flex items-center">
+                <p className="text-3xl font-bold line-through text-gray-500 mr-2">
                   {selectedPrice.original_price}
-                </span>
-              </p>
+                </p>
+                <p className="text-red-500 text-lg font-bold">
+                  Limited Time Deal!
+                </p>
+              </div>
               <span className="text-ui-fg-interactive">
-                -{selectedPrice.percentage_diff}%
+                -{selectedPrice.percentage_diff}% off
               </span>
             </>
           )}
@@ -84,8 +88,8 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         {!inStock
           ? "Нет в наличии"
           : !variant
-          ? "Выбрать вариант"
-          : "Добавить в корзину"}
+            ? "Выбрать вариант"
+            : "Добавить в корзину"}
       </Button>
     </div>
   )
