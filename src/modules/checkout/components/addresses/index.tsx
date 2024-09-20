@@ -12,11 +12,8 @@ const Addresses = () => {
   const {
     sameAsBilling: { state: checked, toggle: onChange },
     editAddresses: { state: isOpen, open },
-    editShipping: { close: closeShipping },
-    editPayment: { close: closePayment },
     setAddresses,
     handleSubmit,
-    cart,
   } = useCheckout()
 
   const handleEdit = () => {
