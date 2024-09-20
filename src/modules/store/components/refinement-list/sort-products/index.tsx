@@ -28,8 +28,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
     setSortBy(e.target.value)
   }
 
-  return
-  (
+  return (
     <FilterRadioGroup
       title="Сортировать"
       items={sortOptions}
