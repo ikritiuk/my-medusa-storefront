@@ -5,54 +5,32 @@ import Spinner from "@modules/common/icons/spinner"
 import BillingAddress from "../billing_address"
 import ShippingAddress from "../shipping-address"
 import Divider from "@modules/common/components/divider"
-import React, { useState } from "react"
-import { useCart } from "medusa-react"
 
 const Addresses = () => {
   const {
     sameAsBilling: { state: checked, toggle: onChange },
     editAddresses: { state: isOpen, open },
+    editShipping: { close: closeShipping },
+    editPayment: { close: closePayment },
     setAddresses,
     handleSubmit,
+    cart,
   } = useCheckout()
 
   const handleEdit = () => {
     open()
+    closeShipping()
+    closePayment()
   }
-  const [submitting, setSubmitting] = useState(false)
-  const { onPaymentCompleted } = useCheckout()
-
-  const handlePayment = async () => {
-    setSubmitting(true)
-    onPaymentCompleted()
-  }
-  const handleClick = async () => {
-    setSubmitting(true);
-    try {
-      await handlePayment(); // Wait for payment to complete
-      handleSubmit(setAddresses); // Then handle the submission
-    } catch (error) {
-      console.error("Error during payment:", error);
-      // Handle any errors (e.g., show a message to the user)
-    } finally {
-      setSubmitting(false); // Reset the submitting state
-    }
-  };
-  const { cart } = useCart()
-
-  const notReady = !cart ||
-    !cart.shipping_address ||
-    !cart.email;
 
   return (
-
     <div className="bg-white px-4 small:px-8">
       <div className="flex flex-row items-center justify-between mb-6">
         <Heading
           level="h2"
           className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
         >
-          Адрес доставки
+          Address
           {!isOpen && <CheckCircleSolid />}
         </Heading>
         {!isOpen && (
@@ -79,14 +57,13 @@ const Addresses = () => {
               <BillingAddress />
             </div>
           )}
-          <Button
-            disabled={notReady}
-            isLoading={submitting}
-            onClick={handleClick}
-            size="large"
-          >
 
-            Продолжить
+          <Button
+            size="large"
+            className="mt-6"
+            onClick={handleSubmit(setAddresses)}
+          >
+            Continue to delivery
           </Button>
         </div>
       ) : (
