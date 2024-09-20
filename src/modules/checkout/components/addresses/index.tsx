@@ -42,7 +42,6 @@ const Addresses = () => {
 
   const notReady = !cart ||
     !cart.shipping_address ||
-    !cart.billing_address ||
     !cart.email;
 
   return (
