@@ -26,11 +26,22 @@ const Addresses = () => {
     setSubmitting(true)
     onPaymentCompleted()
   }
+  const handleClick = async () => {
+    setSubmitting(true);
+    try {
+      await handlePayment(); // Wait for payment to complete
+      handleSubmit(setAddresses); // Then handle the submission
+    } catch (error) {
+      console.error("Error during payment:", error);
+      // Handle any errors (e.g., show a message to the user)
+    } finally {
+      setSubmitting(false); // Reset the submitting state
+    }
+  };
   const { cart } = useCart()
 
   const notReady = !cart ||
     !cart.shipping_address ||
-    !cart.billing_address ||
     !cart.email;
   return (
 
@@ -70,7 +81,7 @@ const Addresses = () => {
           <Button
             disabled={notReady}
             isLoading={submitting}
-            onClick={handlePayment}
+            onClick={handleClick}
             size="large"
           >
 
