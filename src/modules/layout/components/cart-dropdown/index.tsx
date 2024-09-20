@@ -24,7 +24,7 @@ const CartDropdown = () => {
           <Link
             className="hover:text-ui-fg-base"
             href="/cart"
-          >{`Корзина (${totalItems})`}</Link>
+          >{`Cart (${totalItems})`}</Link>
         </Popover.Button>
         <Transition
           show={state}
