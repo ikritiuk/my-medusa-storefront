@@ -92,7 +92,7 @@ const CartDropdown = () => {
                                 onClick={() => deleteItem(item.id)}
                               >
                                 <Trash size={14} />
-                                <span>Удалить</span>
+                                <span>Удалить из Корзины</span>
                               </button>
                             </div>
                           </div>
