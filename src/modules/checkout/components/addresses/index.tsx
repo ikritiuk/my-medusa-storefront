@@ -5,6 +5,7 @@ import Spinner from "@modules/common/icons/spinner"
 import BillingAddress from "../billing_address"
 import ShippingAddress from "../shipping-address"
 import Divider from "@modules/common/components/divider"
+import React, { useState } from "react"
 
 const Addresses = () => {
   const {
@@ -22,8 +23,14 @@ const Addresses = () => {
     closeShipping()
     closePayment()
   }
-
+  const handlePayment = async () => {
+    const [submitting, setSubmitting] = useState(false)
+    const { onPaymentCompleted } = useCheckout()
+    setSubmitting(true)
+    onPaymentCompleted()
+  }
   return (
+
     <div className="bg-white px-4 small:px-8">
       <div className="flex flex-row items-center justify-between mb-6">
         <Heading
@@ -57,12 +64,13 @@ const Addresses = () => {
               <BillingAddress />
             </div>
           )}
-
           <Button
+            disabled={notReady}
+            isLoading={submitting}
+            onClick={handlePayment}
             size="large"
-            className="mt-6"
-            onClick={handleSubmit(setAddresses)}
           >
+
             Продолжить
           </Button>
         </div>
