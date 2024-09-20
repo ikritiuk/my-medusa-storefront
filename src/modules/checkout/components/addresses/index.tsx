@@ -30,7 +30,7 @@ const Addresses = () => {
           level="h2"
           className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
         >
-          Address
+          Адрес доставки
           {!isOpen && <CheckCircleSolid />}
         </Heading>
         {!isOpen && (
@@ -63,7 +63,7 @@ const Addresses = () => {
             className="mt-6"
             onClick={handleSubmit(setAddresses)}
           >
-            Continue to delivery
+            Продолжить
           </Button>
         </div>
       ) : (
