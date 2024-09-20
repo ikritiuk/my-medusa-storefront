@@ -53,9 +53,6 @@ const Nav = () => {
               <Link href="/about-us" className="hover:text-ui-fg-base">
                 О нас
               </Link>
-              <Link href="/account" className="hover:text-ui-fg-base">
-                Аккаунт
-              </Link>
             </div>
             <CartDropdown/>
           </div>

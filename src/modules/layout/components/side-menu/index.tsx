@@ -9,7 +9,6 @@ const SideMenuItems = {
   Главная: "/",
   Магазин: "/store",
   Поиск: "",
-  Аккаунт: "/account",
   Вопросы: "/faq",
   Корзина: "/cart",
 }
