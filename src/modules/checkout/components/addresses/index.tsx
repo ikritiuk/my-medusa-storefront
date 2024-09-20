@@ -40,6 +40,11 @@ const Addresses = () => {
   };
   const { cart } = useCart()
 
+  const notReady = !cart ||
+    !cart.shipping_address ||
+    !cart.billing_address ||
+    !cart.email;
+
   return (
 
     <div className="bg-white px-4 small:px-8">
