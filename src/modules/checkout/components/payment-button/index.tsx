@@ -12,6 +12,8 @@ type PaymentButtonProps = {
 }
 
 const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
+  const [submitting, setSubmitting] = useState(false)
+
   const handlePayment = async () => {
     setSubmitting(true)
   }
@@ -30,7 +32,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
     case "manual":
       return  <Button
         disabled={notReady}
-        isLoading={true}
+        isLoading={submitting}
         onClick={handlePayment}
         size="large"
       >
