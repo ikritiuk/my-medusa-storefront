@@ -26,7 +26,7 @@ const FooterNav = () => {
               {collections && (
                 <div className="flex flex-col gap-y-2">
                 <span className="txt-small-plus txt-ui-fg-base">
-                  Collections
+                  Коллекции
                 </span>
                   <ul
                     className={clsx(

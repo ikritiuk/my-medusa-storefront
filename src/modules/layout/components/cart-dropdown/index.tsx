@@ -116,7 +116,7 @@ const CartDropdown = () => {
                   </div>
                   <Link href="/cart" passHref>
                     <Button className="w-full" size="large">
-                      Go to cart
+                      В корзину
                     </Button>
                   </Link>
                 </div>

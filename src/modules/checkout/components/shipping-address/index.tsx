@@ -98,6 +98,7 @@ const ShippingAddress = ({
                 autoComplete="address-level1"
                 errors={errors}
                 touched={touchedFields}
+                required
               />
             </div>
             <div className="grid grid-cols-2 gap-4 mb-4">
@@ -114,10 +115,13 @@ const ShippingAddress = ({
               />
               <Input
                 label="Телефон"
-                {...register("shipping_address.phone")}
+                {...register("shipping_address.phone", {
+                  required: "Телефон обязателен",
+                })}
                 autoComplete="tel"
                 errors={errors}
                 touched={touchedFields}
+                required
               />
             </div>
           </>

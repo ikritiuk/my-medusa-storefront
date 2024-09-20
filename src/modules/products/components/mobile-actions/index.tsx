@@ -77,13 +77,13 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
                   <span>
                     {variant
                       ? Object.values(options).join(" / ")
-                      : "Select Options"}
+                      : "Выбрать опции"}
                   </span>
                   <ChevronDown />
                 </div>
               </Button>
               <Button onClick={addToCart} className="w-full">
-                {!inStock ? "Out of stock" : "Add to cart"}
+                {!inStock ? "Нет в наличии" : "Добавить в корзину"}
               </Button>
             </div>
           </div>
