@@ -16,11 +16,11 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
       {
-        label: "Product Information",
+        label: "Информация о товаре",
         component: <ProductInfoTab product={product} />,
       },
       {
-        label: "Shipping & Returns",
+        label: "Доставка и возврат",
         component: <ShippingInfoTab />,
       },
     ]
@@ -93,10 +93,9 @@ const ShippingInfoTab = () => {
         <div className="flex items-start gap-x-2">
           <FastDelivery />
           <div>
-            <span className="font-semibold">Fast delivery</span>
+            <span className="font-semibold">Быстрая доставка</span>
             <p className="max-w-sm">
-              Your package will arrive in as soon us possible at your pick up
-              location or in the comfort of your home.
+              Ваши часы прибудут как можно скорее в выбранное вами место.
             </p>
           </div>
         </div>
