@@ -6,12 +6,12 @@ import { Text, clx, useToggleState } from "@medusajs/ui"
 import CountrySelect from "../country-select"
 
 const SideMenuItems = {
-  Home: "/",
-  Store: "/store",
-  Search: "",
-  Account: "/account",
-  FAQ: "/faq",
-  Cart: "/cart",
+  Главная: "/",
+  Магазин: "/store",
+  Поиск: "",
+  Аккаунт: "/account",
+  Вопросы: "/faq",
+  Корзина: "/cart",
 }
 
 const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
