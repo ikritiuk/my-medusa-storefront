@@ -40,13 +40,13 @@ const Nav = () => {
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
-              {process.env.FEATURE_SEARCH_ENABLED && (
-                <DesktopSearchModal
-                  state={searchModalState}
-                  close={searchModalClose}
-                  open={searchModalOpen}
-                />
-              )}
+              {/*{process.env.FEATURE_SEARCH_ENABLED && (*/}
+              {/*  <DesktopSearchModal*/}
+              {/*    state={searchModalState}*/}
+              {/*    close={searchModalClose}*/}
+              {/*    open={searchModalOpen}*/}
+              {/*  />*/}
+              {/*)}*/}
               <Link href="/faq" className="hover:text-ui-fg-base">
                 Вопросы
               </Link>

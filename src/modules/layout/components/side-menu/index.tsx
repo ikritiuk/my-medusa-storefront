@@ -8,7 +8,7 @@ import CountrySelect from "../country-select"
 const SideMenuItems = {
   Главная: "/",
   Магазин: "/store",
-  Поиск: "",
+  // Поиск: "",
   Вопросы: "/faq",
   Корзина: "/cart",
 }
