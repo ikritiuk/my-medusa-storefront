@@ -6,6 +6,7 @@ import BillingAddress from "../billing_address"
 import ShippingAddress from "../shipping-address"
 import Divider from "@modules/common/components/divider"
 import React, { useState } from "react"
+import { useCart } from "medusa-react"
 
 const Addresses = () => {
   const {
@@ -23,9 +24,10 @@ const Addresses = () => {
     closeShipping()
     closePayment()
   }
+  const [submitting, setSubmitting] = useState(false)
+  const { onPaymentCompleted } = useCheckout()
+
   const handlePayment = async () => {
-    const [submitting, setSubmitting] = useState(false)
-    const { onPaymentCompleted } = useCheckout()
     setSubmitting(true)
     onPaymentCompleted()
   }
