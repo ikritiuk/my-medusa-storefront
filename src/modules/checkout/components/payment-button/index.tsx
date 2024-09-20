@@ -13,9 +13,11 @@ type PaymentButtonProps = {
 
 const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
   const [submitting, setSubmitting] = useState(false)
+  const { onPaymentCompleted } = useCheckout()
 
   const handlePayment = async () => {
     setSubmitting(true)
+    onPaymentCompleted()
   }
   const { cart } = useCart()
 
