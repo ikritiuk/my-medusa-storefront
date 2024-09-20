@@ -28,14 +28,15 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
     setSortBy(e.target.value)
   }
 
-  return (
-    <FilterRadioGroup
-      title="Сортировать"
-      items={sortOptions}
-      value={sortBy}
-      handleChange={handleChange}
-    />
-  )
+  return
+  // (
+  //   <FilterRadioGroup
+  //     title="Сортировать"
+  //     items={sortOptions}
+  //     value={sortBy}
+  //     handleChange={handleChange}
+  //   />
+  // )
 }
 
 export default SortProducts
