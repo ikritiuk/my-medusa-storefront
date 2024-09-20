@@ -25,6 +25,14 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
     return variantPrice || cheapestPrice || null
   }, [price])
 
+  // Calculate firstPrice as 2x the original_price
+  const firstPrice = useMemo(() => {
+    if (selectedPrice && selectedPrice.original_price) {
+      return selectedPrice.original_price * 2
+    }
+    return null
+  }, [selectedPrice])
+
   return (
     <div className="flex flex-col gap-y-2">
       <div>
@@ -49,6 +57,18 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
 
       {selectedPrice ? (
         <div className="flex flex-col text-ui-fg-base">
+          {/* First Price */}
+          {firstPrice && (
+            <div className="flex items-center">
+              <p className="text-4xl font-bold text-gray-800 mr-2">
+                {firstPrice}
+              </p>
+              <p className="text-red-500 text-lg font-bold">
+                Original Suggested Price!
+              </p>
+            </div>
+          )}
+
           {/* Current Price */}
           <span
             className={clsx("text-xl-semi", {
