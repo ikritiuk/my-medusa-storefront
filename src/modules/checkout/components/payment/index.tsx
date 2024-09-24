@@ -198,7 +198,7 @@ const Payment = () => {
               }
               isLoading={settingPaymentSession}
             >
-              Continue to review
+              Перейти к проверке
             </Button>
           </div>
         ) : (
