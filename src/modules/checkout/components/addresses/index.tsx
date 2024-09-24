@@ -74,7 +74,7 @@ const Addresses = () => {
                 <div className="flex items-start gap-x-1 w-full">
                   <div className="flex flex-col w-1/3">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Shipping Address
+                      Адрес доставки
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
                       {cart.shipping_address.first_name}{" "}
@@ -95,7 +95,7 @@ const Addresses = () => {
 
                   <div className="flex flex-col w-1/3 ">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Contact
+                      Контактная информация
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
                       {cart.shipping_address.phone}
@@ -107,12 +107,12 @@ const Addresses = () => {
 
                   <div className="flex flex-col w-1/3">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Billing Address
+                      Платёжный адрес
                     </Text>
 
                     {checked ? (
                       <Text className="txt-medium text-ui-fg-subtle">
-                        Billing- and delivery address are the same.
+                        Платёжный и адрес доставки совпадают.
                       </Text>
                     ) : (
                       <>

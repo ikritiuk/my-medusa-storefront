@@ -127,7 +127,7 @@ const StripePaymentButton = ({
         size="large"
         isLoading={submitting}
       >
-        Place order
+        Оформить заказ
       </Button>
       {errorMessage && (
         <div className="text-red-500 text-small-regular mt-2">

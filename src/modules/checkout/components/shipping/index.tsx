@@ -126,7 +126,7 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
             }
           )}
         >
-          Delivery
+          Доставка
           {!isOpen && currentShippingOption && shippingReady && (
             <CheckCircleSolid />
           )}
@@ -205,7 +205,7 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
             {cart && shippingReady && (
               <div className="flex flex-col w-1/3">
                 <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                  Method
+                  Метод
                 </Text>
                 <Text className="txt-medium text-ui-fg-subtle">
                   {cart.shipping_methods[0].shipping_option.name} (
