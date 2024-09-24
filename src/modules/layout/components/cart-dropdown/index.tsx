@@ -103,7 +103,7 @@ const CartDropdown = () => {
                 <div className="p-4 flex flex-col gap-y-4 text-small-regular">
                   <div className="flex items-center justify-between">
                     <span className="text-gray-700 font-semibold">
-                      Subtotal{" "}
+                      Итого{" "}
                       <span className="font-normal">(excl. taxes)</span>
                     </span>
                     <span className="text-large-semi">
