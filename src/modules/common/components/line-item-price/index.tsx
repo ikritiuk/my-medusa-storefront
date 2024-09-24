@@ -9,7 +9,8 @@ type LineItemPriceProps = {
   region: Region
   style?: "default" | "tight"
 }
-function formatCurrency(value) {
+
+function formatCurrency(value: string): string {
   // Use a regular expression to match the pattern
   const regex = /(\bRUB\s+)([\d,]+\.\d{2})/;
   return value.replace(regex, '$2 RUB');
