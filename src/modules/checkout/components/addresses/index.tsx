@@ -36,7 +36,7 @@ const Addresses = () => {
         {!isOpen && (
           <Text>
             <button onClick={handleEdit} className="text-ui-fg-interactive">
-              Edit
+              Редактировать
             </button>
           </Text>
         )}

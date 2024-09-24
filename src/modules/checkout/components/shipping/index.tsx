@@ -134,7 +134,7 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
         {!isOpen && addressReady && (
           <Text>
             <button onClick={handleEdit} className="text-ui-fg-interactive">
-              Edit
+              Редактировать
             </button>
           </Text>
         )}
