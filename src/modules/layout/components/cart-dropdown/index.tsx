@@ -104,7 +104,6 @@ const CartDropdown = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-gray-700 font-semibold">
                       Итого{" "}
-                      <span className="font-normal">(excl. taxes)</span>
                     </span>
                     <span className="text-large-semi">
                       {formatAmount({
