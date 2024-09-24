@@ -131,13 +131,13 @@ const Payment = () => {
             }
           )}
         >
-          Payment
+          Оплата
           {!isOpen && paymentReady && <CheckCircleSolid />}
         </Heading>
         {!isOpen && addressReady && shippingReady && (
           <Text>
             <button onClick={handleEdit} className="text-ui-fg-interactive">
-              Edit
+              Редактировать
             </button>
           </Text>
         )}
