@@ -8,28 +8,21 @@ import { useCart, useSetPaymentSession } from "medusa-react"
 import Spinner from "@modules/common/icons/spinner"
 import { useState } from "react"
 
-// Define types for the address data
-interface AddressData {
-  shipping_address: {
-    first_name: string
-    last_name: string
-    address_1: string
-    address_2?: string
-    postal_code: string
-    city: string
-    country_code: string
-    phone?: string
-  }
-  billing_address?: {
-    first_name: string
-    last_name: string
-    address_1: string
-    address_2?: string
-    postal_code: string
-    city: string
-    country_code: string
-    phone?: string
-  }
+// Define types for the form data structure
+interface Address {
+  first_name: string
+  last_name: string
+  address_1: string
+  address_2?: string
+  postal_code: string
+  city: string
+  country_code: string
+  phone?: string
+}
+
+interface FormData {
+  shipping_address: Address
+  billing_address?: Address // Optional if same as shipping
 }
 
 const Addresses = () => {
@@ -54,8 +47,8 @@ const Addresses = () => {
     closePayment()
   }
 
-  // Handle all submissions at once
-  const handleAllSteps = async (data: AddressData) => {
+  // Handle all submissions at once with typed 'data'
+  const handleAllSteps = async (data: FormData) => {
     setIsSubmitting(true)
 
     try {
@@ -109,7 +102,7 @@ const Addresses = () => {
             </div>
           )}
 
-          <Button size="large" className="mt-6" onClick={() => handleAllSteps({ /* data */ })} disabled={isSubmitting}>
+          <Button size="large" className="mt-6" onClick={handleSubmit(handleAllSteps)} disabled={isSubmitting}>
             {isSubmitting ? "Processing..." : "Continue to Review"}
           </Button>
         </div>
