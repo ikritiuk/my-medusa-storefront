@@ -16,12 +16,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
 
   const notReady =
     !cart ||
-    !cart.shipping_address ||
-    !cart.billing_address ||
-    !cart.email ||
-    cart.shipping_methods.length < 1
-      ? true
-      : false
+    !cart.shipping_address;
 
   switch (paymentSession?.provider_id) {
     case "stripe":
