@@ -105,35 +105,6 @@ const Addresses = () => {
                     </Text>
                   </div>
 
-                  <div className="flex flex-col w-1/3">
-                    <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Платёжный адрес
-                    </Text>
-
-                    {checked ? (
-                      <Text className="txt-medium text-ui-fg-subtle">
-                        Платёжный и адрес доставки совпадают.
-                      </Text>
-                    ) : (
-                      <>
-                        <Text className="txt-medium text-ui-fg-subtle">
-                          {cart.billing_address.first_name}{" "}
-                          {cart.billing_address.last_name}
-                        </Text>
-                        <Text className="txt-medium text-ui-fg-subtle">
-                          {cart.billing_address.address_1}{" "}
-                          {cart.billing_address.address_2}
-                        </Text>
-                        <Text className="txt-medium text-ui-fg-subtle">
-                          {cart.billing_address.postal_code},{" "}
-                          {cart.billing_address.city}
-                        </Text>
-                        <Text className="txt-medium text-ui-fg-subtle">
-                          {cart.billing_address.country_code?.toUpperCase()}
-                        </Text>
-                      </>
-                    )}
-                  </div>
                 </div>
               </div>
             ) : (
