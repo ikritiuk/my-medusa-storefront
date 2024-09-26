@@ -64,7 +64,6 @@ const Addresses = () => {
             className="mt-6"
             onClick={handleSubmit(setAddresses)}
           >
-            Continue to delivery
             Продолжить
           </Button>
         </div>
