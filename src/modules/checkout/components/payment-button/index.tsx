@@ -1,6 +1,6 @@
 import { useCheckout } from "@lib/context/checkout-context"
 import { PaymentSession } from "@medusajs/medusa"
-import { Button, clx, Heading, Text } from "@medusajs/ui"
+import { Button } from "@medusajs/ui"
 import { OnApproveActions, OnApproveData } from "@paypal/paypal-js"
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
@@ -16,7 +16,12 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
 
   const notReady =
     !cart ||
-    !cart.shipping_address;
+    !cart.shipping_address ||
+    !cart.billing_address ||
+    !cart.email ||
+    cart.shipping_methods.length < 1
+      ? true
+      : false
 
   switch (paymentSession?.provider_id) {
     case "stripe":
@@ -30,54 +35,8 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
         <PayPalPaymentButton notReady={notReady} session={paymentSession} />
       )
     default:
-      return <Review >Проверка</Review>
+      return <Button disabled>Select a payment method</Button>
   }
-}
-
-const Review = () => {
-  const {
-    cart,
-    editPayment: { state: isEditPayment },
-    editAddresses: { state: isEditAddresses },
-    editShipping: { state: isEditShipping },
-  } = useCheckout()
-
-  const previousStepsCompleted =
-    !!cart?.shipping_address
-
-  const editingOtherSteps = isEditAddresses
-
-  return (
-    <div className="bg-white px-4 small:px-8">
-      <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
-          className={clx(
-            "flex flex-row text-3xl-regular gap-x-2 items-baseline",
-            {
-              "opacity-50 pointer-events-none select-none": editingOtherSteps,
-            }
-          )}
-        >
-          Проверка
-        </Heading>
-      </div>
-      {!editingOtherSteps && previousStepsCompleted && (
-        <>
-          <div className="flex items-start gap-x-1 w-full mb-6">
-            <div className="w-full">
-              <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                Нажимая кнопку Оформить заказ, вы подтверждаете, что прочитали, поняли и принимаете наши Условия использования,
-                Условия продажи и Политику возврата, а также подтверждаете, что ознакомлены с Политикой конфиденциальности Royal Replica.
-                Наш менеджер свяжется с Вами в ближайшее время.
-              </Text>
-            </div>
-          </div>
-          <PaymentButton paymentSession={cart?.payment_session} />
-        </>
-      )}
-    </div>
-  )
 }
 
 const StripePaymentButton = ({
@@ -104,60 +63,60 @@ const StripePaymentButton = ({
   const handlePayment = async () => {
     setSubmitting(true)
 
-    // if (!stripe || !elements || !card || !cart) {
-    //   setSubmitting(false)
-    //   return
-    // }
+    if (!stripe || !elements || !card || !cart) {
+      setSubmitting(false)
+      return
+    }
 
-    // await stripe
-    //   .confirmCardPayment(session.data.client_secret as string, {
-    //     payment_method: {
-    //       card: card,
-    //       billing_details: {
-    //         name:
-    //           cart.billing_address.first_name +
-    //           " " +
-    //           cart.billing_address.last_name,
-    //         address: {
-    //           city: cart.billing_address.city ?? undefined,
-    //           country: cart.billing_address.country_code ?? undefined,
-    //           line1: cart.billing_address.address_1 ?? undefined,
-    //           line2: cart.billing_address.address_2 ?? undefined,
-    //           postal_code: cart.billing_address.postal_code ?? undefined,
-    //           state: cart.billing_address.province ?? undefined,
-    //         },
-    //         email: cart.email,
-    //         phone: cart.billing_address.phone ?? undefined,
-    //       },
-    //     },
-    //   })
-    //   .then(({ error, paymentIntent }) => {
-    //     if (error) {
-    //       const pi = error.payment_intent
-    //
-    //       if (
-    //         (pi && pi.status === "requires_capture") ||
-    //         (pi && pi.status === "succeeded")
-    //       ) {
-    //         onPaymentCompleted()
-    //       }
-    //
-    //       setErrorMessage(error.message)
-    //       return
-    //     }
-    //
-    //     if (
-    //       (paymentIntent && paymentIntent.status === "requires_capture") ||
-    //       paymentIntent.status === "succeeded"
-    //     ) {
-    //       return onPaymentCompleted()
-    //     }
-    //
-    //     return
-    //   })
-    //   .finally(() => {
-    //     setSubmitting(false)
-    //   })
+    await stripe
+      .confirmCardPayment(session.data.client_secret as string, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name:
+              cart.billing_address.first_name +
+              " " +
+              cart.billing_address.last_name,
+            address: {
+              city: cart.billing_address.city ?? undefined,
+              country: cart.billing_address.country_code ?? undefined,
+              line1: cart.billing_address.address_1 ?? undefined,
+              line2: cart.billing_address.address_2 ?? undefined,
+              postal_code: cart.billing_address.postal_code ?? undefined,
+              state: cart.billing_address.province ?? undefined,
+            },
+            email: cart.email,
+            phone: cart.billing_address.phone ?? undefined,
+          },
+        },
+      })
+      .then(({ error, paymentIntent }) => {
+        if (error) {
+          const pi = error.payment_intent
+
+          if (
+            (pi && pi.status === "requires_capture") ||
+            (pi && pi.status === "succeeded")
+          ) {
+            onPaymentCompleted()
+          }
+
+          setErrorMessage(error.message)
+          return
+        }
+
+        if (
+          (paymentIntent && paymentIntent.status === "requires_capture") ||
+          paymentIntent.status === "succeeded"
+        ) {
+          return onPaymentCompleted()
+        }
+
+        return
+      })
+      .finally(() => {
+        setSubmitting(false)
+      })
   }
 
   return (
