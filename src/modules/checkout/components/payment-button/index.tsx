@@ -58,10 +58,10 @@ const StripePaymentButton = ({
   const handlePayment = async () => {
     setSubmitting(true)
 
-    if (!stripe || !elements || !card || !cart) {
-      setSubmitting(false)
-      return
-    }
+    // if (!stripe || !elements || !card || !cart) {
+    //   setSubmitting(false)
+    //   return
+    // }
 
     await stripe
       .confirmCardPayment(session.data.client_secret as string, {
