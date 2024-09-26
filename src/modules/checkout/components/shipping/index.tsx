@@ -191,13 +191,13 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
             />
           </div>
 
-          <Button
-            size="large"
-            className="mt-6"
-            onClick={() => submitShippingOption(shippingOptionId)}
-          >
-            Continue to payment
-          </Button>
+          {/*<Button*/}
+          {/*  size="large"*/}
+          {/*  className="mt-6"*/}
+          {/*  onClick={() => submitShippingOption(shippingOptionId)}*/}
+          {/*>*/}
+          {/*  Continue to payment*/}
+          {/*</Button>*/}
         </div>
       ) : (
         <div>

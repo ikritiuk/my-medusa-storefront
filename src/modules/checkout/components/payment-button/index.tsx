@@ -22,7 +22,6 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
     cart.shipping_methods.length < 1
       ? true
       : false
-
   switch (paymentSession?.provider_id) {
     case "stripe":
       return (

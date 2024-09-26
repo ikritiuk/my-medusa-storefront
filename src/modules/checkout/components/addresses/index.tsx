@@ -1,10 +1,13 @@
 import { useCheckout } from "@lib/context/checkout-context"
 import { Button, Heading, Text } from "@medusajs/ui"
 import { CheckCircleSolid } from "@medusajs/icons"
-import Spinner from "@modules/common/icons/spinner"
 import BillingAddress from "../billing_address"
 import ShippingAddress from "../shipping-address"
 import Divider from "@modules/common/components/divider"
+import { useCart, useSetPaymentSession } from "medusa-react"
+import Spinner from "@modules/common/icons/spinner"
+
+import { useState } from "react"
 
 const Addresses = () => {
   const {
@@ -17,19 +20,47 @@ const Addresses = () => {
     cart,
   } = useCheckout()
 
+  const { setCart, addShippingMethod } = useCart()
+  const { mutate: setPaymentSessionMutation } = useSetPaymentSession(cart?.id!)
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleEdit = () => {
     open()
     closeShipping()
     closePayment()
   }
 
+  // Handle all submissions at once
+  const handleAllSteps = async (data) => {
+    setIsSubmitting(true)
+
+    try {
+      // Set the addresses
+      await handleSubmit(setAddresses)(data)
+
+      // Automatically set the shipping method (assuming default)
+      const defaultShippingOption = cart.shipping_options[0]?.id
+      if (defaultShippingOption) {
+        await addShippingMethod.mutateAsync({ option_id: defaultShippingOption })
+      }
+
+      // Automatically set the payment method (assuming default)
+      const defaultPaymentProvider = cart.payment_sessions?.[0]?.provider_id
+      if (defaultPaymentProvider) {
+        await setPaymentSessionMutation({ provider_id: defaultPaymentProvider })
+      }
+    } catch (error) {
+      console.error("An error occurred:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="bg-white px-4 small:px-8">
       <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
-          className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
-        >
+        <Heading level="h2" className="flex flex-row text-3xl-regular gap-x-2 items-baseline">
           Адрес доставки
           {!isOpen && <CheckCircleSolid />}
         </Heading>
@@ -47,10 +78,7 @@ const Addresses = () => {
 
           {!checked && (
             <div>
-              <Heading
-                level="h2"
-                className="text-3xl-regular gap-x-4 pb-6 pt-8"
-              >
+              <Heading level="h2" className="text-3xl-regular gap-x-4 pb-6 pt-8">
                 Billing address
               </Heading>
 
@@ -58,12 +86,8 @@ const Addresses = () => {
             </div>
           )}
 
-          <Button
-            size="large"
-            className="mt-6"
-            onClick={handleSubmit(setAddresses)}
-          >
-            Продолжить
+          <Button size="large" className="mt-6" onClick={handleAllSteps} disabled={isSubmitting}>
+            {isSubmitting ? "Processing..." : "Continue to Review"}
           </Button>
         </div>
       ) : (
@@ -77,16 +101,13 @@ const Addresses = () => {
                       Адрес доставки
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
-                      {cart.shipping_address.first_name}{" "}
-                      {cart.shipping_address.last_name}
+                      {cart.shipping_address.first_name} {cart.shipping_address.last_name}
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
-                      {cart.shipping_address.address_1}{" "}
-                      {cart.shipping_address.address_2}
+                      {cart.shipping_address.address_1} {cart.shipping_address.address_2}
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
-                      {cart.shipping_address.postal_code},{" "}
-                      {cart.shipping_address.city}
+                      {cart.shipping_address.postal_code}, {cart.shipping_address.city}
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
                       {cart.shipping_address.country_code?.toUpperCase()}
@@ -100,17 +121,12 @@ const Addresses = () => {
                     <Text className="txt-medium text-ui-fg-subtle">
                       {cart.shipping_address.phone}
                     </Text>
-                    <Text className="txt-medium text-ui-fg-subtle">
-                      {cart.email}
-                    </Text>
+                    <Text className="txt-medium text-ui-fg-subtle">{cart.email}</Text>
                   </div>
-
                 </div>
               </div>
             ) : (
-              <div className="">
-                <Spinner />
-              </div>
+              <Spinner />
             )}
           </div>
         </div>

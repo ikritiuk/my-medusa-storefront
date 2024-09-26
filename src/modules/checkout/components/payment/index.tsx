@@ -186,20 +186,20 @@ const Payment = () => {
                 />
               </div>
             )}
-            <Button
-              onClick={handleSubmit}
-              type="submit"
-              size="large"
-              className="mt-6"
-              disabled={
-                !cart.payment_session?.provider_id ||
-                (cart.payment_session?.provider_id === "stripe" &&
-                  !cardFormComplete)
-              }
-              isLoading={settingPaymentSession}
-            >
-              Перейти к проверке
-            </Button>
+            {/*<Button*/}
+            {/*  onClick={handleSubmit}*/}
+            {/*  type="submit"*/}
+            {/*  size="large"*/}
+            {/*  className="mt-6"*/}
+            {/*  disabled={*/}
+            {/*    !cart.payment_session?.provider_id ||*/}
+            {/*    (cart.payment_session?.provider_id === "stripe" &&*/}
+            {/*      !cardFormComplete)*/}
+            {/*  }*/}
+            {/*  isLoading={settingPaymentSession}*/}
+            {/*>*/}
+            {/*  Перейти к проверке*/}
+            {/*</Button>*/}
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center px-4 py-16 text-gray-900">
