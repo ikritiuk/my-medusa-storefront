@@ -11,11 +11,9 @@ const Review = () => {
   } = useCheckout()
 
   const previousStepsCompleted =
-    !!cart?.shipping_address &&
-    !!cart.shipping_methods?.[0]?.shipping_option.id &&
-    !!cart?.payment_sessions
+    !!cart?.shipping_address
 
-  const editingOtherSteps = isEditAddresses || isEditShipping || isEditPayment
+  const editingOtherSteps = isEditAddresses
 
   return (
     <div className="bg-white px-4 small:px-8">
