@@ -108,12 +108,14 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
     return []
   }, [shipping_options, cart])
 
-  // Automatically submit the shipping option when selected
+  // Automatically select the first available shipping option and submit it
   useEffect(() => {
-    if (shippingOptionId && !submitted) {
-      submitShippingOption(shippingOptionId)
+    if (shippingMethods.length > 0 && !submitted) {
+      const firstOptionId = shippingMethods[0].value;
+      setShippingOptionId(firstOptionId);
+      submitShippingOption(firstOptionId);
     }
-  }, [shippingOptionId, submitted]) // Run effect when shippingOptionId changes
+  }, [shippingMethods, submitted]);
 
   return (
     <div className="bg-white p-4 small:px-8">
