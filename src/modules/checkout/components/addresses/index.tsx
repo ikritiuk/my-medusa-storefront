@@ -6,8 +6,31 @@ import ShippingAddress from "../shipping-address"
 import Divider from "@modules/common/components/divider"
 import { useCart, useSetPaymentSession } from "medusa-react"
 import Spinner from "@modules/common/icons/spinner"
-
 import { useState } from "react"
+
+// Define types for the address data
+interface AddressData {
+  shipping_address: {
+    first_name: string
+    last_name: string
+    address_1: string
+    address_2?: string
+    postal_code: string
+    city: string
+    country_code: string
+    phone?: string
+  }
+  billing_address?: {
+    first_name: string
+    last_name: string
+    address_1: string
+    address_2?: string
+    postal_code: string
+    city: string
+    country_code: string
+    phone?: string
+  }
+}
 
 const Addresses = () => {
   const {
@@ -32,7 +55,7 @@ const Addresses = () => {
   }
 
   // Handle all submissions at once
-  const handleAllSteps = async (data) => {
+  const handleAllSteps = async (data: AddressData) => {
     setIsSubmitting(true)
 
     try {
@@ -40,13 +63,13 @@ const Addresses = () => {
       await handleSubmit(setAddresses)(data)
 
       // Automatically set the shipping method (assuming default)
-      const defaultShippingOption = cart.shipping_options[0]?.id
+      const defaultShippingOption = cart?.shipping_options?.[0]?.id
       if (defaultShippingOption) {
         await addShippingMethod.mutateAsync({ option_id: defaultShippingOption })
       }
 
       // Automatically set the payment method (assuming default)
-      const defaultPaymentProvider = cart.payment_sessions?.[0]?.provider_id
+      const defaultPaymentProvider = cart?.payment_sessions?.[0]?.provider_id
       if (defaultPaymentProvider) {
         await setPaymentSessionMutation({ provider_id: defaultPaymentProvider })
       }
@@ -86,7 +109,7 @@ const Addresses = () => {
             </div>
           )}
 
-          <Button size="large" className="mt-6" onClick={handleAllSteps} disabled={isSubmitting}>
+          <Button size="large" className="mt-6" onClick={() => handleAllSteps({ /* data */ })} disabled={isSubmitting}>
             {isSubmitting ? "Processing..." : "Continue to Review"}
           </Button>
         </div>
