@@ -62,6 +62,14 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
     refetchShipping()
   }, [cart, refetch])
 
+  // Automatically select the first valid shipping option
+  useEffect(() => {
+    if (shipping_options && shipping_options.length > 0) {
+      const firstValidOption = shipping_options[0].id
+      setShippingOptionId(firstValidOption)
+    }
+  }, [shipping_options])
+
   const submitShippingOption = (soId: string) => {
     addShippingMethod.mutate(
       { option_id: soId },
@@ -144,9 +152,9 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
           <div>
             <RadioGroup
               value={shippingOptionId}
-              onChange={(value: string) => handleChange(value)}
+              onChange={handleChange}
             >
-              {shippingMethods && shippingMethods.length ? (
+              {shippingMethods.length ? (
                 shippingMethods.map((option) => {
                   return (
                     <RadioGroup.Option
