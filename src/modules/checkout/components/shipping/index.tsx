@@ -65,10 +65,13 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
   // Automatically select the first valid shipping option
   useEffect(() => {
     if (shipping_options && shipping_options.length > 0) {
-      const firstValidOption = shipping_options[0].id
-      setShippingOptionId(firstValidOption)
+      const firstValidOption = shipping_options[0].id;
+      // Check if firstValidOption is defined before setting it
+      if (firstValidOption) {
+        setShippingOptionId(firstValidOption);
+      }
     }
-  }, [shipping_options])
+  }, [shipping_options]);
 
   const submitShippingOption = (soId: string) => {
     addShippingMethod.mutate(
