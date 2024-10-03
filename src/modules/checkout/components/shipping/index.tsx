@@ -50,7 +50,7 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
 
   // Fetch shipping options
   const { shipping_options, refetch } = useCartShippingOptions(cart.id, {
-    enabled: !!cart.id,
+    enabled: !!cart.id,a
   })
 
   // Any time the cart changes we need to ensure that we are displaying valid shipping options
@@ -191,13 +191,13 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
             />
           </div>
 
-          {/*<Button*/}
-          {/*  size="large"*/}
-          {/*  className="mt-6"*/}
-          {/*  onClick={() => submitShippingOption(shippingOptionId)}*/}
-          {/*>*/}
-          {/*  Continue to payment*/}
-          {/*</Button>*/}
+          <Button
+            size="large"
+            className="mt-6"
+            onClick={() => submitShippingOption(shippingOptionId)}
+          >
+            Перейти к платежу
+          </Button>
         </div>
       ) : (
         <div>
