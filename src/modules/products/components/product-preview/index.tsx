@@ -16,7 +16,7 @@ const ProductPreview = ({
     <div>
       <Thumbnail thumbnail={thumbnail} size="full" isFeatured={isFeatured} />
       <div className="flex txt-compact-medium mt-4 justify-between">
-        <Text className="text-ui-fg-subtle">{title}</Text>
+        <Text className="text-ui-fg-subtle w-4/5">{title}</Text>
         <div className="flex items-center gap-x-2">
           {price ? (
             <>
