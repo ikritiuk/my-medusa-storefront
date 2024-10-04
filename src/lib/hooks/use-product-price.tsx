@@ -1,6 +1,7 @@
 import { formatAmount, useCart, useProducts } from "medusa-react"
 import { useEffect, useMemo } from "react"
 import { CalculatedVariant } from "types/medusa"
+import { formatCurrency } from '../../modules/common/utils/utils';
 
 type useProductPriceProps = {
   id: string
@@ -45,16 +46,16 @@ const useProductPrice = ({ id, variantId }: useProductPriceProps) => {
     })
 
     return {
-      calculated_price: formatAmount({
+      calculated_price: formatCurrency(formatAmount({
         amount: cheapestVariant.calculated_price,
         region: cart.region,
         includeTaxes: false,
-      }),
-      original_price: formatAmount({
+      })),
+      original_price: formatCurrency(formatAmount({
         amount: cheapestVariant.original_price,
         region: cart.region,
         includeTaxes: false,
-      }),
+      })),
       price_type: cheapestVariant.calculated_price_type,
       percentage_diff: getPercentageDiff(
         cheapestVariant.original_price,
@@ -77,16 +78,16 @@ const useProductPrice = ({ id, variantId }: useProductPriceProps) => {
     }
 
     return {
-      calculated_price: formatAmount({
+      calculated_price: formatCurrency(formatAmount({
         amount: variant.calculated_price,
         region: cart.region,
         includeTaxes: false,
-      }),
-      original_price: formatAmount({
+      })),
+      original_price: formatCurrency(formatAmount({
         amount: variant.original_price,
         region: cart.region,
         includeTaxes: false,
-      }),
+      })),
       price_type: variant.calculated_price_type,
       percentage_diff: getPercentageDiff(
         variant.original_price,

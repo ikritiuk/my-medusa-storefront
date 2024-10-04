@@ -1,5 +1,6 @@
 import { Order } from "@medusajs/medusa"
 import { formatAmount } from "medusa-react"
+import { formatCurrency } from '../../../common/utils/utils';
 
 type OrderSummaryProps = {
   order: Order
@@ -11,7 +12,7 @@ const OrderSummary = ({ order }: OrderSummaryProps) => {
       return
     }
 
-    return formatAmount({ amount, region: order.region, includeTaxes: false })
+    return formatCurrency(formatAmount({ amount, region: order.region, includeTaxes: false }))
   }
 
   return (
