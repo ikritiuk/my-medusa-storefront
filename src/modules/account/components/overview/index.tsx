@@ -5,6 +5,7 @@ import MapPin from "@modules/common/icons/map-pin"
 import Package from "@modules/common/icons/package"
 import User from "@modules/common/icons/user"
 import { formatAmount } from "medusa-react"
+import { formatCurrency } from '../../../common/utils/utils';
 import Link from "next/link"
 
 type OverviewProps = {
@@ -127,11 +128,11 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                               </span>
                               <span>#{order.display_id}</span>
                               <span>
-                                {formatAmount({
+                                {formatCurrency(formatAmount({
                                   amount: order.total,
                                   region: order.region,
                                   includeTaxes: false,
-                                })}
+                                }))}
                               </span>
                             </div>
                             <button
