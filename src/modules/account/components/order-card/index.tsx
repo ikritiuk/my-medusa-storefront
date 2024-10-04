@@ -2,6 +2,7 @@ import { Order } from "@medusajs/medusa"
 import { Button } from "@medusajs/ui"
 import Thumbnail from "@modules/products/components/thumbnail"
 import { formatAmount } from "medusa-react"
+import { formatCurrency } from '../../../common/utils/utils';
 import Link from "next/link"
 import { useMemo } from "react"
 
@@ -28,11 +29,11 @@ const OrderCard = ({ order }: OrderCardProps) => {
           {new Date(order.created_at).toDateString()}
         </span>
         <span className="px-2">
-          {formatAmount({
+          {formatCurrency(formatAmount({
             amount: order.total,
             region: order.region,
             includeTaxes: false,
-          })}
+          }))}
         </span>
         <span className="pl-2">{`${numberOfLines} ${
           numberOfLines > 1 ? "items" : "item"

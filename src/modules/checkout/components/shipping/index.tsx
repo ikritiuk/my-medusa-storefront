@@ -10,6 +10,7 @@ import { ErrorMessage } from "@hookform/error-message"
 import { formatAmount, useCart, useCartShippingOptions } from "medusa-react"
 import { useEffect, useMemo, useState } from "react"
 import { Cart } from "@medusajs/medusa"
+import { formatCurrency } from '../../../common/utils/utils';
 
 type ShippingOption = {
   value?: string
@@ -114,10 +115,10 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
       return shipping_options?.map((option) => ({
         value: option.id,
         label: option.name,
-        price: formatAmount({
+        price: formatCurrency(formatAmount({
           amount: option.amount || 0,
           region: cart.region,
-        }),
+        })),
       }))
     }
 
@@ -220,10 +221,10 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
                 </Text>
                 <Text className="txt-medium text-ui-fg-subtle">
                   {cart.shipping_methods[0].shipping_option.name} (
-                  {formatAmount({
+                  {formatCurrency(formatAmount({
                     amount: cart.shipping_methods[0].price,
                     region: cart.region,
-                  })
+                  }))
                     .replace(/,/g, "")
                     .replace(/\./g, ",")}
                   )
