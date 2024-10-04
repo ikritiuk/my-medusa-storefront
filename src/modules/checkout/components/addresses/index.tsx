@@ -30,14 +30,13 @@ const Addresses = () => {
           level="h2"
           className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
         >
-          Address
           Адрес доставки
           {!isOpen && <CheckCircleSolid />}
         </Heading>
         {!isOpen && (
           <Text>
             <button onClick={handleEdit} className="text-ui-fg-interactive">
-              Edit
+              Редактировать
             </button>
           </Text>
         )}
@@ -75,7 +74,7 @@ const Addresses = () => {
                 <div className="flex items-start gap-x-1 w-full">
                   <div className="flex flex-col w-1/3">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Shipping Address
+                      Адрес доставки
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
                       {cart.shipping_address.first_name}{" "}
@@ -96,7 +95,7 @@ const Addresses = () => {
 
                   <div className="flex flex-col w-1/3 ">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Contact
+                      Контакт
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
                       {cart.shipping_address.phone}
@@ -108,12 +107,12 @@ const Addresses = () => {
 
                   <div className="flex flex-col w-1/3">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Billing Address
+                      Платежный адрес
                     </Text>
 
                     {checked ? (
                       <Text className="txt-medium text-ui-fg-subtle">
-                        Billing- and delivery address are the same.
+                        Платежный и адрес доставки совпадают.
                       </Text>
                     ) : (
                       <>
