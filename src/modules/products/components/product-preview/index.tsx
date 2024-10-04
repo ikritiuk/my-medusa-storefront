@@ -22,7 +22,7 @@ const ProductPreview = ({
             <>
               {price.price_type === "sale" && (
                 <Text className="line-through text-ui-fg-muted">
-                  {formatCurrency(price.original_price)}
+                  {price.original_price}
                 </Text>
               )}
               <Text
@@ -30,7 +30,7 @@ const ProductPreview = ({
                   "text-ui-fg-interactive": price.price_type === "sale",
                 })}
               >
-                {formatCurrency(price.calculated_price)}
+                {price.calculated_price}
               </Text>
             </>
           ) : (
