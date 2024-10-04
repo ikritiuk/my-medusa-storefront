@@ -138,7 +138,7 @@ const MainMenu = () => {
                 onClick={setScreenCountry}
               >
                 <span className="sr-only">
-                  Click to select shipping country
+                  Нажмите, чтобы выбрать страну доставки
                 </span>
                 <div className="flex items-center gap-x-2">
                   <ReactCountryFlag countryCode={countryCode || "us"} svg />
