@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ProductPreviewType } from "types/global"
 import Thumbnail from "../thumbnail"
 import { Text } from "@medusajs/ui"
+import { formatCurrency } from '../../../common/utils/utils';
 
 const ProductPreview = ({
   title,
@@ -21,7 +22,7 @@ const ProductPreview = ({
             <>
               {price.price_type === "sale" && (
                 <Text className="line-through text-ui-fg-muted">
-                  {price.original_price}
+                  {formatCurrency(price.original_price)}
                 </Text>
               )}
               <Text
@@ -29,7 +30,7 @@ const ProductPreview = ({
                   "text-ui-fg-interactive": price.price_type === "sale",
                 })}
               >
-                {price.calculated_price}
+                {formatCurrency(price.calculated_price)}
               </Text>
             </>
           ) : (
