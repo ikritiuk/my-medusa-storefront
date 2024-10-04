@@ -1,4 +1,4 @@
-export function formatCurrency(value) {
+export function formatCurrency(value: string): string {
   // Trim any extra whitespace from the input
   value = value.trim();
 
