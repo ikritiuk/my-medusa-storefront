@@ -3,6 +3,7 @@ import { Tooltip } from "@medusajs/ui"
 import { InformationCircleSolid } from "@medusajs/icons"
 import { formatAmount } from "medusa-react"
 import React from "react"
+import { formatCurrency } from '../../utils/utils';
 
 type CartTotalsProps = {
   data: Omit<Cart, "refundable_amount" | "refunded_total"> | Order
@@ -36,13 +37,13 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
               <InformationCircleSolid color="var(--fg-muted)" />
             </Tooltip>
           </span>
-          <span>{getAmount(subtotal)}</span>
+          <span>{formatCurrency(getAmount(subtotal))}</span>
         </div>
         {!!discount_total && (
           <div className="flex items-center justify-between">
             <span>Discount</span>
             <span className="text-ui-fg-interactive">
-              - {getAmount(discount_total)}
+              - {formatCurrency(getAmount(discount_total))}
             </span>
           </div>
         )}
@@ -50,18 +51,18 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
           <div className="flex items-center justify-between">
             <span>Подарочная карта</span>
             <span className="text-ui-fg-interactive">
-              - {getAmount(gift_card_total)}
+              - {formatCurrency(getAmount(gift_card_total))}
             </span>
           </div>
         )}
         <div className="flex items-center justify-between">
           <span>Доставка</span>
-          <span>{getAmount(shipping_total)}</span>
+          <span>{formatCurrency(getAmount(shipping_total))}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="flex gap-x-1 items-center ">Налоги</span>
-          <span>{getAmount(tax_total)}</span>
-        </div>
+        {/*<div className="flex justify-between">*/}
+        {/*  <span className="flex gap-x-1 items-center ">Налоги</span>*/}
+        {/*  <span>{formatCurrency(getAmount(tax_total))}</span>*/}
+        {/*</div>*/}
       </div>
       <div className="h-px w-full border-b border-gray-200 my-4" />
       <div className="flex items-center justify-between text-ui-fg-base mb-2 txt-medium ">
