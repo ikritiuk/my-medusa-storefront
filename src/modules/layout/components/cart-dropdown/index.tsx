@@ -10,6 +10,7 @@ import Thumbnail from "@modules/products/components/thumbnail"
 import { formatAmount, useCart } from "medusa-react"
 import Link from "next/link"
 import { Fragment } from "react"
+import { formatCurrency } from '../../../common/utils/utils';
 
 const CartDropdown = () => {
   const { cart, totalItems } = useCart()
@@ -106,11 +107,11 @@ const CartDropdown = () => {
                       Итого{" "}
                     </span>
                     <span className="text-large-semi">
-                      {formatAmount({
+                      {formatCurrency(formatAmount({
                         amount: cart.subtotal || 0,
                         region: cart.region,
                         includeTaxes: false,
-                      })}
+                      }))}
                     </span>
                   </div>
                   <Link href="/cart" passHref>
