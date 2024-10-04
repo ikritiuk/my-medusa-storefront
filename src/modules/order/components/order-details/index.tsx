@@ -37,7 +37,7 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
         .
       </Text>
       <Text className="mt-2">
-        Дата заказа: {formattedDate.toDateString()}
+        Дата заказа: {formattedDate}
       </Text>
       <Text className="mt-2 text-ui-fg-interactive">
         Номер заказа: {order.display_id}
