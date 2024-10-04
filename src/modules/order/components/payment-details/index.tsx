@@ -3,6 +3,7 @@ import { Container, Heading, Text } from "@medusajs/ui"
 import { paymentInfoMap } from "@modules/checkout/components/payment"
 import Divider from "@modules/common/components/divider"
 import { formatAmount } from "medusa-react"
+import { formatCurrency } from '../../../common/utils/utils';
 
 type PaymentDetailsProps = {
   order: Order
@@ -46,10 +47,10 @@ const PaymentDetails = ({ order }: PaymentDetailsProps) => {
                 <Text>
                   {payment.provider_id === "stripe" && payment.data.card_last4
                     ? `**** **** **** ${payment.data.card_last4}`
-                    : `${formatAmount({
+                    : `${formatCurrency(formatAmount({
                         amount: payment.amount,
                         region: order.region,
-                      })} время заказа ${new Date(
+                      }))} время заказа ${new Date(
                         payment.created_at
                       ).toLocaleString()}`}
                 </Text>
