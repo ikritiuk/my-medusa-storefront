@@ -18,7 +18,11 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
   return (
     <div>
       <Text className="mt-8">
-        We have sent the order confirmation details to{" "}
+        Для оплаты мы свяжемся с Вами по номеру телефона {" "}
+        <span className="text-ui-fg-medium-plus font-semibold">
+          {order.shipping_address.phone}
+        </span>
+        или через email {" "}
         <span className="text-ui-fg-medium-plus font-semibold">
           {order.email}
         </span>
