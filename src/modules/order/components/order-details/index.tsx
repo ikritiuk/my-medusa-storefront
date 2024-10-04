@@ -5,6 +5,8 @@ type OrderDetailsProps = {
   order: Order
   showStatus?: boolean
 }
+const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+const formattedDate = new Intl.DateTimeFormat('ru-RU', options).format(new Date(order.created_at));
 
 const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
   const items = order.items.reduce((acc, i) => acc + i.quantity, 0)
@@ -22,17 +24,17 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
         <span className="text-ui-fg-medium-plus font-semibold">
           {order.shipping_address.phone}
         </span>
-        или через email {" "}
+        {" "} или через email {" "}
         <span className="text-ui-fg-medium-plus font-semibold">
           {order.email}
         </span>
         .
       </Text>
       <Text className="mt-2">
-        Order date: {new Date(order.created_at).toDateString()}
+        Дата заказа: {formattedDate.toDateString()}
       </Text>
       <Text className="mt-2 text-ui-fg-interactive">
-        Order number: {order.display_id}
+        Номер заказа: {order.display_id}
       </Text>
 
       <div className="flex items-center text-compact-small gap-x-4 mt-4">
