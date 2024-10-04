@@ -179,7 +179,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
           <form onSubmit={handleSubmit(onApply)} className="w-full">
             <Label className="flex gap-x-1 mb-2">
               Подарочная карта или скидочный код?
-              <Tooltip content="You can add multiple gift cards, but only one discount code.">
+              <Tooltip content="Можно добавить несколько подарочных карт, но только один скидочный код.">
                 <InformationCircleSolid color="var(--fg-muted)" />
               </Tooltip>
             </Label>
