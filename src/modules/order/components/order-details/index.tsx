@@ -5,10 +5,16 @@ type OrderDetailsProps = {
   order: Order
   showStatus?: boolean
 }
-const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-const formattedDate = new Intl.DateTimeFormat('ru-RU', options).format(new Date(order.created_at));
 
 const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long' as 'long' // Cast to the correct type
+  };
+  const formattedDate = new Intl.DateTimeFormat('ru-RU', options).format(new Date(order.created_at));
+
   const items = order.items.reduce((acc, i) => acc + i.quantity, 0)
 
   const formatStatus = (str: string) => {
