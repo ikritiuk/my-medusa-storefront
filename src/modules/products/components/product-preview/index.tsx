@@ -21,7 +21,7 @@ const ProductPreview = ({
           {price ? (
             <>
               <Text className="line-through text-ui-fg-muted"> {/* Added line-through and muted class */}
-                {formatCurrency(price.original_price * 2)}
+                {formatCurrency(Number(price.original_price) * 2)}
               </Text>
             </>
           ) : (
