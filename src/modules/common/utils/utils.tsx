@@ -10,7 +10,8 @@ export function formatCurrencyX2(value: string): string {
   if (match) {
     const numericValue = parseFloat(match[0].replace(/,/g, '')); // Remove commas and convert to number
     const doubledValue = numericValue * 2; // Double the value
-    return formatCurrency(doubledValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' RUB'); // Format back to currency
+    // Format back to currency without decimal part
+    return `${doubledValue.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })} RUB`; // Format without decimals
   }
 
   return value; // Return the original value if no match is found
