@@ -3,6 +3,7 @@ import NativeSelect, {
 } from "@modules/common/components/native-select"
 import { useCart, useRegions } from "medusa-react"
 import { forwardRef, useImperativeHandle, useMemo, useRef } from "react"
+import { translateCountryToRussian } from "@modules/common/utils/utils"
 
 const CountrySelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
   ({ placeholder = "Country", ...props }, ref) => {
@@ -33,7 +34,7 @@ const CountrySelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
       <NativeSelect ref={innerRef} placeholder={placeholder} {...props}>
         {countryOptions.map(({ value, label }, index) => (
           <option key={index} value={value}>
-            {label}
+            {translateCountryToRussian(label)}
           </option>
         ))}
       </NativeSelect>
