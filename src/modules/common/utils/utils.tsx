@@ -5,7 +5,7 @@ const countryTranslations = {
   // Add more countries as needed
 };
 
-export function translateCountryToRussian(country) {
+export function translateCountryToRussian(country: string): string {
   return countryTranslations[country] || country; // Return the original name if not found
 }
 
