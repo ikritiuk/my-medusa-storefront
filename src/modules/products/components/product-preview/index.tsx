@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ProductPreviewType } from "types/global"
 import Thumbnail from "../thumbnail"
 import { Text } from "@medusajs/ui"
-import { formatCurrency, formatCurrencyToNumber } from "../../../common/utils/utils"
+import { formatCurrency, formatCurrencyX2 } from "../../../common/utils/utils"
 
 const ProductPreview = ({
   title,
@@ -21,7 +21,7 @@ const ProductPreview = ({
           {price ? (
             <>
               <Text className="line-through text-ui-fg-muted"> {/* Added line-through and muted class */}
-                {formatCurrencyToNumber((Number(price.original_price) * 2).toString())} {/* Convert to string */}
+                {formatCurrencyX2(price.original_price)} {/* Convert to string */}
               </Text>
             </>
           ) : (
