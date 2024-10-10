@@ -1,3 +1,14 @@
+const countryTranslations = {
+  "Russian Federation": "Россия",
+  "Belarus": "Беларусь",
+  "Kazakhstan": "Казахстан",
+  // Add more countries as needed
+};
+
+export function translateCountryToRussian(country) {
+  return countryTranslations[country] || country; // Return the original name if not found
+}
+
 export function formatCurrency(value: string): string {
   const regex = /(\bRUB\s+)([\d,]+)\.\d{2}/;
   return value.replace(regex, '$2 RUB').trim();

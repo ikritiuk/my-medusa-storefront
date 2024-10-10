@@ -7,6 +7,7 @@ import { revalidateTags } from "app/actions"
 import { useRegions } from "medusa-react"
 import { Fragment, useEffect, useMemo, useState } from "react"
 import ReactCountryFlag from "react-country-flag"
+import { translateCountryToRussian } from "@modules/common/utils/utils"
 
 type CountryOption = {
   country: string
@@ -73,7 +74,7 @@ const CountrySelect = ({ toggleState }: CountrySelectProps) => {
                   }}
                   countryCode={current.country}
                 />
-                {current.label}
+                {translateCountryToRussian(current.label)}
               </span>
             )}
           </div>
