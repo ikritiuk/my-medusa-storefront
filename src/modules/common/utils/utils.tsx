@@ -1,4 +1,4 @@
-const countryTranslations = {
+const countryTranslations: { [key: string]: string } = {
   "Russian Federation": "Россия",
   "Belarus": "Беларусь",
   "Kazakhstan": "Казахстан",
