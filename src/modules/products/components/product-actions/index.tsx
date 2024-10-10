@@ -4,11 +4,12 @@ import {
 } from "@lib/context/product-context"
 import useProductPrice from "@lib/hooks/use-product-price"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
-import { Button } from "@medusajs/ui"
+import { Button, Text } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/option-select"
 import clsx from "clsx"
 import React, { useMemo } from "react"
+import { formatCurrencyX2 } from "@modules/common/utils/utils"
 
 type ProductActionsProps = {
   product: PricedProduct
@@ -46,7 +47,17 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           </div>
         )}
       </div>
-
+      <div className="flex flex-col text-ui-fg-base text-xl-semi">
+        {price ? (
+          <>
+            <Text className="line-through text-ui-fg-muted">
+              {formatCurrencyX2(selectedPrice.original_price)} {/* Convert to string */}
+            </Text>
+          </>
+        ) : (
+          <div className="w-20 h-6 animate-pulse bg-gray-100"></div>
+        )}
+      </div>
       {selectedPrice ? (
         <div className="flex flex-col text-ui-fg-base">
           {/* Current Price */}
