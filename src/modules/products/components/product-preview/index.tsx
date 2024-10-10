@@ -20,6 +20,17 @@ const ProductPreview = ({
         <div className="flex items-center gap-x-2">
           {price ? (
             <>
+              <Text className="line-through text-ui-fg-muted"> {/* Added line-through and muted class */}
+                {formatCurrency(price.original_price * 2)}
+              </Text>
+            </>
+          ) : (
+            <div className="w-20 h-6 animate-pulse bg-gray-100"></div>
+          )}
+        </div>
+        <div className="flex items-center gap-x-2">
+          {price ? (
+            <>
               {price.price_type === "sale" && (
                 <Text className="line-through text-ui-fg-muted">
                   {formatCurrency(price.original_price)}
