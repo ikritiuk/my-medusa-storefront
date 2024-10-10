@@ -50,7 +50,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
       {selectedPrice ? (
         <div className="flex flex-col text-ui-fg-base">
           {/* New Price (Doubled and Crossed) */}
-          <p className="text-3xl font-bold line-through text-gray-500 mb-2">
+          <p className="text-xl-semi  line-through text-gray-500 mb-2">
             {formatCurrencyX2(selectedPrice.original_price)}
           </p>
 
