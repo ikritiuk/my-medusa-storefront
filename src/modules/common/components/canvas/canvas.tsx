@@ -7,6 +7,7 @@ type WatermarkedImageProps = {
   fill?: boolean;   // If you need to handle fill
   sizes?: string;   // Sizes attribute for responsive images
   style?: React.CSSProperties; // Inline styles
+  priority?: boolean; // New prop for priority
 };
 
 const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
@@ -16,6 +17,7 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
                                                              fill,
                                                              sizes,
                                                              style,
+                                                             priority, // Accept the priority prop
                                                            }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
