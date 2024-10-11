@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import { useResizeObserver } from "react-resize-observer"; // Optional: to handle resizing more elegantly
+import React, { useEffect, useRef, useState } from "react";
 
 type WatermarkedImageProps = {
   src: string;
@@ -15,10 +14,27 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
                                                              style,
                                                            }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [dimensions, setDimensions] = React.useState({ width: 0, height: 0 });
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  // Optional: Use Resize Observer for dynamic sizing
-  useResizeObserver({ onResize: ({ width, height }) => setDimensions({ width, height }) });
+  useEffect(() => {
+    const handleResize = () => {
+      if (canvasRef.current) {
+        const { clientWidth, clientHeight } = canvasRef.current.parentElement!;
+        setDimensions({ width: clientWidth, height: clientHeight });
+      }
+    };
+
+    // Set initial dimensions
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -27,8 +43,9 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
 
     img.onload = () => {
       if (canvas && ctx) {
-        // Set canvas dimensions to match the container
         const { width, height } = dimensions;
+
+        // Set canvas dimensions
         canvas.width = width;
         canvas.height = height;
 
@@ -42,8 +59,8 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
       }
     };
 
-    img.src = src;
-  }, [src, watermark, dimensions]); // Update whenever the src or dimensions change
+    img.src = src; // Load the image
+  }, [src, watermark, dimensions]); // Re-draw on image source or dimensions change
 
   return (
     <canvas
