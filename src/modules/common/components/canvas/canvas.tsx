@@ -48,6 +48,11 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
       if (canvas) {
         const ctx = canvas.getContext("2d");
 
+        if (!ctx) {
+          console.error("Failed to get canvas context.");
+          return;
+        }
+
         // Get the appropriate canvas size based on the provided sizes prop
         const { width, height } = getCanvasSize(sizes || "(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px");
 
