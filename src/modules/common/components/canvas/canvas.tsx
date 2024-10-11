@@ -4,7 +4,6 @@ type WatermarkedImageProps = {
   src: string;      // URL of the image
   watermark: string; // Text for the watermark
   className?: string; // Additional classes
-  alt?: string;     // Alternative text
   fill?: boolean;   // If you need to handle fill
   sizes?: string;   // Sizes attribute for responsive images
   style?: React.CSSProperties; // Inline styles
@@ -14,7 +13,6 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
                                                              src,
                                                              watermark,
                                                              className,
-                                                             alt,
                                                              fill,
                                                              sizes,
                                                              style,
@@ -30,10 +28,8 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
       img.onload = () => {
         if (canvas && ctx) {
           // Responsive canvas dimensions
-          const maxWidth = window.innerWidth < 800 ? window.innerWidth : 800
-          const maxHeight = window.innerHeight < 600 ? window.innerHeight : 600
-
-          // Maintain aspect ratio
+          const maxWidth = 800 // Example max width
+          const maxHeight = 600 // Example max height
           let width = img.width
           let height = img.height
           const scale = Math.min(maxWidth / width, maxHeight / height)
@@ -54,7 +50,7 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
         }
 
       }
-      img.src = src
+      img.src = src // Load the image
     }
 
 
@@ -64,7 +60,6 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
     <canvas
       ref={canvasRef}
       className={`${className} ${fill ? "object-fill" : ""}`}
-      alt={alt}
       style={{ ...style }} // Apply any additional styles
     />
   )
