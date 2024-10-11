@@ -5,7 +5,7 @@ type WatermarkedImageProps = {
   watermark: string; // Text for the watermark
   className?: string; // Additional classes
   fill?: boolean;   // If you need to handle fill
-  sizes?: string;   // Sizes attribute for responsive images
+  sizes: string;    // Sizes attribute for responsive images
   style?: React.CSSProperties; // Inline styles
   priority?: boolean; // New prop for priority
 };
@@ -33,7 +33,7 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
     // Use the first matching size
     for (const size of sizeList) {
       if (!size.mediaQuery || window.matchMedia(size.mediaQuery).matches) {
-        return { width: size.width, height: (size.width * 34) / 29 }; // Example aspect ratio
+        return { width: size.width, height: (size.width * 34) / 29 }; // Maintain aspect ratio
       }
     }
 
@@ -53,8 +53,7 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
           return;
         }
 
-        // Get the appropriate canvas size based on the provided sizes prop
-        const { width, height } = getCanvasSize(sizes || "(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px");
+        const { width, height } = getCanvasSize(sizes);
 
         // High DPI support
         const devicePixelRatio = window.devicePixelRatio || 1;

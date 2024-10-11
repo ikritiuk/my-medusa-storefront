@@ -1,7 +1,7 @@
 import { Image as MedusaImage } from "@medusajs/medusa";
 import { Container } from "@medusajs/ui";
-import WatermarkedImage from "@modules/common/components/canvas/canvas";
-import * as React from "react";
+import WatermarkedImage from "@modules/common/components/canvas/canvas"; // Adjust import as necessary
+import React from "react";
 
 type ImageGalleryProps = {
   images: MedusaImage[];
