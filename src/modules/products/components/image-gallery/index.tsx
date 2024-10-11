@@ -1,7 +1,7 @@
 import { Image as MedusaImage } from "@medusajs/medusa";
 import { Container } from "@medusajs/ui";
-import WatermarkedImage from "@modules/common/components/canvas/canvas"
-import * as React from "react"
+import WatermarkedImage from "@modules/common/components/canvas/canvas";
+import * as React from "react";
 
 type ImageGalleryProps = {
   images: MedusaImage[];
@@ -20,10 +20,10 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             <WatermarkedImage
               src={image.url}
               watermark="ROYAL-REPLICA.SHOP"
-              priority={index <= 2} // Now this prop is recognized
+              priority={index <= 2}
               className="absolute inset-0 rounded-rounded"
               fill
-              sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px" // This prop is here but won't be used directly
+              sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
               style={{
                 objectFit: "cover",
               }}
