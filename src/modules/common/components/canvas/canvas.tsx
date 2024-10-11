@@ -5,7 +5,7 @@ type WatermarkedImageProps = {
   watermark: string; // Text for the watermark
   className?: string; // Additional classes
   fill?: boolean;   // If you need to handle fill
-  sizes: string;    // Sizes attribute for responsive images
+  sizes?: string;   // Sizes attribute for responsive images
   style?: React.CSSProperties; // Inline styles
   priority?: boolean; // New prop for priority
 };
@@ -21,62 +21,47 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
                                                            }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  const getCanvasSize = (sizes: string): { width: number; height: number } => {
-    const sizeList = sizes.split(',').map(size => {
-      const [mediaQuery, width] = size.trim().split(' ');
-      return {
-        mediaQuery,
-        width: parseInt(width, 10)
-      };
-    });
-
-    // Use the first matching size
-    for (const size of sizeList) {
-      if (!size.mediaQuery || window.matchMedia(size.mediaQuery).matches) {
-        return { width: size.width, height: (size.width * 34) / 29 }; // Maintain aspect ratio
-      }
-    }
-
-    return { width: 800, height: 600 }; // Fallback size
-  };
-
   useEffect(() => {
     const canvas = canvasRef.current;
-    const img = new Image();
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      const img = new Image();
 
-    img.onload = () => {
-      if (canvas) {
-        const ctx = canvas.getContext("2d");
+      img.onload = () => {
+        if (canvas && ctx) {
+          // Get the dimensions based on the sizes prop
+          const maxWidth = 800; // Example max width
+          const maxHeight = 600; // Example max height
+          let width = img.width;
+          let height = img.height;
 
-        if (!ctx) {
-          console.error("Failed to get canvas context.");
-          return;
+          // Calculate the aspect ratio and scale accordingly
+          const scale = Math.min(maxWidth / width, maxHeight / height);
+          width *= scale;
+          height *= scale;
+
+          // Set canvas dimensions
+          canvas.width = width * window.devicePixelRatio;
+          canvas.height = height * window.devicePixelRatio;
+          ctx.scale(window.devicePixelRatio, window.devicePixelRatio); // Scale the context
+
+          // Set canvas dimensions in CSS
+          canvas.style.width = `${width}px`;
+          canvas.style.height = `${height}px`;
+
+          // Draw the image
+          ctx.drawImage(img, 0, 0, width, height);
+
+          // Add watermark
+          ctx.font = "36px Arial";
+          ctx.fillStyle = "rgba(200, 200, 200, 0.5)"; // Light gray
+          ctx.fillText(watermark, 10, height - 30);
         }
+      };
 
-        const { width, height } = getCanvasSize(sizes);
-
-        // High DPI support
-        const devicePixelRatio = window.devicePixelRatio || 1;
-        canvas.width = width * devicePixelRatio;
-        canvas.height = height * devicePixelRatio;
-        ctx.scale(devicePixelRatio, devicePixelRatio); // Scale the context
-
-        // Set canvas dimensions in CSS
-        canvas.style.width = `${width}px`;
-        canvas.style.height = `${height}px`;
-
-        // Draw the image
-        ctx.drawImage(img, 0, 0, width, height);
-
-        // Add watermark
-        ctx.font = "36px Arial";
-        ctx.fillStyle = "rgba(211, 211, 211, 0.5)"; // Light gray with transparency
-        ctx.fillText(watermark, 10, height - 30);
-      }
-    };
-
-    img.src = src; // Load the image
-  }, [src, watermark, sizes]);
+      img.src = src; // Load the image
+    }
+  }, [src, watermark]);
 
   return (
     <canvas
