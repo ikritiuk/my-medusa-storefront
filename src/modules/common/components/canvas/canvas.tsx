@@ -21,7 +21,7 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
                                                            }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  const getCanvasSize = (sizes: string, viewportWidth: number): { width: number; height: number } => {
+  const getCanvasSize = (sizes: string): { width: number; height: number } => {
     const sizeList = sizes.split(',').map(size => {
       const [mediaQuery, width] = size.trim().split(' ');
       return {
@@ -30,6 +30,7 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
       };
     });
 
+    // Use the first matching size
     for (const size of sizeList) {
       if (!size.mediaQuery || window.matchMedia(size.mediaQuery).matches) {
         return { width: size.width, height: (size.width * 34) / 29 }; // Example aspect ratio
@@ -41,32 +42,43 @@ const WatermarkedImage: React.FC<WatermarkedImageProps> = ({
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (canvas) {
-      const ctx = canvas.getContext("2d");
-      const img = new Image();
-      const { width, height } = sizes ? getCanvasSize(sizes, window.innerWidth) : { width: 800, height: 600 };
+    const img = new Image();
 
-      img.onload = () => {
-        if (canvas && ctx) {
-          canvas.width = width;
-          canvas.height = height;
-          ctx.drawImage(img, 0, 0, width, height);
+    img.onload = () => {
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
 
-          // Change the color of the watermark to light gray
-          ctx.font = "36px Arial";
-          ctx.fillStyle = "rgba(211, 211, 211, 0.5)"; // Light gray with transparency
-          ctx.fillText(watermark, 10, height - 30);
-        }
-      };
-      img.src = src;
-    }
+        // Get the appropriate canvas size based on the provided sizes prop
+        const { width, height } = getCanvasSize(sizes || "(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px");
+
+        // High DPI support
+        const devicePixelRatio = window.devicePixelRatio || 1;
+        canvas.width = width * devicePixelRatio;
+        canvas.height = height * devicePixelRatio;
+        ctx.scale(devicePixelRatio, devicePixelRatio); // Scale the context
+
+        // Set canvas dimensions in CSS
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+
+        // Draw the image
+        ctx.drawImage(img, 0, 0, width, height);
+
+        // Add watermark
+        ctx.font = "36px Arial";
+        ctx.fillStyle = "rgba(211, 211, 211, 0.5)"; // Light gray with transparency
+        ctx.fillText(watermark, 10, height - 30);
+      }
+    };
+
+    img.src = src; // Load the image
   }, [src, watermark, sizes]);
 
   return (
     <canvas
       ref={canvasRef}
       className={`${className} ${fill ? "object-fill" : ""}`}
-      style={{ ...style }}
+      style={{ ...style }} // Apply any additional styles
     />
   );
 };
