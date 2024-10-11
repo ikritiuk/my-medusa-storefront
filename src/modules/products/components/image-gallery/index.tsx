@@ -1,52 +1,31 @@
-import React, { useEffect, useRef } from "react"
+import { Image as MedusaImage } from "@medusajs/medusa";
+import { Container } from "@medusajs/ui";
+import WatermarkedImage from "@modules/common/components/canvas/canvas"
+import * as React from "react"
 
-type WatermarkedImageProps = {
-  src: string;      // URL of the image
-  watermark: string; // Text for the watermark
+type ImageGalleryProps = {
+  images: MedusaImage[]; // Ensure this matches the type of your images
 };
 
-const WatermarkedImage: React.FC<WatermarkedImageProps> = ({ src, watermark }) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
+  return (
+    <div className="flex items-start relative">
+      <div className="flex flex-col flex-1 small:mx-16 gap-y-4">
+        {images.map((image, index) => (
+          <Container
+            key={image.id}
+            className="relative aspect-[29/34] w-full overflow-hidden bg-ui-bg-subtle"
+            id={image.id}
+          >
+            <WatermarkedImage
+              src={image.url}
+              watermark="Your Watermark" // Customize the watermark text
+            />
+          </Container>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (canvas) {
-      const ctx = canvas?.getContext("2d")
-      const img = new Image()
-
-      img.onload = () => {
-        if (canvas && ctx) {
-          // Set desired maximum dimensions
-          const maxWidth = 800 // Example max width
-          const maxHeight = 600 // Example max height
-
-          // Calculate the scaling factor to maintain aspect ratio
-          let width = img.width
-          let height = img.height
-
-          const scale = Math.min(maxWidth / width, maxHeight / height)
-          width *= scale
-          height *= scale
-
-          // Set canvas dimensions
-          canvas.width = width
-          canvas.height = height
-
-          // Draw the image
-          ctx.drawImage(img, 0, 0, width, height)
-
-          // Add watermark
-          ctx.font = "36px Arial"
-          ctx.fillStyle = "rgba(255, 255, 255, 0.5)" // White with transparency
-          ctx.fillText(watermark, 10, height - 30) // Position of the watermark
-        }
-
-      }
-      img.src = src // Load the image
-    }
-  }, [src, watermark])
-
-  return <canvas ref={canvasRef}/>
-}
-
-export default WatermarkedImage
+export default ImageGallery;
