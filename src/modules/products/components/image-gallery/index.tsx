@@ -23,7 +23,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               priority={index <= 2}
               className="absolute inset-0 rounded-rounded"
               fill
-              sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
               style={{
                 objectFit: "cover",
               }}
