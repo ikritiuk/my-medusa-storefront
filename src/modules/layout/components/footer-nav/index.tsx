@@ -33,7 +33,7 @@ const FooterNav = () => {
                       "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
                       {
                         "grid-cols-2": (collections?.length || 0) > 3,
-                      }
+                      },
                     )}
                   >
                     {collections?.slice(0, 6).map((c) => (
@@ -57,27 +57,24 @@ const FooterNav = () => {
             © {new Date().getFullYear()} Royal Replica. Все права защищены.
           </Text>
           <div
-            style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #ccc; padding: 15px; border-radius: 10px; max-width: 800px; margin: 20px auto;">
+            className="flex items-center justify-between border border-gray-300 p-4 rounded-lg max-w-3xl mx-auto my-5">
             <div>
-              <h3>Не нашли желаемую модель часов?</h3>
-              <p>Вы можете написать нам персонально, и мы с радостью доставим эту модель со склада специально для
-                вас.</p>
+              <h3 className="text-lg font-semibold">Не нашли желаемую модель часов?</h3>
+              <p className="text-sm">Вы можете написать нам персонально, и мы с радостью доставим эту модель со склада
+                специально для вас.</p>
             </div>
-            <div style="text-align: center;">
-              <img src="/qr-footer.png" alt="QR код на Telegram" style="width: 150px;">
-              </img>
-              <p>Сканируйте QR код для связи через Telegram</p>
+            <div className="text-center">
+              <img src="/qr-footer.png" alt="QR код на Telegram" className="w-36"/>
+              <p className="text-sm mt-2">Сканируйте QR код для связи через Telegram</p>
             </div>
-            <div style="text-align: center; margin-left: 20px;">
-              <a href="https://t.me/royalreplicashop" target="_blank" style="text-decoration: none;">
+            <div className="text-center ml-5">
+              <a href="https://t.me/royalreplicashop" target="_blank" className="text-decoration-none">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
-                     style="width: 50px;">
-                </img>
-                <p>Написать в Telegram</p>
+                     className="w-12"/>
+                <p className="text-sm mt-2">Написать в Telegram</p>
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
