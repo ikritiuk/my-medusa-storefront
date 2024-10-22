@@ -56,6 +56,28 @@ const FooterNav = () => {
           <Text className="txt-compact-small">
             © {new Date().getFullYear()} Royal Replica. Все права защищены.
           </Text>
+          <div
+            style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #ccc; padding: 15px; border-radius: 10px; max-width: 800px; margin: 20px auto;">
+            <div>
+              <h3>Не нашли желаемую модель часов?</h3>
+              <p>Вы можете написать нам персонально, и мы с радостью доставим эту модель со склада специально для
+                вас.</p>
+            </div>
+            <div style="text-align: center;">
+              <img src="/qr-footer.png" alt="QR код на Telegram" style="width: 150px;">
+              </img>
+              <p>Сканируйте QR код для связи через Telegram</p>
+            </div>
+            <div style="text-align: center; margin-left: 20px;">
+              <a href="https://t.me/royalreplicashop" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
+                     style="width: 50px;">
+                </img>
+                <p>Написать в Telegram</p>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
