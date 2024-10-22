@@ -14,29 +14,17 @@ const FooterNav = () => {
       <div className="content-container flex flex-col">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
           <div>
-            <Link
-              href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
-            >
-              Royal Replica
-            </Link>
-            <div
-              className="flex items-center justify-between border border-gray-300 p-4 rounded-lg max-w-3xl mx-auto my-5">
-              <div>
-                <h3 className="text-lg font-semibold">Не нашли желаемую модель часов?</h3>
-                <p className="text-sm">Вы можете написать нам персонально, и мы с радостью доставим эту модель со склада
-                  специально для вас.</p>
-              </div>
-              <div className="text-center">
-                <img src="/qr-footer.png" alt="QR код на Telegram" className="w-36"/>
-                <p className="text-sm mt-2">Сканируйте QR код для связи через Telegram</p>
-              </div>
-              <div className="text-center ml-5">
-                <a href="https://t.me/royalreplicashop" target="_blank" className="text-decoration-none">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
-                       className="w-12"/>
-                  <p className="text-sm mt-2">Написать в Telegram</p>
-                </a>
+            <div className="flex justify-between  p-4 rounded-lg max-w-3xl ">
+              <div><h3 className="text-lg font-semibold">Не нашли желаемую модель часов?</h3><p className="text-sm">Вы
+                можете написать нам персонально, </p>
+                <p>и мы с радостью доставим эту модель со склада специально для вас.</p>
+
+                <div className="">
+                  <a href="https://t.me/royalreplicashop" target="_blank"
+                     className="text-decoration-none">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
+                      className="w-12"/><p className="text-sm mt-2">Написать в Telegram</p></a></div>
               </div>
             </div>
           </div>
