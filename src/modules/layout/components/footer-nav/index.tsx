@@ -12,7 +12,7 @@ const FooterNav = () => {
   return (
     <div className="border-t border-ui-border-base w-screen">
       <div className="content-container flex flex-col">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
+        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-10">
           <div>
             <div className="flex justify-between max-w-3xl">
               <div><h3 className="text-lg font-semibold">Не нашли желаемую модель часов?</h3><p className="text-sm">Вы
