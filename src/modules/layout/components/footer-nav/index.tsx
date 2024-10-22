@@ -25,7 +25,7 @@ const FooterNav = () => {
                      className="text-decoration-none">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
-                      className="w-12"/></a></div>
+                      class="w-16 p-2"/></a></div>
               </div>
             </div>
           </div>
