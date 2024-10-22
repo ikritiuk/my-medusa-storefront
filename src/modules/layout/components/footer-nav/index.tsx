@@ -20,6 +20,25 @@ const FooterNav = () => {
             >
               Royal Replica
             </Link>
+            <div
+              className="flex items-center justify-between border border-gray-300 p-4 rounded-lg max-w-3xl mx-auto my-5">
+              <div>
+                <h3 className="text-lg font-semibold">Не нашли желаемую модель часов?</h3>
+                <p className="text-sm">Вы можете написать нам персонально, и мы с радостью доставим эту модель со склада
+                  специально для вас.</p>
+              </div>
+              <div className="text-center">
+                <img src="/qr-footer.png" alt="QR код на Telegram" className="w-36"/>
+                <p className="text-sm mt-2">Сканируйте QR код для связи через Telegram</p>
+              </div>
+              <div className="text-center ml-5">
+                <a href="https://t.me/royalreplicashop" target="_blank" className="text-decoration-none">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
+                       className="w-12"/>
+                  <p className="text-sm mt-2">Написать в Telegram</p>
+                </a>
+              </div>
+            </div>
           </div>
           <div className="text-small-regular grid grid-cols-3 gap-x-10 md:gap-x-16">
             <div className="flex flex-col gap-y-2">
@@ -56,25 +75,6 @@ const FooterNav = () => {
           <Text className="txt-compact-small">
             © {new Date().getFullYear()} Royal Replica. Все права защищены.
           </Text>
-          <div
-            className="flex items-center justify-between border border-gray-300 p-4 rounded-lg max-w-3xl mx-auto my-5">
-            <div>
-              <h3 className="text-lg font-semibold">Не нашли желаемую модель часов?</h3>
-              <p className="text-sm">Вы можете написать нам персонально, и мы с радостью доставим эту модель со склада
-                специально для вас.</p>
-            </div>
-            <div className="text-center">
-              <img src="/qr-footer.png" alt="QR код на Telegram" className="w-36"/>
-              <p className="text-sm mt-2">Сканируйте QR код для связи через Telegram</p>
-            </div>
-            <div className="text-center ml-5">
-              <a href="https://t.me/royalreplicashop" target="_blank" className="text-decoration-none">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
-                     className="w-12"/>
-                <p className="text-sm mt-2">Написать в Telegram</p>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
