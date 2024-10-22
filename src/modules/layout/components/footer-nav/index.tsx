@@ -14,16 +14,15 @@ const FooterNav = () => {
       <div className="content-container flex flex-col">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
           <div>
-            <div className="flex justify-between  p-4 rounded-lg max-w-3xl ">
+            <div className="flex justify-between max-w-3xl">
               <div><h3 className="text-lg font-semibold">Не нашли желаемую модель часов?</h3><p className="text-sm">Вы
-                можете написать нам персонально, </p>
+                можете написать нам в Телеграм, </p>
                 <p className="text-sm">и мы с радостью доставим эту модель со склада </p>
                 <p className="text-sm">специально для Вас.</p>
                 <div className="">
 
                   <a href="https://t.me/royalreplicashop" target="_blank"
                      className="text-decoration-none">
-                    <p className="text-sm mt-2">Написать в Telegram:</p>
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
                       className="w-12"/></a></div>
