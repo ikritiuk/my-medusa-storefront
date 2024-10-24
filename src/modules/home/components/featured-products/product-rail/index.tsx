@@ -15,7 +15,7 @@ const ProductRail = ({ collection }: { collection: ProductCollection }) => {
       <div className="flex justify-between mb-8">
         <Text className="txt-xlarge">{collection.title}</Text>
         <span className="text-2xl">
-          <InteractiveLink href={`/search/${query}`} onClick={close}>
+          <InteractiveLink href={`/collections/${collection.handle}`}>
              Просмотреть все
           </InteractiveLink>
       </span>
