@@ -32,7 +32,7 @@ export const paymentInfoMap: Record<
     icon: <Bancontact />,
   },
   manual: {
-    title: "Test payment",
+    title: "Мы свяжемся с вами для оплаты",
     icon: <CreditCard />,
   },
   // Add more payment providers here
