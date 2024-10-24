@@ -14,11 +14,9 @@ const ProductRail = ({ collection }: { collection: ProductCollection }) => {
     <div className="content-container">
       <div className="flex justify-between mb-8">
         <Text className="txt-xlarge">{collection.title}</Text>
-        <span className="text-2xl">
-          <InteractiveLink href={`/collections/${collection.handle}`}>
-             Просмотреть все
-          </InteractiveLink>
-      </span>
+        <InteractiveLink href={`/collections/${collection.handle}`}>
+          Просмотреть все
+        </InteractiveLink>
       </div>
       <ul className="grid grid-cols-2 small:grid-cols-3 gap-x-6 gap-y-8">
         {data &&
