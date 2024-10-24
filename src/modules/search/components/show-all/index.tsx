@@ -21,9 +21,11 @@ const ShowAll = ({ close }: { close: () => void }) => {
   return (
     <Container className="flex flex-col small:flex-row gap-2 justify-center items-center h-fit py-4 small:py-2">
       <Text>Showing the first 6 results.</Text>
-      <InteractiveLink href={`/search/${query}`} onClick={close} className="text-2xl">
-        Просмотреть все
-      </InteractiveLink>
+      <span className="text-2xl">
+        <InteractiveLink href={`/search/${query}`} onClick={close}>
+          Просмотреть все
+        </InteractiveLink>
+      </span>
     </Container>
   )
 }
