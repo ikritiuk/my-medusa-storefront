@@ -95,7 +95,7 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                         />
                       </div>
                       <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Royal-Replica. Все права защищены.
+                        © {new Date().getFullYear()} Luxury24. Все права защищены.
                       </Text>
                     </div>
                   </div>

@@ -6,7 +6,7 @@ import { Metadata } from "next"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "Royal-Replica shop",
+  title: "Luxury24 shop",
   description:
     "Top quality replicas",
 }
