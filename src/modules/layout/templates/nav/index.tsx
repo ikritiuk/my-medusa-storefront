@@ -34,7 +34,7 @@ const Nav = () => {
           <div>
             <a
               href="/">
-              <img className="w-full h-auto md:w-1/2 mx-auto" src="/logo.svg" alt="Logo"/>
+              <img className="w-full h-auto md:w-1/6 mx-auto" src="/logo.svg" alt="Logo"/>
             </a>
           </div>
 
