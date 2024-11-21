@@ -10,10 +10,10 @@ const Hero = () => {
                 <img src="hero-rolex.jpg" alt="Logo" />
             </Link>
             <Link href="/collections/piguet" className="m-2 w-1/4">
-                <img src="hero-piguet.jpg" alt="Logo" />
+                <img src="hero-piguet.png" alt="Logo" />
             </Link>
             <Link href="/collections/patek" className="m-2 w-1/4">
-                <img src="hero-patek.jpg" alt="Logo" />
+                <img src="hero-patek.png" alt="Logo" />
             </Link>
           </div>
         </div>
