@@ -10,7 +10,7 @@ const SideMenuItems = {
   Магазин: "/store",
   // Поиск: "",
   Вопросы: "/faq",
-  Корзина: "/cart",
+  // Корзина: "/cart",
 }
 
 const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
