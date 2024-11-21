@@ -85,8 +85,14 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
 
       <Button
         onClick={() => {
+          // Create the message with optional variant title
           const message = `Я хочу приобрести товар: ${variant?.title || 'не указан'}`;
-          window.open(`https://t.me/luxury24manager?text=${encodeURIComponent(message)}`, '_blank');
+
+          // Open a new tab with the Telegram link
+          window.open(
+            `https://t.me/luxury24manager?text=${encodeURIComponent(message)}`,
+            '_blank'
+          );
         }}
         disabled={!inStock || !variant}
         variant="primary"
@@ -111,6 +117,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           </>
         )}
       </Button>
+
     </div>
   )
 }
