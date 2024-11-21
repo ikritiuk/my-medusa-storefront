@@ -59,7 +59,7 @@ const Nav = () => {
                 О нас
               </Link>
             </div>
-            <CartDropdown/>
+            {/*<CartDropdown/>*/}
           </div>
         </nav>
         <MobileMenu/>
