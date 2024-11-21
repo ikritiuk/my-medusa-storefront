@@ -85,8 +85,8 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
 
       <Button
         onClick={() => {
-          const message = `Я хочу купить товар: ${variant?.title || 'не указан'}`;
-          window.open(`https://t.me/your_telegram_username?text=${encodeURIComponent(message)}`, '_blank');
+          const message = `Я хочу приобрести товар: ${variant?.title || 'не указан'}`;
+          window.open(`https://t.me/luxury24manager?text=${encodeURIComponent(message)}`, '_blank');
         }}
         disabled={!inStock || !variant}
         variant="primary"
