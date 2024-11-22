@@ -89,7 +89,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           const currentPath = window.location.href; // Full URL with current path
 
           // Construct the message without encoding
-          const message = `Запрос: ${currentPath}`;
+          const message = `3anpoc : ${currentPath}`;
 
           // Construct the Telegram URL
           const finalUrl = `https://t.me/luxury24manager?text=${message}`;
