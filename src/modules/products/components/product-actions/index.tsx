@@ -85,10 +85,16 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
 
       <Button
         onClick={() => {
-          // Dynamically encoding a message
-          const message = "Я хочу приобрести товар: ";
-          const encodedMessage = encodeURIComponent(message);
-          const finalUrl = `https://t.me/luxury24manager?text=${encodedMessage}`;
+          // Get the current URL and path
+          const currentPath = window.location.href; // Full URL with current path
+
+          // Construct the message without encoding
+          const message = `Запрос: ${currentPath}`;
+
+          // Construct the Telegram URL
+          const finalUrl = `https://t.me/luxury24manager?text=${message}`;
+
+          // Open the URL in a new tab
           window.open(finalUrl, '_blank');
         }}
         disabled={!inStock || !variant}
