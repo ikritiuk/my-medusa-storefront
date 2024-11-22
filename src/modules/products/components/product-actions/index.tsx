@@ -85,8 +85,9 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
 
       <Button
         onClick={() => {
-          // Уже вручную закодированный текст
-          const encodedMessage = 'Я%20хочу%20приобрести%20товар%3A%20не%20указан';
+          // Dynamically encoding a message
+          const message = "Я хочу приобрести товар: ";
+          const encodedMessage = encodeURIComponent(message);
           const finalUrl = `https://t.me/luxury24manager?text=${encodedMessage}`;
           window.open(finalUrl, '_blank');
         }}
@@ -112,7 +113,6 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           </>
         )}
       </Button>
-
 
     </div>
   )
