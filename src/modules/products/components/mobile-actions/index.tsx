@@ -71,7 +71,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
                 <div></div>
               )}
             </div>
-            <div className="grid grid-cols-2 w-full gap-x-4">
+            <div className="grid w-full gap-x-4">
               <Button
                 onClick={() => {
                   // Get the current URL and path
@@ -87,7 +87,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
                   window.open(finalUrl, '_blank');
                 }}
                 disabled={!inStock}
-                className="w-full flex items-center justify-center gap-x-2"
+                className="w-full flex items-center justify-center gap-x-2 text-lg font-semibold"
               >
                 {!inStock ? (
                   "Нет в наличии"
