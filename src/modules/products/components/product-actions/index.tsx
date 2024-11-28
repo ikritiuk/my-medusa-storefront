@@ -27,10 +27,10 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
   }, [price])
 
   return (
-    <div className="flex flex-col gap-y-2 w-full">
+    <div className="flex w-full">
       <div>
         {product.variants.length > 1 && (
-          <div className="flex flex-col gap-y-4">
+          <div className="flex">
             {(product.options || []).map((option) => {
               return (
                 <div key={option.id}>
