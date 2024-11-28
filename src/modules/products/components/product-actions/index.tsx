@@ -27,7 +27,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
   }, [price])
 
   return (
-    <div className="flex flex-col gap-y-2">
+    <div className="flex flex-col gap-y-2 w-full">
       <div>
         {product.variants.length > 1 && (
           <div className="flex flex-col gap-y-4">
@@ -48,7 +48,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         )}
       </div>
       {selectedPrice ? (
-        <div className="flex flex-col text-ui-fg-base">
+        <div className="flex flex-col text-ui-fg-base w-full">
           <p className="text-xl  line-through text-gray-500 mb-2">
             {formatCurrencyX2(selectedPrice.original_price)}
           </p>
@@ -99,7 +99,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         }}
         disabled={!inStock || !variant}
         variant="primary"
-        className="w-full h-10 flex items-center justify-center gap-x-2"
+        className="w-full h-10 flex items-center justify-center gap-x-2 text-lg font-semibold"
       >
         {!inStock ? (
           "Нет в наличии"
@@ -119,7 +119,6 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           </>
         )}
       </Button>
-
     </div>
   )
 }
