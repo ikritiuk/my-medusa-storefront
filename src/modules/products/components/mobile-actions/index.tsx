@@ -72,17 +72,23 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
               )}
             </div>
             <div className="grid grid-cols-2 w-full gap-x-4">
-              <Button onClick={open} variant="secondary" className="w-full">
-                <div className="flex items-center justify-between w-full">
-                  <span>
-                    {variant
-                      ? Object.values(options).join(" / ")
-                      : "Выбрать опции"}
-                  </span>
-                  <ChevronDown />
-                </div>
-              </Button>
-              <Button onClick={addToCart} className="w-full flex items-center justify-center gap-x-2">
+              <Button
+                onClick={() => {
+                  // Get the current URL and path
+                  const currentPath = window.location.href; // Full URL with current path
+
+                  // Construct the message without encoding
+                  const message = `Запрос: ${currentPath}`;
+
+                  // Construct the Telegram URL
+                  const finalUrl = `https://t.me/luxury24manager?text=${message}`;
+
+                  // Open the URL in a new tab
+                  window.open(finalUrl, '_blank');
+                }}
+                disabled={!inStock}
+                className="w-full flex items-center justify-center gap-x-2"
+              >
                 {!inStock ? (
                   "Нет в наличии"
                 ) : (
@@ -93,13 +99,22 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
                       fill="currentColor"
                       className="w-5 h-5"
                     >
-                      <path
-                        d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm4.564 8.16l-1.758 8.31c-.132.589-.476.732-.963.456l-2.665-1.964-1.287 1.238c-.142.143-.262.262-.535.262l.191-2.69 4.896-4.415c.213-.19-.046-.295-.331-.105l-6.06 3.82-2.615-.818c-.569-.18-.581-.569.118-.84l10.278-3.968c.478-.174.896.118.745.838z"/>
+                      <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm4.564 8.16l-1.758 8.31c-.132.589-.476.732-.963.456l-2.665-1.964-1.287 1.238c-.142.143-.262.262-.535.262l.191-2.69 4.896-4.415c.213-.19-.046-.295-.331-.105l-6.06 3.82-2.615-.818c-.569-.18-.581-.569.118-.84l10.278-3.968c.478-.174.896.118.745.838z" />
                     </svg>
-                    Добавить в корзину
+                    {/* Telegram Icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path d="M12 2C6.478 2 2 6.478 2 12c0 5.522 4.478 10 10 10s10-4.478 10-10c0-5.522-4.478-10-10-10zm4.91 7.487l-1.347 6.353c-.103.488-.386.6-.79.402L11.99 14.1l-1.048 1.014c-.116.116-.213.213-.436.213l.156-2.252 4.105-3.707c.178-.162-.038-.252-.276-.09L9.935 11.5l-1.77-.553c-.386-.123-.395-.386.08-.57l7.973-3.075c.37-.145.693.086.577.684z" />
+                    </svg>
+                    Заказать в Telegram
                   </>
                 )}
               </Button>
+
             </div>
           </div>
         </Transition>
