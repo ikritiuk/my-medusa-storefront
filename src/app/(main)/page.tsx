@@ -5,21 +5,22 @@ import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-hom
 import { Metadata } from "next"
 import { Suspense } from "react"
 
+import Head from "next/head"
+
 export const metadata: Metadata = {
   title: "Luxury24 shop",
-  description:
-    "Top quality replicas",
+  description: "Top quality replicas",
 }
 
-export default async function Home() {
-  const { collections, count } = await getCollectionsList(0, 3)
-
+export default function Home() {
   return (
     <>
-      <Hero />
-      <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
-        <FeaturedProducts collections={collections} />
-      </Suspense>
+      <Head>
+        <meta name="yandex-verification" content="8e708c798b48a43d" />
+      </Head>
+      <main>
+        <h1>Welcome to Luxury24 Shop</h1>
+      </main>
     </>
   )
 }
