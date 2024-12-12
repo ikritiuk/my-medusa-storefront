@@ -5,6 +5,7 @@ import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-hom
 import { Metadata } from "next"
 import { Suspense } from "react"
 import NextHead from "next/head"
+import * as React from "react"
 
 
 export const metadata: Metadata = {
