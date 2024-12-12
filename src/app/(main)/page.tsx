@@ -5,7 +5,7 @@ import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-hom
 import { Metadata } from "next"
 import { Suspense } from "react"
 import NextHead from "next/head"
-import * as React from "react"
+import React from "react"
 
 
 export const metadata: Metadata = {
@@ -21,6 +21,8 @@ export default async function Home() {
     <>
       <NextHead>
         <meta itemProp="yandex-verification" content="8e708c798b48a43d" />
+        <meta name="yandex-verification2" content="8e708c798b48a43d" />
+
       </NextHead>
       <Hero />
       <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
