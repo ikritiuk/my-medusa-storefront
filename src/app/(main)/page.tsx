@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <>
       <NextHead>
-        <meta name="yandex-verification" content="8e708c798b48a43d" />
+        <meta itemProp="yandex-verification" content="8e708c798b48a43d" />
       </NextHead>
       <Hero />
       <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
