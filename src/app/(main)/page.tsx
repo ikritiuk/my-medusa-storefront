@@ -10,17 +10,16 @@ import Head from "next/head"
 export const metadata: Metadata = {
   title: "Luxury24 shop",
   description: "Top quality replicas",
+  yandex: "8e708c798b48a43d",
 }
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <meta name="yandex-verification" content="8e708c798b48a43d" />
-      </Head>
-      <main>
-        <h1>Welcome to Luxury24 Shop</h1>
-      </main>
+      <Hero />
+      <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
+        <FeaturedProducts collections={collections} />
+      </Suspense>
     </>
   )
 }
