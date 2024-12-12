@@ -3,9 +3,8 @@ import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
 import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-homepage-products"
 import { Metadata } from "next"
-import { Suspense } from "react"
+import { Suspense, useEffect } from "react"
 import NextHead from "next/head"
-import * as React from "react"
 
 export const metadata: Metadata = {
   title: "Luxury24 shop",
@@ -15,31 +14,35 @@ export const metadata: Metadata = {
 export default async function Home() {
   const { collections, count } = await getCollectionsList(0, 3)
 
+  // Add the Yandex Metrika script after the component has mounted (client-side only)
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.type = "text/javascript"
+    script.async = true
+    script.src = "https://mc.yandex.ru/metrika/tag.js"
+    document.head.appendChild(script)
+
+    script.onload = () => {
+      if (window.ym) {
+        window.ym(99172678, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true,
+          ecommerce: "dataLayer",
+        })
+      }
+    }
+
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
   return (
     <>
       <NextHead>
-        {/* Yandex.Metrika counter script */}
-        <script type="text/javascript">
-          {`
-            (function(m,e,t,r,i,k,a){
-              m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-              m[i].l=1*new Date();
-              for (var j = 0; j < document.scripts.length; j++) {
-                if (document.scripts[j].src === r) { return; }
-              }
-              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-            })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-            ym(99172678, "init", {
-              clickmap:true,
-              trackLinks:true,
-              accurateTrackBounce:true,
-              webvisor:true,
-              ecommerce:"dataLayer"
-            });
-          `}
-        </script>
+        {/* Optional noscript part for Yandex Metrika */}
         <noscript>
           <div>
             <img
