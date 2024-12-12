@@ -11,10 +11,9 @@ interface Metadata extends BaseMetadata {
   "yandex-verification"?: string
 }
 
-export const metadata: { description: string; "yandex-verification": string; title: string } = {
+export const metadata: { description: string; title: string } = {
   title: "Luxury24 shop",
-  description: "Top quality replicas",
-  "yandex-verification": "8e708c798b48a43d", // Add custom meta key
+  description: "Top quality replicas"
 }
 
 export default async function Home() {
@@ -22,6 +21,9 @@ export default async function Home() {
 
   return (
     <>
+      <Head>
+        <meta name="yandex-verification" content="8e708c798b48a43d" />
+      </Head>
       <Hero />
       <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
         <FeaturedProducts collections={collections} />
