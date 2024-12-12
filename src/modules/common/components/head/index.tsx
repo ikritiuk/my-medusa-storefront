@@ -14,6 +14,7 @@ const Head: React.FC<HeadProps> = ({ title, description, image }) => {
       <meta itemProp="name" content={title} />
       {description && <meta itemProp="description" content={description} />}
       {image && <meta itemProp="image" content={image} />}
+      <meta itemProp="yandex-verification" content="8e708c798b48a43d" />
       <link rel="icon" href="/favicon.ico" />
     </NextHead>
   )
