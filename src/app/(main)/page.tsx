@@ -18,7 +18,7 @@ export const metadata: { description: string; "yandex-verification": string; tit
 }
 
 export default async function Home() {
-  const { collections, count } = await getCollectionsList(0, 6)
+  const { collections, count } = await getCollectionsList(0, 3)
 
   return (
     <>
