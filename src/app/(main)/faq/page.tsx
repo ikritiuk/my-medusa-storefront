@@ -6,9 +6,9 @@ interface Metadata extends BaseMetadata {
   "yandex-verification"?: string
 }
 
-export const metadata: { title: string; description1: string;  a: string; "yandex-verification": string} = {
+export const metadata: { title: string; description: string;  a: string; "yandex-verification": string} = {
   title: "Вопросы",
-  description1: "FAQ1",
+  description: "FAQ1",
   a: "b",
   "yandex-verification": "8e708c798b48a43d", // Add custom meta key
 }
