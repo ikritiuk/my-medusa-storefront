@@ -7,8 +7,7 @@ type HeadProps = {
   image?: string | null
 }
 
-const Head: React.FC<HeadProps> = ({ title, description, image, yandex }) => {
-
+const Head: React.FC<HeadProps> = ({ title, description, image }) => {
   return (
     <NextHead>
       <title>{title} | Luxury24</title>
