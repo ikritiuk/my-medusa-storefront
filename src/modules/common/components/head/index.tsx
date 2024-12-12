@@ -10,9 +10,8 @@ type HeadProps = {
 const Head: React.FC<HeadProps> = ({ title, description, image }) => {
   return (
     <NextHead>
-      <meta name="yandex-verification" content="8e708c798b48a43d" />
-      <title>Yandex</title>
-      <meta itemProp="name" content="Yandex2" />
+      <title>{title} | Luxury24</title>
+      <meta itemProp="name" content={title} />
       {description && <meta itemProp="description" content={description} />}
       {image && <meta itemProp="image" content={image} />}
       <link rel="icon" href="/favicon.ico" />
