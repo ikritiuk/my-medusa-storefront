@@ -17,7 +17,9 @@ export const metadata: { description: string; "yandex-verification": string; tit
   "yandex-verification": "8e708c798b48a43d", // Add custom meta key
 }
 
-export default function Home() {
+export default async function Home() {
+  const { collections, count } = await getCollectionsList(0, 6)
+
   return (
     <>
       <Hero />
