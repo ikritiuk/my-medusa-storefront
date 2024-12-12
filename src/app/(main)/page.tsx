@@ -6,6 +6,7 @@ import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-hom
 import { Metadata } from "next"
 import { Suspense } from "react"
 import * as React from "react"
+import Head from "@modules/common/components/head"
 
 export const metadata: Metadata = {
   title: "Luxury24 shop",
@@ -18,6 +19,7 @@ export default async function Home() {
 
   return (
     <>
+      <Head/>
       <Meta/>
       <Hero />
       <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
