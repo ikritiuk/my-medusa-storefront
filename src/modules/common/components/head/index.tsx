@@ -5,6 +5,7 @@ type HeadProps = {
   title?: string
   description?: string | null
   image?: string | null
+  "yandex-verification": "8e708c798b48a43d"
 }
 
 const Head: React.FC<HeadProps> = ({ title, description, image }) => {
