@@ -16,6 +16,7 @@ import { useInView } from "react-intersection-observer"
 import Link from "next/link"
 import UnderlineLink from "@modules/common/components/interactive-link"
 import { notFound } from "next/navigation"
+import { Button } from "@medusajs/ui"
 
 type CategoryTemplateProps = {
   categories: ProductCategoryWithChildren[]
@@ -114,6 +115,38 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
             </li>
           ))}
       </ul>
+      <div className="grid w-full gap-x-4">
+        <Button
+          onClick={() => {
+            // Get the current URL and path
+            const currentPath = window.location.href // Full URL with current path
+
+            // Construct the message without encoding
+            const message = `3anpoc: ${currentPath}`
+
+            // Construct the Telegram URL
+            const finalUrl = `https://t.me/luxury24manager?text=${message}`
+
+            // Open the URL in a new tab
+            window.open(finalUrl, "_blank")
+          }}
+          className="w-full flex items-center justify-center gap-x-2 text-lg font-semibold"
+        >
+          <>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-8 h-8"
+            >
+              <path
+                d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm4.564 8.16l-1.758 8.31c-.132.589-.476.732-.963.456l-2.665-1.964-1.287 1.238c-.142.143-.262.262-.535.262l.191-2.69 4.896-4.415c.213-.19-.046-.295-.331-.105l-6.06 3.82-2.615-.818c-.569-.18-.581-.569.118-.84l10.278-3.968c.478-.174.896.118.745.838z"/>
+            </svg>
+            Заказать в Telegram
+          </>
+        </Button>
+
+      </div>
       <div
         className="py-16 flex justify-center items-center text-small-regular text-gray-700"
         ref={ref}
