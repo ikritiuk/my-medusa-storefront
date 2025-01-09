@@ -15,7 +15,7 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
-                preload="auto" {/* Preloads the entire video */}
+                preload="auto"
               />
             </Link>
           </div>
@@ -33,7 +33,7 @@ const Hero = () => {
               loop
               muted
               playsInline
-              preload="auto" {/* Preloads the entire video */}
+              preload="auto"
             />
           </Link>
         </div>
