@@ -56,13 +56,11 @@ const Hero = () => {
             />
           </Link>
         </div>
-        <div className="flex flex-col items-center mb-2 gap-4">
+        <div className="flex flex-col items-center mb-2 gap-4"> {/* Added gap-4 for spacing */}
           <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
             <img src="hero-rolex.jpg" alt="hero-image-1" />
           </Link>
-        </div>
-        <div className="flex flex-col items-center mb-2 gap-4">
-          <div className="flex items-center justify-between w-full h-full gap-4">
+          <div className="flex items-center justify-between w-full gap-4"> {/* Added gap-4 */}
             <Link href="/collections/piguet" className="w-1/2 h-full">
               <img src="hero-piguet.png" alt="hero-image-2" />
             </Link>
