@@ -43,7 +43,7 @@ const Hero = () => {
 
       {/* Small and medium screens (sm to md) */}
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
-        <div className="flex flex-col items-center mb-4"> {/* Added mb-4 */}
+        <div className="flex flex-col items-center mb-6">
           <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
             <video
               src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
