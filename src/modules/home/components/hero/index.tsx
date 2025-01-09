@@ -54,26 +54,6 @@ const Hero = () => {
               playsInline
             />
           </Link>
-            <Link href="/collections/piguet" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
-              <video
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-ap.mp4"
-                className="w-full"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            </Link>
-            <Link href="/collections/patek" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
-              <video
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-pf.mp4"
-                className="w-full"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            </Link>
         </div>
       </div>
     </div>
