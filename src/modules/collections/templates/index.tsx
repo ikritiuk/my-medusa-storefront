@@ -11,6 +11,7 @@ import { useCart } from "medusa-react"
 import React, { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 import { ProductCollection } from "@medusajs/medusa"
+import FloatingButton from "@modules/home/components/floating-button"
 
 const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
   collection,
@@ -80,6 +81,7 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
       >
         <span ref={ref}></span>
       </div>
+      <FloatingButton/>
     </div>
   )
 }
