@@ -47,11 +47,11 @@ const Nav = () => {
               {/*    open={searchModalOpen}*/}
               {/*  />*/}
               {/*)}*/}
-              <a href="https://t.me/luxury24manager" target="_blank"
-                 className="text-decoration-none">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"
-                  className="w-12 p-2"/></a>
+              {/*<a href="https://t.me/luxury24manager" target="_blank"*/}
+              {/*   className="text-decoration-none">*/}
+              {/*  <img*/}
+              {/*    src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Icon"*/}
+              {/*    className="w-12 p-2"/></a>*/}
               <Link href="/faq" className="hover:text-ui-fg-base">
                 Вопросы
               </Link>
