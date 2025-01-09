@@ -4,7 +4,6 @@ const Hero = () => {
   return (
     <div className="relative bg-ui-bg-subtle">
       {/* Large screen (lg and up) */}
-
       <div className="hidden lg:block h-screen w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-2 hidden lg:flex">
           {/* Video Section */}
@@ -41,6 +40,15 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Full-Width Image */}
+      <div className="w-full">
+        <img
+          src="row-rolex.jpg"
+          alt="Full Width Image"
+          className="w-full h-auto mt-6 object-cover"
+        />
+      </div>
+
       {/* Small and medium screens (sm to md) */}
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="flex flex-col items-center mb-6">
@@ -68,6 +76,14 @@ const Hero = () => {
               <img src="hero-patek.png" alt="hero-image-3" />
             </Link>
           </div>
+        </div>
+        {/* Full-Width Image for Mobile */}
+        <div className="w-full">
+          <img
+            src="row-rolex.jpg"
+            alt="Full Width Image"
+            className="w-full h-auto mt-4 object-cover"
+          />
         </div>
       </div>
     </div>
