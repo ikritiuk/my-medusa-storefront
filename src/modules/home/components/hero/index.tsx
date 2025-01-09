@@ -9,27 +9,7 @@ const Hero = () => {
           <div className="flex items-center mb-2">
             <Link href="/collections/rolex" className="m-2 w-full md:w-1/3">
               <video
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
-                className="w-full"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            </Link>
-            <Link href="/collections/piguet" className="m-2 w-1/3">
-              <video
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-ap.mp4"
-                className="w-full"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            </Link>
-            <Link href="/collections/patek" className="m-2 w-1/3">
-              <video
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-pf.mp4"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/submariner-hero.mp4"
                 className="w-full"
                 autoPlay
                 loop
@@ -46,7 +26,7 @@ const Hero = () => {
         <div className="flex flex-col items-center mb-2">
           <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
             <video
-              src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4 "
+              src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
               className="w-full"
               autoPlay
               loop
