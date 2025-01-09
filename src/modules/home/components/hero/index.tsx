@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 const Hero = () => {
@@ -12,6 +14,7 @@ const Hero = () => {
               <div className="relative w-full h-full overflow-hidden">
                 <video
                   src="https://medusajs-server.fra1.digitaloceanspaces.com/panda-hero.mp4"
+                  poster="https://medusajs-server.fra1.digitaloceanspaces.com/panda-hero-preview.jpg"
                   className="w-full h-full object-cover translate-y-[-10%]"
                   autoPlay
                   loop
@@ -24,6 +27,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
       <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-2 hidden lg:flex">
           <div className="flex items-center mb-2">
@@ -55,6 +59,7 @@ const Hero = () => {
           <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
             <video
               src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
+              poster="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex-preview.jpg"
               className="w-full object-cover"
               autoPlay
               loop
