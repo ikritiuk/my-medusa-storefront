@@ -54,7 +54,6 @@ const Hero = () => {
               playsInline
             />
           </Link>
-          <div className="flex items-center justify-between w-full">
             <Link href="/collections/piguet" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
               <video
                 src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-ap.mp4"
@@ -75,7 +74,6 @@ const Hero = () => {
                 playsInline
               />
             </Link>
-          </div>
         </div>
       </div>
     </div>
