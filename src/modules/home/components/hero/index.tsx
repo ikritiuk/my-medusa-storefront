@@ -61,10 +61,10 @@ const Hero = () => {
             <img src="hero-rolex.jpg" alt="hero-image-1" />
           </Link>
           <div className="flex items-center justify-between w-full gap-4"> {/* Added gap-4 */}
-            <Link href="/collections/piguet" className="m-3 w-1/2 h-full">
+            <Link href="/collections/piguet" className="w-1/2 h-full">
               <img src="hero-piguet.png" alt="hero-image-2" />
             </Link>
-            <Link href="/collections/patek" className="m-3 w-1/2 h-full">
+            <Link href="/collections/patek" className="w-1/2 h-full">
               <img src="hero-patek.png" alt="hero-image-3" />
             </Link>
           </div>
