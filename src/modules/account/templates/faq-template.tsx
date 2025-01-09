@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react"
+import FloatingButton from "@modules/home/components/floating-button"
 
 const faqs = [
   {
@@ -85,6 +86,7 @@ const FaqTemplate = () => {
           </div>
         </div>
       </div>
+      <FloatingButton/>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 "use client"
 import React from "react"
+import FloatingButton from "@modules/home/components/floating-button"
 
 const imageTextRow0 = [
   "Часы Rolex изготавливаются из высококачественных металлов, таких как нержавеющая сталь 904L, отличающаяся высоким содержанием никеля и хрома. Эта стальная сплав имеет повышенную устойчивость к коррозии и немного тяжелее других видов стали.",
@@ -124,6 +125,7 @@ const AboutUsPage = () => {
           </div>
         </div>
       </div>
+      <FloatingButton/>
     </div>
   )
 }
