@@ -35,7 +35,7 @@ const Hero = () => {
           <div className="flex items-center mb-2">
             <Link href="/collections/rolex" className="m-2 w-1/4">
               <img
-                src="hero-rolex.png"
+                src="hero-rolex.jpg"
                 alt="Logo"
                 className="object-contain w-full h-auto"
               />
