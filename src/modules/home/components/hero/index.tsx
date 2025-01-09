@@ -43,7 +43,7 @@ const Hero = () => {
       {/* Full-Width Image */}
       <div className="w-full">
         <img
-          src="row-rolex.jpg"
+          src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
           alt="Full Width Image"
           className="w-full h-auto mt-6 object-cover"
         />
