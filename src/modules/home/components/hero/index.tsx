@@ -8,15 +8,17 @@ const Hero = () => {
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-2 hidden lg:flex">
           <div className="flex items-center mb-2">
             <Link href="/collections/rolex" className="m-2 w-full">
-              <video
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/submariner-hero.mp4"
-                className="w-full"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-              />
+              <div className="relative w-full h-full overflow-hidden">
+                <video
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/submariner-hero.mp4"
+                  className="w-full h-full object-cover translate-y-[-10%]"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                />
+              </div>
             </Link>
           </div>
         </div>
@@ -28,7 +30,7 @@ const Hero = () => {
           <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
             <video
               src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
-              className="w-full"
+              className="w-full object-cover"
               autoPlay
               loop
               muted
