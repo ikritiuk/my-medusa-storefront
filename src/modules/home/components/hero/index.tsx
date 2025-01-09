@@ -45,13 +45,17 @@ const Hero = () => {
       </div>
 
       {/* Full-Width Image */}
+
       <div className="hidden lg:block w-full">
-        <img
-          src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
-          alt="Full Width Image"
-          className="w-full h-auto mt-6 object-cover"
-        />
+        <Link href="/collections/rolex">
+          <img
+            src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
+            alt="Full Width Image"
+            className="w-full h-auto mt-6 object-cover cursor-pointer"
+          />
+        </Link>
       </div>
+
 
       {/* Small and medium screens (sm to md) */}
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
@@ -84,12 +88,15 @@ const Hero = () => {
         </div>
         {/* Full-Width Image for Mobile */}
         <div className="w-full">
-          <img
-            src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
-            alt="Full Width Image"
-            className="w-full h-auto mt-4 object-cover"
-          />
+          <Link href="/collections/rolex">
+            <img
+              src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
+              alt="Full Width Image"
+              className="w-full h-auto mt-4 object-cover cursor-pointer"
+            />
+          </Link>
         </div>
+
       </div>
     </div>
   );
