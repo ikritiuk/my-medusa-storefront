@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="relative bg-ui-bg-subtle">
       {/* Large screen (lg and up) */}
-      <div className="hidden lg:block h-full w-full border-b border-ui-border-base relative overflow-hidden">
+      <div className="hidden lg:block h-screen w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-2 hidden lg:flex">
           <div className="flex items-center mb-2">
             <Link href="/collections/rolex" className="m-2 w-full">
@@ -15,6 +15,7 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
+                preload="auto" {/* Preloads the entire video */}
               />
             </Link>
           </div>
@@ -32,6 +33,7 @@ const Hero = () => {
               loop
               muted
               playsInline
+              preload="auto" {/* Preloads the entire video */}
             />
           </Link>
         </div>
