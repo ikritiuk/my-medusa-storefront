@@ -56,31 +56,16 @@ const Hero = () => {
             />
           </Link>
         </div>
-        <div className="flex flex-col items-center mb-2 gap-4">
-          {/* First Image */}
+        <div className="flex flex-col items-center mb-2 gap-4"> {/* Added gap-4 for spacing */}
           <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
-            <img
-              src="hero-rolex.jpg"
-              alt="hero-image-1"
-              className="w-full sm:w-[200%] sm:h-auto"
-            />
+            <img src="hero-rolex.jpg" alt="hero-image-1" />
           </Link>
-          <div className="flex items-center justify-between w-full gap-4">
-            {/* Second Image */}
+          <div className="flex items-center justify-between w-full gap-4"> {/* Added gap-4 */}
             <Link href="/collections/piguet" className="w-1/2 h-full">
-              <img
-                src="hero-piguet.png"
-                alt="hero-image-2"
-                className="w-full sm:w-[200%] sm:h-auto"
-              />
+              <img src="hero-piguet.png" alt="hero-image-2" />
             </Link>
-            {/* Third Image */}
             <Link href="/collections/patek" className="w-1/2 h-full">
-              <img
-                src="hero-patek.png"
-                alt="hero-image-3"
-                className="w-full sm:w-[200%] sm:h-auto"
-              />
+              <img src="hero-patek.png" alt="hero-image-3" />
             </Link>
           </div>
         </div>
