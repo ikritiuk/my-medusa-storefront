@@ -4,10 +4,10 @@ import React from "react";
 
 const FloatingButton = () => {
   return (
-    <div className="fixed bottom-4 left-4 right-4 md:bottom-8 md:right-8 md:left-auto z-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50">
       <button
         onClick={() => window.open("https://t.me/luxury24info", "_blank")}
-        className="w-full md:w-auto px-4 py-3 md:px-6 md:py-4 bg-black text-white text-center rounded-lg shadow-lg hover:bg-gray-900 transition-transform transform hover:scale-105 md:text-lg"
+        className="px-4 py-3 md:px-6 md:py-4 bg-black text-white text-center rounded-lg shadow-lg hover:bg-gray-900 transition-transform transform hover:scale-105 md:text-lg"
         aria-label="Order on Telegram"
       >
         <div className="flex items-center justify-center gap-2">
