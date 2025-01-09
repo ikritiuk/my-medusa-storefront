@@ -1,4 +1,5 @@
 import Hero from "@modules/home/components/hero";
+import FloatingButton from "@modules/home/components/floating-button";
 import { Metadata } from "next";
 import * as React from "react";
 
@@ -14,6 +15,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <FloatingButton/>
     </>
   );
 }
