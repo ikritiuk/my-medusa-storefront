@@ -264,7 +264,7 @@ const Hero = () => {
               </div>
               <Link href="/collections/cartier">
                 <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.jpg"
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.webp"
                   alt="Cartier"
                   className="rounded"
                 />
@@ -276,9 +276,9 @@ const Hero = () => {
                 <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
                   Tag Hauer
                 </div>
-                <Link href="/collections/piguet">
+                <Link href="/collections/tag-hauer">
                   <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.png"
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.jpg"
                     alt="Tag Hauer"
                     className="rounded"
                   />
