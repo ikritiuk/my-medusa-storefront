@@ -83,7 +83,7 @@ const Hero = () => {
       </div>
 
       {/* Second Row of 3 Images */}
-      <div className="hidden lg:block w-full border-b border-ui-border-base py-8">
+      <div className="hidden lg:block  h-[25vh] w-full border-b border-ui-border-base py-8">
         <div className="flex flex-col justify-center items-center text-center gap-6">
           <div className="grid grid-cols-3 gap-6">
             <div className="group relative cursor-pointer transition-transform hover:scale-105">
