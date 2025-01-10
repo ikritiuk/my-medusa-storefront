@@ -85,9 +85,9 @@ const Hero = () => {
             <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
               Brand 1
             </div>
-            <Link href="/collections/brand1">
+            <Link href="/collections/patek">
               <img
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand1.png"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 1"
                 className="rounded"
               />
@@ -100,7 +100,7 @@ const Hero = () => {
             </div>
             <Link href="/collections/brand2">
               <img
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand2.png"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 2"
                 className="rounded"
               />
@@ -113,7 +113,7 @@ const Hero = () => {
             </div>
             <Link href="/collections/brand3">
               <img
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand3.png"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 3"
                 className="rounded"
               />
@@ -126,7 +126,7 @@ const Hero = () => {
             </div>
             <Link href="/collections/brand4">
               <img
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand4.png"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 4"
                 className="rounded"
               />
@@ -173,9 +173,9 @@ const Hero = () => {
             <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
               Brand 1
             </div>
-            <Link href="/collections/brand1">
+            <Link href="/collections/patek">
               <img
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand1.png"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 1"
                 className="rounded w-full"
               />
@@ -187,7 +187,7 @@ const Hero = () => {
             </div>
             <Link href="/collections/brand2">
               <img
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand2.png"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 2"
                 className="rounded w-full"
               />
@@ -199,7 +199,7 @@ const Hero = () => {
             </div>
             <Link href="/collections/brand3">
               <img
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand3.png"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 3"
                 className="rounded w-full"
               />
@@ -211,7 +211,7 @@ const Hero = () => {
             </div>
             <Link href="/collections/brand4">
               <img
-                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand4.png"
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 4"
                 className="rounded w-full"
               />
