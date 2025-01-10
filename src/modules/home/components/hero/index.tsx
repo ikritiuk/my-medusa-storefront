@@ -157,8 +157,8 @@ const Hero = () => {
         </div>
         <div className="flex flex-col items-center mb-6 gap-4">
           {/* Title Section */}
-          <div className="flex items-center justify-center h-[100vh]">
-            <h2 className="text-lg font-semibold text-center">Популярные бренды</h2>
+          <div className="flex items-center justify-center h-auto py-4 px-4">
+            <h2 className="text-lg font-semibold text-center max-w-[90%]">Популярные бренды</h2>
           </div>
           {/* Brand Images */}
           <div className="flex flex-col items-center gap-4">
