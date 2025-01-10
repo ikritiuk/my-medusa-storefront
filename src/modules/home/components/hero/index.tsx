@@ -30,6 +30,9 @@ const Hero = () => {
 
       <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-2 hidden lg:flex">
+          {/* Title Section */}
+          <h2 className="text-xl font-bold mb-6">Популярные бренды</h2>
+          {/* Brand Images */}
           <div className="flex items-center mb-2">
             <Link href="/collections/rolex" className="m-2 w-full md:w-1/2">
               <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg" alt="Logo" />
@@ -45,7 +48,6 @@ const Hero = () => {
       </div>
 
       {/* Full-Width Image */}
-
       <div className="hidden lg:block w-full">
         <Link href="/collections/rolex">
           <img
@@ -55,7 +57,6 @@ const Hero = () => {
           />
         </Link>
       </div>
-
 
       {/* Small and medium screens (sm to md) */}
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
@@ -73,11 +74,14 @@ const Hero = () => {
             />
           </Link>
         </div>
-        <div className="flex flex-col items-center mb-2 gap-4"> {/* Added gap-4 for spacing */}
+        <div className="flex flex-col items-center mb-6 gap-4">
+          {/* Title Section */}
+          <h2 className="text-lg font-semibold mb-4">Популярные бренды</h2>
+          {/* Brand Images */}
           <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
             <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg" alt="hero-image-1" />
           </Link>
-          <div className="flex items-center justify-between w-full gap-4"> {/* Added gap-4 */}
+          <div className="flex items-center justify-between w-full gap-4">
             <Link href="/collections/piguet" className="w-1/2 h-full">
               <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png" alt="hero-image-2" />
             </Link>
@@ -96,7 +100,6 @@ const Hero = () => {
             />
           </Link>
         </div>
-
       </div>
     </div>
   );
