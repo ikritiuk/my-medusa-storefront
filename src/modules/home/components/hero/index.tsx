@@ -44,8 +44,8 @@ const Hero = () => {
         <div className="h-screen w-full border-b border-ui-border-base">
           <VideoSection
             href="/collections/rolex"
-            videoSrc="https://medusajs-server.fra1.digitaloceanspaces.com/panda-hero.mp4"
-            posterSrc="https://medusajs-server.fra1.digitaloceanspaces.com/panda-hero-preview.jpg"
+            videoSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/panda-hero.mp4"
+            posterSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/panda-hero-preview.jpg"
           />
         </div>
 
@@ -59,19 +59,19 @@ const Hero = () => {
           <div className="flex items-start gap-4">
             <ImageCard
               href="/collections/rolex"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.jpg"
               imgAlt="Rolex"
               label="Rolex"
             />
             <ImageCard
               href="/collections/piguet"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet.png"
               imgAlt="Audemars Piguet"
               label="Audemars Piguet"
             />
             <ImageCard
               href="/collections/patek"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.png"
               imgAlt="Patek Philippe"
               label="Patek Philippe"
             />
@@ -82,19 +82,19 @@ const Hero = () => {
           <div className="flex items-start gap-4">
             <ImageCard
               href="/collections/cartier"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.webp"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.webp"
               imgAlt="Cartier"
               label="Cartier"
             />
             <ImageCard
               href="/collections/tag-hauer"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.webp"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.webp"
               imgAlt="Tag Hauer"
               label="Tag Hauer"
             />
             <ImageCard
               href="/collections/hublot"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.jpg"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.jpg"
               imgAlt="Hublot"
               label="Hublot"
             />
@@ -105,7 +105,7 @@ const Hero = () => {
         <div className="w-full">
           <Link href="/collections/rolex">
             <img
-              src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
+              src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/row-rolex.jpg"
               alt="Full Width Image"
               className="w-full h-auto mt-6 object-cover cursor-pointer"
               loading="lazy"
@@ -122,8 +122,8 @@ const Hero = () => {
           </div>
           <VideoSection
             href="/collections/rolex"
-            videoSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
-            posterSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex-preview.jpg"
+            videoSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.mp4"
+            posterSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex-preview.jpg"
           />
         </div>
 
@@ -133,40 +133,40 @@ const Hero = () => {
           {/* Mobile Brand Rows */}
           <ImageCard
             href="/collections/rolex"
-            imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
+            imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.jpg"
             imgAlt="Rolex"
             label="Rolex"
           />
           <div className="flex items-center gap-4">
             <ImageCard
               href="/collections/piguet"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet.png"
               imgAlt="Audemars Piguet"
               label="Audemars Piguet"
             />
             <ImageCard
               href="/collections/patek"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.png"
               imgAlt="Patek Philippe"
               label="Patek Philippe"
             />
           </div>
           <ImageCard
             href="/collections/cartier"
-            imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.webp"
+            imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.webp"
             imgAlt="Cartier"
             label="Cartier"
           />
           <div className="flex items-center gap-4">
             <ImageCard
               href="/collections/tag-hauer"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.webp"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.webp"
               imgAlt="Tag Hauer"
               label="Tag Hauer"
             />
             <ImageCard
               href="/collections/hublot"
-              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.jpg"
+              imgSrc="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.jpg"
               imgAlt="Hublot"
               label="Hublot"
             />
@@ -176,7 +176,7 @@ const Hero = () => {
         <div className="w-full">
           <Link href="/collections/rolex">
             <img
-              src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
+              src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/row-rolex.jpg"
               alt="Full Width Image"
               className="w-full h-auto mt-4 object-cover cursor-pointer"
               loading="lazy"

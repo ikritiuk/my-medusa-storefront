@@ -36,17 +36,17 @@ const AboutUsPage = () => {
           <div className="flex flex-col md:flex-row md:flex-wrap md:-mx-2 lg:-mx-4">
             {[
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/1-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/1-im-detail.jpg",
                 alt: "Photo 1",
                 title: "Лучшие материалы",
               },
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/2-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/2-im-detail.jpg",
                 alt: "Photo 2",
                 title: "Внимание к мелочам",
               },
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/3-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/3-im-detail.jpg",
                 alt: "Photo 3",
                 title: "Премиум качество",
               },
@@ -67,17 +67,17 @@ const AboutUsPage = () => {
           <div className="flex flex-col md:flex-row md:flex-wrap md:-mx-2 lg:-mx-4">
             {[
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/5-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/5-im-detail.jpg",
                 alt: "Photo 5",
                 title: "Микрогравировка",
               },
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/6-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/6-im-detail.jpg",
                 alt: "Photo 6",
                 title: "Водонепроницаемость",
               },
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/7-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/7-im-detail.jpg",
                 alt: "Photo 7",
                 title: "Гравировка на корпусе",
               },
@@ -97,17 +97,17 @@ const AboutUsPage = () => {
           <div className="flex flex-col md:flex-row md:flex-wrap md:-mx-2 lg:-mx-4">
             {[
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/7-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/7-im-detail.jpg",
                 alt: "Photo 7",
                 title: "Cапфировое стекло",
               },
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/8-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/8-im-detail.jpg",
                 alt: "Photo 8",
                 title: "Застежка GLIDELOCK",
               },
               {
-                src: "https://medusajs-server.fra1.digitaloceanspaces.com/static/9-im-detail.jpg",
+                src: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/static/9-im-detail.jpg",
                 alt: "Photo 9",
                 title: "Точность",
               },
