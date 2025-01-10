@@ -136,7 +136,7 @@ const Hero = () => {
       </div>
 
       {/* Full-Width Image */}
-      <div className="hidden w-full">
+      <div className="hidden lg:block w-full">
         <Link href="/collections/rolex">
           <img
             src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
@@ -165,7 +165,54 @@ const Hero = () => {
             </div>
           </Link>
         </div>
-
+        <div className="flex flex-col items-center mb-6 gap-4">
+          {/* Title Section */}
+          <h2 className="text-lg font-semibold mb-4">Популярные бренды</h2>
+          {/* Brand Images */}
+          <div className="flex flex-col items-center gap-4">
+            <div className="relative text-center w-full">
+              {/* Brand Name */}
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                Rolex
+              </div>
+              <Link href="/collections/rolex">
+                <img
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
+                  alt="Rolex"
+                  className="rounded"
+                />
+              </Link>
+            </div>
+            <div className="flex items-center justify-between w-full gap-4">
+              <div className="relative w-1/2 text-center">
+                {/* Brand Name */}
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                  Audemars Piguet
+                </div>
+                <Link href="/collections/piguet">
+                  <img
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
+                    alt="Audemars Piguet"
+                    className="rounded"
+                  />
+                </Link>
+              </div>
+              <div className="relative w-1/2 text-center">
+                {/* Brand Name */}
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                  Patek Philippe
+                </div>
+                <Link href="/collections/patek">
+                  <img
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
+                    alt="Patek Philippe"
+                    className="rounded"
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* Mobile version of the row with 4 images */}
         <div className="grid grid-cols-2 gap-4 mb-6">
           {/* Individual items for each image */}
@@ -217,6 +264,16 @@ const Hero = () => {
               />
             </Link>
           </div>
+        </div>
+        {/* Full-Width Image for Mobile */}
+        <div className="w-full">
+          <Link href="/collections/rolex">
+            <img
+              src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
+              alt="Full Width Image"
+              className="w-full h-auto mt-4 object-cover cursor-pointer"
+            />
+          </Link>
         </div>
       </div>
     </div>
