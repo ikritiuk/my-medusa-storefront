@@ -2,252 +2,184 @@
 
 import Link from "next/link";
 
+// Reusable Image Card Component
+const ImageCard = ({ href, imgSrc, imgAlt, label }) => (
+  <div className="relative m-2 w-full md:w-1/4">
+    <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
+      {label}
+    </div>
+    <Link href={href}>
+      <img src={imgSrc} alt={imgAlt} className="rounded" loading="lazy" />
+    </Link>
+  </div>
+);
+
+// Reusable Video Section Component
+const VideoSection = ({ href, videoSrc, posterSrc }) => (
+  <Link href={href} className="relative w-full overflow-hidden">
+    <video
+      src={videoSrc}
+      poster={posterSrc}
+      className="w-full h-full object-cover translate-y-[-10%]"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+    />
+  </Link>
+);
+
 const Hero = () => {
   return (
     <div className="relative bg-ui-bg-subtle">
-      {/* Large screen (lg and up) */}
-      <div className="hidden lg:block h-screen w-full border-b border-ui-border-base relative overflow-hidden">
+      {/* Large Screen Layout */}
+      <div className="hidden lg:block">
+        {/* Promo Banner */}
         <div className="absolute top-4 left-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20">
           Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ
         </div>
-        <div className="flex flex-col justify-center items-center text-center gap-2">
-          {/* Video Section */}
-          <div className="flex items-center mb-2 w-full">
-            <Link href="/collections/rolex" className="m-2 w-full">
-              <div className="relative w-full h-full overflow-hidden">
-                <video
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/panda-hero.mp4"
-                  poster="https://medusajs-server.fra1.digitaloceanspaces.com/panda-hero-preview.jpg"
-                  className="w-full h-full object-cover translate-y-[-10%]"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                />
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div>
 
-      {/* Title Section */}
-      <div className="hidden lg:block w-full text-center my-6">
-        <h2 className="text-xl font-bold">Популярные бренды</h2>
-      </div>
-
-      {/* Row of 3 Images */}
-      <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
-        <div className="flex flex-col justify-center items-center text-center gap-4">
-          <div className="flex items-start mb-2 gap-4">
-            <div className="relative m-2 w-1/2">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Rolex
-              </div>
-              <Link href="/collections/rolex">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
-                  alt="Rolex"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-            <div className="relative m-2 w-1/4">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Audemars Piguet
-              </div>
-              <Link href="/collections/piguet">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
-                  alt="Audemars Piguet"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-            <div className="relative m-2 w-1/4">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Patek Philippe
-              </div>
-              <Link href="/collections/patek">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
-                  alt="Patek Philippe"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Row of 3 Images */}
-      <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
-        <div className="flex flex-col justify-center items-center text-center gap-4">
-          <div className="flex items-start mb-2 gap-4">
-            <div className="relative m-2 w-1/2">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Cartier
-              </div>
-              <Link href="/collections/cartier">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.webp"
-                  alt="Cartier"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-            <div className="relative m-2 w-1/4">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Tag Hauer
-              </div>
-              <Link href="/collections/tag-hauer">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.webp"
-                  alt="Tag Hauer"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-            <div className="relative m-2 w-1/4">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Hublot
-              </div>
-              <Link href="/collections/hublot">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.jpg"
-                  alt="Hublot"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Full-Width Image */}
-      <div className="hidden lg:block w-full">
-        <Link href="/collections/rolex">
-          <img
-            src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
-            alt="Full Width Image"
-            className="w-full h-auto mt-6 object-cover cursor-pointer"
+        {/* Video Section */}
+        <div className="h-screen w-full border-b border-ui-border-base">
+          <VideoSection
+            href="/collections/rolex"
+            videoSrc="https://medusajs-server.fra1.digitaloceanspaces.com/panda-hero.mp4"
+            posterSrc="https://medusajs-server.fra1.digitaloceanspaces.com/panda-hero-preview.jpg"
           />
-        </Link>
-      </div>
+        </div>
 
-      {/* Mobile Layout */}
-      <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
-        {/* Video Section for Mobile */}
-        <div className="relative w-full overflow-hidden">
-          <div className="absolute inset-x-4 top-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center">
-            Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ
+        {/* Popular Brands Title */}
+        <div className="w-full text-center my-6">
+          <h2 className="text-xl font-bold">Популярные бренды</h2>
+        </div>
+
+        {/* Brand Rows */}
+        <div className="h-[50vh] w-full border-b border-ui-border-base">
+          <div className="flex items-start gap-4">
+            <ImageCard
+              href="/collections/rolex"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
+              imgAlt="Rolex"
+              label="Rolex"
+            />
+            <ImageCard
+              href="/collections/piguet"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
+              imgAlt="Audemars Piguet"
+              label="Audemars Piguet"
+            />
+            <ImageCard
+              href="/collections/patek"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
+              imgAlt="Patek Philippe"
+              label="Patek Philippe"
+            />
           </div>
-          <Link href="/collections/rolex" className="w-full">
-            <video
-              src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
-              poster="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex-preview.jpg"
-              className="w-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
+        </div>
+
+        <div className="h-[50vh] w-full border-b border-ui-border-base">
+          <div className="flex items-start gap-4">
+            <ImageCard
+              href="/collections/cartier"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.webp"
+              imgAlt="Cartier"
+              label="Cartier"
+            />
+            <ImageCard
+              href="/collections/tag-hauer"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.webp"
+              imgAlt="Tag Hauer"
+              label="Tag Hauer"
+            />
+            <ImageCard
+              href="/collections/hublot"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.jpg"
+              imgAlt="Hublot"
+              label="Hublot"
+            />
+          </div>
+        </div>
+
+        {/* Full-Width Image */}
+        <div className="w-full">
+          <Link href="/collections/rolex">
+            <img
+              src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
+              alt="Full Width Image"
+              className="w-full h-auto mt-6 object-cover cursor-pointer"
+              loading="lazy"
             />
           </Link>
         </div>
-        <div className="flex flex-col items-center mb-6 gap-4">
-          {/* Title Section */}
-          <div className="flex items-center justify-center h-auto py-4 px-4">
-            <h2 className="text-lg font-semibold text-center max-w-[90%]">Популярные бренды</h2>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="sm:md:block lg:hidden">
+        <div className="relative w-full">
+          <div className="absolute inset-x-4 top-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center">
+            Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ
           </div>
-          {/* Brand Images */}
-          <div className="flex flex-col items-center gap-4">
-            <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
-                Rolex
-              </div>
-              <Link href="/collections/rolex">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
-                  alt="Rolex"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-            <div className="flex items-center justify-between w-full gap-4">
-              <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
-                  Audemars Piguet
-                </div>
-                <Link href="/collections/piguet">
-                  <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
-                    alt="Audemars Piguet"
-                    className="rounded"
-                  />
-                </Link>
-              </div>
-              <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
-                  Patek Philippe
-                </div>
-                <Link href="/collections/patek">
-                  <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
-                    alt="Patek Philippe"
-                    className="rounded"
-                  />
-                </Link>
-              </div>
-            </div>
+          <VideoSection
+            href="/collections/rolex"
+            videoSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
+            posterSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex-preview.jpg"
+          />
+        </div>
+
+        <div className="flex flex-col items-center gap-4 my-6">
+          <h2 className="text-lg font-semibold text-center">Популярные бренды</h2>
+
+          {/* Mobile Brand Rows */}
+          <ImageCard
+            href="/collections/rolex"
+            imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
+            imgAlt="Rolex"
+            label="Rolex"
+          />
+          <div className="flex items-center gap-4">
+            <ImageCard
+              href="/collections/piguet"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
+              imgAlt="Audemars Piguet"
+              label="Audemars Piguet"
+            />
+            <ImageCard
+              href="/collections/patek"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
+              imgAlt="Patek Philippe"
+              label="Patek Philippe"
+            />
           </div>
-          <div className="flex flex-col items-center gap-4">
-            <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
-                Cartier
-              </div>
-              <Link href="/collections/cartier">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.webp"
-                  alt="Cartier"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-            <div className="flex items-center justify-between w-full gap-4">
-              <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
-                  Tag Hauer
-                </div>
-                <Link href="/collections/tag-hauer">
-                  <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.webp"
-                    alt="Tag Hauer"
-                    className="rounded"
-                  />
-                </Link>
-              </div>
-              <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
-                  Hublot
-                </div>
-                <Link href="/collections/hublot">
-                  <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.jpg"
-                    alt="Hublot"
-                    className="rounded"
-                  />
-                </Link>
-              </div>
-            </div>
+          <ImageCard
+            href="/collections/cartier"
+            imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.webp"
+            imgAlt="Cartier"
+            label="Cartier"
+          />
+          <div className="flex items-center gap-4">
+            <ImageCard
+              href="/collections/tag-hauer"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.webp"
+              imgAlt="Tag Hauer"
+              label="Tag Hauer"
+            />
+            <ImageCard
+              href="/collections/hublot"
+              imgSrc="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.jpg"
+              imgAlt="Hublot"
+              label="Hublot"
+            />
           </div>
         </div>
+
         <div className="w-full">
           <Link href="/collections/rolex">
             <img
               src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
               alt="Full Width Image"
               className="w-full h-auto mt-4 object-cover cursor-pointer"
+              loading="lazy"
             />
           </Link>
         </div>
