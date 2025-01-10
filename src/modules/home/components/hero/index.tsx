@@ -260,49 +260,6 @@ const Hero = () => {
             <div className="relative text-center w-full">
               {/* Brand Name */}
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
-                Rolex
-              </div>
-              <Link href="/collections/rolex">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
-                  alt="Rolex"
-                  className="rounded"
-                />
-              </Link>
-            </div>
-            <div className="flex items-center justify-between w-full gap-4">
-              <div className="relative w-1/2 text-center">
-                {/* Brand Name */}
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
-                  Audemars Piguet
-                </div>
-                <Link href="/collections/piguet">
-                  <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
-                    alt="Audemars Piguet"
-                    className="rounded"
-                  />
-                </Link>
-              </div>
-              <div className="relative w-1/2 text-center">
-                {/* Brand Name */}
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
-                  Patek Philippe
-                </div>
-                <Link href="/collections/patek">
-                  <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
-                    alt="Patek Philippe"
-                    className="rounded"
-                  />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col items-center gap-4">
-            <div className="relative text-center w-full">
-              {/* Brand Name */}
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
                 Cartier
               </div>
               <Link href="/collections/cartier">
