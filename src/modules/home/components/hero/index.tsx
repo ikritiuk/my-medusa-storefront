@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="relative bg-ui-bg-subtle">
       {/* Large screen (lg and up) */}
-      <div className="hidden lg:block h-screen w-full border-b border-ui-border-base relative overflow-hidden">
+      <div className="hidden lg:block h-[80vh] w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50 z-20">
           <div className="text-center text-white px-4">
             <h1 className="text-3xl font-bold mb-2">Премиум часы</h1>
@@ -33,10 +33,10 @@ const Hero = () => {
       </div>
 
       {/* Row of 3 Images */}
-      <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
+      <div className="hidden lg:block h-[25vh] w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="flex flex-col justify-center items-center text-center gap-4">
           <div className="flex items-start mb-2 gap-4">
-            <div className="relative m-2 w-1/2 group cursor-pointer transition-transform hover:scale-105">
+            <div className="relative m-2 w-1/2">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
                 Rolex
               </div>
@@ -44,11 +44,11 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.jpg"
                   alt="Rolex"
-                  className="rounded shadow-lg"
+                  className="rounded"
                 />
               </Link>
             </div>
-            <div className="relative m-2 w-1/4 group cursor-pointer transition-transform hover:scale-105">
+            <div className="relative m-2 w-1/4">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
                 Audemars Piguet
               </div>
@@ -56,11 +56,11 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet.png"
                   alt="Audemars Piguet"
-                  className="rounded shadow-lg"
+                  className="rounded"
                 />
               </Link>
             </div>
-            <div className="relative m-2 w-1/4 group cursor-pointer transition-transform hover:scale-105">
+            <div className="relative m-2 w-1/4">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
                 Patek Philippe
               </div>
@@ -68,7 +68,7 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.png"
                   alt="Patek Philippe"
-                  className="rounded shadow-lg"
+                  className="rounded"
                 />
               </Link>
             </div>
@@ -76,11 +76,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Second Row of 3 Images */}
-      <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
+      {/* Row of 3 Images */}
+      <div className="hidden lg:block h-[25vh] w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="flex flex-col justify-center items-center text-center gap-4">
           <div className="flex items-start mb-2 gap-4">
-            <div className="relative m-2 w-1/2 group cursor-pointer transition-transform hover:scale-105">
+            <div className="relative m-2 w-1/2">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
                 Cartier
               </div>
@@ -88,11 +88,11 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.webp"
                   alt="Cartier"
-                  className="rounded shadow-lg"
+                  className="rounded"
                 />
               </Link>
             </div>
-            <div className="relative m-2 w-1/4 group cursor-pointer transition-transform hover:scale-105">
+            <div className="relative m-2 w-1/4">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
                 Tag Hauer
               </div>
@@ -100,11 +100,11 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.webp"
                   alt="Tag Hauer"
-                  className="rounded shadow-lg"
+                  className="rounded"
                 />
               </Link>
             </div>
-            <div className="relative m-2 w-1/4 group cursor-pointer transition-transform hover:scale-105">
+            <div className="relative m-2 w-1/4">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
                 Hublot
               </div>
@@ -112,7 +112,7 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.jpg"
                   alt="Hublot"
-                  className="rounded shadow-lg"
+                  className="rounded"
                 />
               </Link>
             </div>
