@@ -18,7 +18,7 @@ module.exports = withStoreConfig({
       },
       {
         protocol: "https",
-        hostname: "medusajs-server.fra1.digitaloceanspaces.com",
+        hostname: "medusajs-server.fra1.cdn.digitaloceanspaces.com",
       },
       {
         protocol: "https",
