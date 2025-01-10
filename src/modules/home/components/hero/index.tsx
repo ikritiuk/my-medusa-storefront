@@ -81,7 +81,7 @@ const Hero = () => {
       </div>
 
       {/* Full-Width Image */}
-      <div className="w-full">
+      <div className="hidden lg:block w-full">
         <Link href="/collections/rolex">
           <img
             src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
