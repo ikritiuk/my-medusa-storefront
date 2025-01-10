@@ -139,7 +139,7 @@ const Hero = () => {
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
         {/* Video Section for Mobile */}
         <div className="relative w-full overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center">
+          <div className="absolute inset-x-4 top-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center">
             Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ
           </div>
           <Link href="/collections/rolex" className="w-full">
@@ -157,7 +157,9 @@ const Hero = () => {
         </div>
         <div className="flex flex-col items-center mb-6 gap-4">
           {/* Title Section */}
-          <h2 className="text-lg font-semibold mb-4 text-center">Популярные бренды</h2>
+          <div className="flex items-center justify-center h-[100vh]">
+            <h2 className="text-lg font-semibold text-center">Популярные бренды</h2>
+          </div>
           {/* Brand Images */}
           <div className="flex flex-col items-center gap-4">
             <div className="relative text-center w-full">
