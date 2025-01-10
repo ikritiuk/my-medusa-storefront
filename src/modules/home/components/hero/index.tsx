@@ -33,87 +33,99 @@ const Hero = () => {
       </div>
 
       {/* Row of 3 Images */}
-      <div className="hidden lg:block h-[25vh] w-full border-b border-ui-border-base relative overflow-hidden">
-        <div className="flex flex-col justify-center items-center text-center gap-4">
-          <div className="flex items-start mb-2 gap-4">
-            <div className="relative m-2 w-1/2">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Rolex
-              </div>
+      <div className="hidden lg:block w-full border-b border-ui-border-base py-8">
+        <div className="flex flex-col justify-center items-center text-center gap-6">
+          <div className="grid grid-cols-3 gap-6">
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/rolex">
-                <img
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.jpg"
-                  alt="Rolex"
-                  className="rounded"
-                />
+                <div className="relative">
+                  <img
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.jpg"
+                    alt="Rolex"
+                    className="rounded shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-white text-lg font-semibold">Rolex</span>
+                  </div>
+                </div>
               </Link>
             </div>
-            <div className="relative m-2 w-1/4">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Audemars Piguet
-              </div>
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/piguet">
-                <img
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet.png"
-                  alt="Audemars Piguet"
-                  className="rounded"
-                />
+                <div className="relative">
+                  <img
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet.png"
+                    alt="Audemars Piguet"
+                    className="rounded shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-white text-lg font-semibold">Audemars Piguet</span>
+                  </div>
+                </div>
               </Link>
             </div>
-            <div className="relative m-2 w-1/4">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Patek Philippe
-              </div>
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/patek">
-                <img
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.png"
-                  alt="Patek Philippe"
-                  className="rounded"
-                />
+                <div className="relative">
+                  <img
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.png"
+                    alt="Patek Philippe"
+                    className="rounded shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-white text-lg font-semibold">Patek Philippe</span>
+                  </div>
+                </div>
               </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Row of 3 Images */}
-      <div className="hidden lg:block h-[25vh] w-full border-b border-ui-border-base relative overflow-hidden">
-        <div className="flex flex-col justify-center items-center text-center gap-4">
-          <div className="flex items-start mb-2 gap-4">
-            <div className="relative m-2 w-1/2">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Cartier
-              </div>
+      {/* Second Row of 3 Images */}
+      <div className="hidden lg:block w-full border-b border-ui-border-base py-8">
+        <div className="flex flex-col justify-center items-center text-center gap-6">
+          <div className="grid grid-cols-3 gap-6">
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/cartier">
-                <img
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.webp"
-                  alt="Cartier"
-                  className="rounded"
-                />
+                <div className="relative">
+                  <img
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.webp"
+                    alt="Cartier"
+                    className="rounded shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-white text-lg font-semibold">Cartier</span>
+                  </div>
+                </div>
               </Link>
             </div>
-            <div className="relative m-2 w-1/4">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Tag Hauer
-              </div>
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/tag-hauer">
-                <img
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.webp"
-                  alt="Tag Hauer"
-                  className="rounded"
-                />
+                <div className="relative">
+                  <img
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.webp"
+                    alt="Tag Hauer"
+                    className="rounded shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-white text-lg font-semibold">Tag Hauer</span>
+                  </div>
+                </div>
               </Link>
             </div>
-            <div className="relative m-2 w-1/4">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded z-10">
-                Hublot
-              </div>
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/hublot">
-                <img
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.jpg"
-                  alt="Hublot"
-                  className="rounded"
-                />
+                <div className="relative">
+                  <img
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.jpg"
+                    alt="Hublot"
+                    className="rounded shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-white text-lg font-semibold">Hublot</span>
+                  </div>
+                </div>
               </Link>
             </div>
           </div>
