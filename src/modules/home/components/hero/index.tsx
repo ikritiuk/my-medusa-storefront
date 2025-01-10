@@ -29,20 +29,29 @@ const Hero = () => {
       </div>
 
       <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
-        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-2 hidden lg:flex">
+        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-4">
           {/* Title Section */}
           <h2 className="text-xl font-bold mb-6">Популярные бренды</h2>
-          {/* Brand Images */}
+          {/* Brand Names and Images */}
           <div className="flex items-center mb-2">
-            <Link href="/collections/rolex" className="m-2 w-full md:w-1/2">
-              <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg" alt="Logo" />
-            </Link>
-            <Link href="/collections/piguet" className="m-2 w-1/4">
-              <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png" alt="Logo" />
-            </Link>
-            <Link href="/collections/patek" className="m-2 w-1/4">
-              <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png" alt="Logo" />
-            </Link>
+            <div className="m-2 w-full md:w-1/2 text-center">
+              <p className="font-medium mb-2">Rolex</p>
+              <Link href="/collections/rolex">
+                <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg" alt="Rolex" />
+              </Link>
+            </div>
+            <div className="m-2 w-1/4 text-center">
+              <p className="font-medium mb-2">Audemars Piguet</p>
+              <Link href="/collections/piguet">
+                <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png" alt="Audemars Piguet" />
+              </Link>
+            </div>
+            <div className="m-2 w-1/4 text-center">
+              <p className="font-medium mb-2">Patek Philippe</p>
+              <Link href="/collections/patek">
+                <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png" alt="Patek Philippe" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -77,17 +86,37 @@ const Hero = () => {
         <div className="flex flex-col items-center mb-6 gap-4">
           {/* Title Section */}
           <h2 className="text-lg font-semibold mb-4">Популярные бренды</h2>
-          {/* Brand Images */}
-          <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
-            <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg" alt="hero-image-1" />
-          </Link>
-          <div className="flex items-center justify-between w-full gap-4">
-            <Link href="/collections/piguet" className="w-1/2 h-full">
-              <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png" alt="hero-image-2" />
-            </Link>
-            <Link href="/collections/patek" className="w-1/2 h-full">
-              <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png" alt="hero-image-3" />
-            </Link>
+          {/* Brand Names and Images */}
+          <div className="flex flex-col items-center gap-4">
+            <div className="text-center">
+              <p className="font-medium mb-2">Rolex</p>
+              <Link href="/collections/rolex">
+                <img
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
+                  alt="Rolex"
+                />
+              </Link>
+            </div>
+            <div className="flex items-center justify-between w-full gap-4">
+              <div className="w-1/2 text-center">
+                <p className="font-medium mb-2">Audemars Piguet</p>
+                <Link href="/collections/piguet">
+                  <img
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
+                    alt="Audemars Piguet"
+                  />
+                </Link>
+              </div>
+              <div className="w-1/2 text-center">
+                <p className="font-medium mb-2">Patek Philippe</p>
+                <Link href="/collections/patek">
+                  <img
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
+                    alt="Patek Philippe"
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
         {/* Full-Width Image for Mobile */}
