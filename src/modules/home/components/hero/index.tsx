@@ -80,6 +80,17 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Full-Width Image */}
+      <div className="w-full">
+        <Link href="/collections/rolex">
+          <img
+            src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
+            alt="Full Width Image"
+            className="w-full h-auto mt-6 object-cover cursor-pointer"
+          />
+        </Link>
+      </div>
+
       {/* Row of 4 Images */}
       <div className="hidden lg:block w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-4">
@@ -105,6 +116,24 @@ const Hero = () => {
 
       {/* Mobile Layout */}
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
+        {/* Video Section for Mobile */}
+        <div className="mb-6">
+          <Link href="/collections/rolex" className="w-full">
+            <div className="relative w-full overflow-hidden">
+              <video
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
+                poster="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex-preview.jpg"
+                className="w-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              />
+            </div>
+          </Link>
+        </div>
+
         {/* Row of 3 Images for Mobile */}
         <div className="flex flex-col items-center mb-6 gap-4">
           <h2 className="text-lg font-semibold mb-4">Популярные бренды</h2>
@@ -166,6 +195,16 @@ const Hero = () => {
               </Link>
             </div>
           ))}
+        </div>
+        {/* Full-Width Image for Mobile */}
+        <div className="w-full">
+          <Link href="/collections/rolex">
+            <img
+              src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
+              alt="Full Width Image"
+              className="w-full h-auto mt-4 object-cover cursor-pointer"
+            />
+          </Link>
         </div>
       </div>
     </div>
