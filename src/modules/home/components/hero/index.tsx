@@ -32,24 +32,45 @@ const Hero = () => {
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-4">
           {/* Title Section */}
           <h2 className="text-xl font-bold mb-6">Популярные бренды</h2>
-          {/* Brand Names and Images */}
-          <div className="flex items-center mb-2">
-            <div className="m-2 w-full md:w-1/2 text-center">
-              <p className="font-medium mb-2">Rolex</p>
+          {/* Brand Images */}
+          <div className="flex items-center mb-2 gap-4">
+            <div className="relative m-2 w-full md:w-1/2">
+              {/* Brand Name */}
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                Rolex
+              </div>
               <Link href="/collections/rolex">
-                <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg" alt="Rolex" />
+                <img
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
+                  alt="Rolex"
+                  className="rounded"
+                />
               </Link>
             </div>
-            <div className="m-2 w-1/4 text-center">
-              <p className="font-medium mb-2">Audemars Piguet</p>
+            <div className="relative m-2 w-1/4">
+              {/* Brand Name */}
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                Audemars Piguet
+              </div>
               <Link href="/collections/piguet">
-                <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png" alt="Audemars Piguet" />
+                <img
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
+                  alt="Audemars Piguet"
+                  className="rounded"
+                />
               </Link>
             </div>
-            <div className="m-2 w-1/4 text-center">
-              <p className="font-medium mb-2">Patek Philippe</p>
+            <div className="relative m-2 w-1/4">
+              {/* Brand Name */}
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                Patek Philippe
+              </div>
               <Link href="/collections/patek">
-                <img src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png" alt="Patek Philippe" />
+                <img
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
+                  alt="Patek Philippe"
+                  className="rounded"
+                />
               </Link>
             </div>
           </div>
@@ -86,33 +107,45 @@ const Hero = () => {
         <div className="flex flex-col items-center mb-6 gap-4">
           {/* Title Section */}
           <h2 className="text-lg font-semibold mb-4">Популярные бренды</h2>
-          {/* Brand Names and Images */}
+          {/* Brand Images */}
           <div className="flex flex-col items-center gap-4">
-            <div className="text-center">
-              <p className="font-medium mb-2">Rolex</p>
+            <div className="relative text-center">
+              {/* Brand Name */}
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                Rolex
+              </div>
               <Link href="/collections/rolex">
                 <img
                   src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
                   alt="Rolex"
+                  className="rounded"
                 />
               </Link>
             </div>
             <div className="flex items-center justify-between w-full gap-4">
-              <div className="w-1/2 text-center">
-                <p className="font-medium mb-2">Audemars Piguet</p>
+              <div className="relative w-1/2 text-center">
+                {/* Brand Name */}
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                  Audemars Piguet
+                </div>
                 <Link href="/collections/piguet">
                   <img
                     src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
                     alt="Audemars Piguet"
+                    className="rounded"
                   />
                 </Link>
               </div>
-              <div className="w-1/2 text-center">
-                <p className="font-medium mb-2">Patek Philippe</p>
+              <div className="relative w-1/2 text-center">
+                {/* Brand Name */}
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                  Patek Philippe
+                </div>
                 <Link href="/collections/patek">
                   <img
                     src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                     alt="Patek Philippe"
+                    className="rounded"
                   />
                 </Link>
               </div>
