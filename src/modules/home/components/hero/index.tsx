@@ -83,36 +83,36 @@ const Hero = () => {
           <div className="flex items-start mb-2 gap-4">
             <div className="relative m-2 w-1/2">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
-                Rolex
+                Cartier
               </div>
-              <Link href="/collections/rolex">
+              <Link href="/collections/cartier">
                 <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
-                  alt="Rolex"
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.webp"
+                  alt="Cartier"
                   className="rounded"
                 />
               </Link>
             </div>
             <div className="relative m-2 w-1/4">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
-                Audemars Piguet
+                Tag Hauer
               </div>
-              <Link href="/collections/piguet">
+              <Link href="/collections/tag-hauer">
                 <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
-                  alt="Audemars Piguet"
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.jpg"
+                  alt="Tag Hauer"
                   className="rounded"
                 />
               </Link>
             </div>
             <div className="relative m-2 w-1/4">
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
-                Patek Philippe
+                Hublot
               </div>
-              <Link href="/collections/patek">
+              <Link href="/collections/hublot">
                 <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
-                  alt="Patek Philippe"
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.jpg"
+                  alt="Hublot"
                   className="rounded"
                 />
               </Link>
@@ -293,6 +293,49 @@ const Hero = () => {
                   <img
                     src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                     alt="Patek Philippe"
+                    className="rounded"
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="relative text-center w-full">
+              {/* Brand Name */}
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                Cartier
+              </div>
+              <Link href="/collections/cartier">
+                <img
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/cartier-hero.jpg"
+                  alt="Cartier"
+                  className="rounded"
+                />
+              </Link>
+            </div>
+            <div className="flex items-center justify-between w-full gap-4">
+              <div className="relative w-1/2 text-center">
+                {/* Brand Name */}
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                  Tag Hauer
+                </div>
+                <Link href="/collections/piguet">
+                  <img
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.png"
+                    alt="Tag Hauer"
+                    className="rounded"
+                  />
+                </Link>
+              </div>
+              <div className="relative w-1/2 text-center">
+                {/* Brand Name */}
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                  Hublot
+                </div>
+                <Link href="/collections/hublot">
+                  <img
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.png"
+                    alt="Hublot"
                     className="rounded"
                   />
                 </Link>
