@@ -139,7 +139,7 @@ const Hero = () => {
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
         {/* Video Section for Mobile */}
         <div className="relative w-full overflow-hidden">
-          <div className="absolute inset-x-4 top-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center">
             Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ
           </div>
           <Link href="/collections/rolex" className="w-full">
