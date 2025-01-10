@@ -99,7 +99,7 @@ const Hero = () => {
               </div>
               <Link href="/collections/tag-hauer">
                 <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.jpg"
+                  src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.webp"
                   alt="Tag Hauer"
                   className="rounded"
                 />
@@ -278,7 +278,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/tag-hauer">
                   <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.jpg"
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/th-hero.webp"
                     alt="Tag Hauer"
                     className="rounded"
                   />
@@ -291,7 +291,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/hublot">
                   <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.png"
+                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hublot-hero.jpg"
                     alt="Hublot"
                     className="rounded"
                   />
