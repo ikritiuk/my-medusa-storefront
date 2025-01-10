@@ -33,7 +33,7 @@ const Hero = () => {
           {/* Title Section */}
           <h2 className="text-xl font-bold mb-6">Популярные бренды</h2>
           {/* Brand Images */}
-          <div className="flex items-center mb-2 gap-4">
+          <div className="flex items-start mb-2 gap-4">
             <div className="relative m-2 w-1/2">
               {/* Brand Name */}
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
