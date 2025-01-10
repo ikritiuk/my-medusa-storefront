@@ -38,7 +38,6 @@ const Hero = () => {
         <div className="flex flex-col justify-center items-center text-center gap-4">
           <div className="flex items-start mb-2 gap-4">
             <div className="relative m-2 w-1/2">
-              {/* Brand Name */}
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
                 Rolex
               </div>
@@ -51,7 +50,6 @@ const Hero = () => {
               </Link>
             </div>
             <div className="relative m-2 w-1/4">
-              {/* Brand Name */}
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
                 Audemars Piguet
               </div>
@@ -64,7 +62,6 @@ const Hero = () => {
               </Link>
             </div>
             <div className="relative m-2 w-1/4">
-              {/* Brand Name */}
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
                 Patek Philippe
               </div>
@@ -80,8 +77,66 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Row of 4 Images */}
+      <div className="hidden lg:block w-full border-b border-ui-border-base">
+        <div className="flex items-start justify-center gap-4 mb-6">
+          {/* Image 1 */}
+          <div className="relative w-1/4">
+            <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
+              Brand 1
+            </div>
+            <Link href="/collections/brand1">
+              <img
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand1.png"
+                alt="Brand 1"
+                className="rounded"
+              />
+            </Link>
+          </div>
+          {/* Image 2 */}
+          <div className="relative w-1/4">
+            <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
+              Brand 2
+            </div>
+            <Link href="/collections/brand2">
+              <img
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand2.png"
+                alt="Brand 2"
+                className="rounded"
+              />
+            </Link>
+          </div>
+          {/* Image 3 */}
+          <div className="relative w-1/4">
+            <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
+              Brand 3
+            </div>
+            <Link href="/collections/brand3">
+              <img
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand3.png"
+                alt="Brand 3"
+                className="rounded"
+              />
+            </Link>
+          </div>
+          {/* Image 4 */}
+          <div className="relative w-1/4">
+            <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
+              Brand 4
+            </div>
+            <Link href="/collections/brand4">
+              <img
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand4.png"
+                alt="Brand 4"
+                className="rounded"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Full-Width Image */}
-      <div className="hidden lg:block w-full">
+      <div className="w-full">
         <Link href="/collections/rolex">
           <img
             src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
@@ -91,24 +146,77 @@ const Hero = () => {
         </Link>
       </div>
 
-      {/* Row of 4 Images */}
-      <div className="hidden lg:block w-full border-b border-ui-border-base">
-        <div className="flex items-start gap-4 mb-6 justify-center">
-          {[1, 2, 3, 4].map((_, index) => (
-            <div key={index} className="relative w-1/4">
-              {/* Brand Name */}
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
-                Patek Philippe
-              </div>
-              <Link href="/collections/patek">
-                <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
-                  alt="Patek Philippe"
-                  className="rounded"
-                />
-              </Link>
+      {/* Mobile Layout */}
+      <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
+        {/* Video Section for Mobile */}
+        <div className="mb-6">
+          <Link href="/collections/rolex" className="w-full">
+            <div className="relative w-full overflow-hidden">
+              <video
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
+                poster="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex-preview.jpg"
+                className="w-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              />
             </div>
-          ))}
+          </Link>
+        </div>
+
+        {/* Mobile version of the row with 4 images */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {/* Individual items for each image */}
+          <div className="relative">
+            <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+              Brand 1
+            </div>
+            <Link href="/collections/brand1">
+              <img
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand1.png"
+                alt="Brand 1"
+                className="rounded w-full"
+              />
+            </Link>
+          </div>
+          <div className="relative">
+            <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+              Brand 2
+            </div>
+            <Link href="/collections/brand2">
+              <img
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand2.png"
+                alt="Brand 2"
+                className="rounded w-full"
+              />
+            </Link>
+          </div>
+          <div className="relative">
+            <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+              Brand 3
+            </div>
+            <Link href="/collections/brand3">
+              <img
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand3.png"
+                alt="Brand 3"
+                className="rounded w-full"
+              />
+            </Link>
+          </div>
+          <div className="relative">
+            <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+              Brand 4
+            </div>
+            <Link href="/collections/brand4">
+              <img
+                src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-brand4.png"
+                alt="Brand 4"
+                className="rounded w-full"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
