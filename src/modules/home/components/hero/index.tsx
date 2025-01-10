@@ -98,7 +98,7 @@ const Hero = () => {
             <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
               Brand 2
             </div>
-            <Link href="/collections/brand2">
+            <Link href="/collections/patek">
               <img
                 src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 2"
@@ -111,7 +111,7 @@ const Hero = () => {
             <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
               Brand 3
             </div>
-            <Link href="/collections/brand3">
+            <Link href="/collections/patek">
               <img
                 src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 3"
@@ -124,7 +124,7 @@ const Hero = () => {
             <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded z-10">
               Brand 4
             </div>
-            <Link href="/collections/brand4">
+            <Link href="/collections/patek">
               <img
                 src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 4"
@@ -185,7 +185,7 @@ const Hero = () => {
             <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
               Brand 2
             </div>
-            <Link href="/collections/brand2">
+            <Link href="/collections/patek">
               <img
                 src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 2"
@@ -197,7 +197,7 @@ const Hero = () => {
             <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
               Brand 3
             </div>
-            <Link href="/collections/brand3">
+            <Link href="/collections/patek">
               <img
                 src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 3"
@@ -209,7 +209,7 @@ const Hero = () => {
             <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
               Brand 4
             </div>
-            <Link href="/collections/brand4">
+            <Link href="/collections/patek">
               <img
                 src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
                 alt="Brand 4"
