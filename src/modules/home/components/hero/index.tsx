@@ -6,29 +6,25 @@ const Hero = () => {
   return (
     <div className="relative bg-ui-bg-subtle">
       {/* Large screen (lg and up) */}
-      <div className="hidden lg:block h-screen w-full border-b border-ui-border-base relative overflow-hidden">
-        <div className="absolute top-4 left-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20">
-          Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ
-        </div>
-        <div className="flex flex-col justify-center items-center text-center gap-2">
-          {/* Video Section */}
-          <div className="flex items-center mb-2 w-full">
-            <Link href="/collections/rolex" className="m-2 w-full">
-              <div className="relative w-full h-full overflow-hidden">
-                <video
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/panda-hero.mp4"
-                  poster="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/panda-hero-preview.jpg"
-                  className="w-full h-full object-cover translate-y-[-10%]"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                />
-              </div>
-            </Link>
+      <div className="hidden lg:block h-[80vh] w-full border-b border-ui-border-base relative overflow-hidden">
+        <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50 z-20">
+          <div className="text-center text-white px-4">
+            <h1 className="text-3xl font-bold mb-2">Премиум часы</h1>
+            <p className="text-lg mb-4">Высококачественные материалы из Европы. Доставка во все регионы РФ.</p>
+            <Link href="/collections/rolex" className="inline-block bg-white text-black font-semibold px-6 py-2 rounded">Explore Now</Link>
           </div>
         </div>
+        <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
+        <video
+          src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/panda-hero.mp4"
+          poster="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/panda-hero-preview.jpg"
+          className="w-full h-full object-cover"
+          muted
+          autoPlay
+          loop
+          playsInline
+          preload="auto"
+        />
       </div>
 
       {/* Title Section */}
