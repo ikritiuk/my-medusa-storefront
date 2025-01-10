@@ -28,11 +28,42 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Row of 4 Images */}
+      <div className="hidden lg:block w-full border-b border-ui-border-base relative overflow-hidden">
+        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-4">
+          <div className="flex items-start gap-4 mb-6">
+            {[
+              { src: "https://medusajs-server.fra1.digitaloceanspaces.com/image1.jpg", name: "Brand 1", link: "/collections/brand1" },
+              { src: "https://medusajs-server.fra1.digitaloceanspaces.com/image2.jpg", name: "Brand 2", link: "/collections/brand2" },
+              { src: "https://medusajs-server.fra1.digitaloceanspaces.com/image3.jpg", name: "Brand 3", link: "/collections/brand3" },
+              { src: "https://medusajs-server.fra1.digitaloceanspaces.com/image4.jpg", name: "Brand 4", link: "/collections/brand4" },
+            ].map((item, index) => (
+              <div key={index} className="relative w-1/4">
+                {/* Brand Name */}
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                  {item.name}
+                </div>
+                <Link href={item.link}>
+                  <img
+                    src={item.src}
+                    alt={item.name}
+                    className="rounded"
+                  />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Title Section */}
+      <div className="hidden lg:block w-full text-center my-6">
+        <h2 className="text-xl font-bold">Популярные бренды</h2>
+      </div>
+
+      {/* Row of 3 Images */}
       <div className="hidden lg:block h-[50vh] w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center gap-4">
-          {/* Title Section */}
-          <h2 className="text-xl font-bold mb-6">Популярные бренды</h2>
-          {/* Brand Images */}
           <div className="flex items-start mb-2 gap-4">
             <div className="relative m-2 w-1/2">
               {/* Brand Name */}
@@ -77,90 +108,30 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Full-Width Image */}
-      <div className="hidden lg:block w-full">
-        <Link href="/collections/rolex">
-          <img
-            src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
-            alt="Full Width Image"
-            className="w-full h-auto mt-6 object-cover cursor-pointer"
-          />
-        </Link>
-      </div>
-
-      {/* Small and medium screens (sm to md) */}
+      {/* Mobile Layout */}
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
-        <div className="flex flex-col items-center mb-6">
-          <Link href="/collections/rolex" className="w-full sm:w-full md:w-full sm:max-w-none md:max-w-none h-full">
-            <video
-              src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.mp4"
-              poster="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex-preview.jpg"
-              className="w-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-            />
-          </Link>
-        </div>
-        <div className="flex flex-col items-center mb-6 gap-4">
-          {/* Title Section */}
-          <h2 className="text-lg font-semibold mb-4">Популярные бренды</h2>
-          {/* Brand Images */}
-          <div className="flex flex-col items-center gap-4">
-            <div className="relative text-center w-full">
+        {/* 4 Images in Mobile Layout */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {[
+            { src: "https://medusajs-server.fra1.digitaloceanspaces.com/image1.jpg", name: "Brand 1", link: "/collections/brand1" },
+            { src: "https://medusajs-server.fra1.digitaloceanspaces.com/image2.jpg", name: "Brand 2", link: "/collections/brand2" },
+            { src: "https://medusajs-server.fra1.digitaloceanspaces.com/image3.jpg", name: "Brand 3", link: "/collections/brand3" },
+            { src: "https://medusajs-server.fra1.digitaloceanspaces.com/image4.jpg", name: "Brand 4", link: "/collections/brand4" },
+          ].map((item, index) => (
+            <div key={index} className="relative">
               {/* Brand Name */}
               <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
-                Rolex
+                {item.name}
               </div>
-              <Link href="/collections/rolex">
+              <Link href={item.link}>
                 <img
-                  src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-rolex.jpg"
-                  alt="Rolex"
-                  className="rounded"
+                  src={item.src}
+                  alt={item.name}
+                  className="rounded w-full"
                 />
               </Link>
             </div>
-            <div className="flex items-center justify-between w-full gap-4">
-              <div className="relative w-1/2 text-center">
-                {/* Brand Name */}
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
-                  Audemars Piguet
-                </div>
-                <Link href="/collections/piguet">
-                  <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-piguet.png"
-                    alt="Audemars Piguet"
-                    className="rounded"
-                  />
-                </Link>
-              </div>
-              <div className="relative w-1/2 text-center">
-                {/* Brand Name */}
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
-                  Patek Philippe
-                </div>
-                <Link href="/collections/patek">
-                  <img
-                    src="https://medusajs-server.fra1.digitaloceanspaces.com/hero-patek.png"
-                    alt="Patek Philippe"
-                    className="rounded"
-                  />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Full-Width Image for Mobile */}
-        <div className="w-full">
-          <Link href="/collections/rolex">
-            <img
-              src="https://medusajs-server.fra1.digitaloceanspaces.com/row-rolex.jpg"
-              alt="Full Width Image"
-              className="w-full h-auto mt-4 object-cover cursor-pointer"
-            />
-          </Link>
+          ))}
         </div>
       </div>
     </div>
