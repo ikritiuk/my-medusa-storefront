@@ -33,12 +33,12 @@ const ProductPreview = ({
             {price ? (
               <>
                 {price.price_type === "sale" && (
-                  <Text className="line-through text-ui-fg-muted">
+                  <Text className="line-through text-ui-fg-subtle">
                     {formatCurrency(price.original_price)}
                   </Text>
                 )}
                 <Text
-                  className={clsx("text-ui-fg-muted", {
+                  className={clsx("text-ui-fg-subtle", {
                     "text-ui-fg-interactive": price.price_type === "sale",
                   })}
                 >
