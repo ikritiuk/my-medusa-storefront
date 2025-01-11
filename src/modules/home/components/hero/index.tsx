@@ -335,10 +335,9 @@ const Hero = () => {
                       className="rounded shadow-lg transition-transform duration-500 hover:scale-110"
                     />
                     <div
-                      className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
+                      className="absolute bottom-2 left-2 right-2 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                       {watch.name}
                     </div>
-
                   </div>
                 </Link>
               </div>
