@@ -230,7 +230,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center justify-between w-full gap-4">
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400">
                   Tag Hauer
                 </div>
                 <Link href="/collections/tag-hauer">
@@ -242,7 +242,7 @@ const Hero = () => {
                 </Link>
               </div>
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400">
                   Hublot
                 </div>
                 <Link href="/collections/hublot">
