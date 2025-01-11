@@ -174,7 +174,7 @@ const Hero = () => {
           {/* Brand Images */}
           <div className="flex flex-col items-center gap-4">
             <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-transform duration-300 group-hover:translate-y-[-2px] group-hover:scale-105">
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                 Rolex
               </div>
               <Link href="/collections/rolex">
