@@ -7,7 +7,7 @@ const trendingWatches = [
   {
     name: "Rolex Submariner Date Black Dial Blue Bezel",
     image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/rolex-submariner-date-126619lb-white-gold-black-dial-blue-bezel-2023-rolex-41374317052148_1280x-1720021169543.jpg",
-    link: "https://www.luxury24.shop/products/rolex-submariner-date-126619-lb-white-gold-black-dial-blue-bezel",
+    link: "/products/rolex-submariner-date-126619-lb-white-gold-black-dial-blue-bezel",
   },
   {
     name: "Patek Philippe Nautilus",
