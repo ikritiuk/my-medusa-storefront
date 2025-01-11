@@ -40,7 +40,7 @@ const Hero = () => {
               <Link href="/collections/rolex">
                 <div className="relative">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.jpg"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/rolex-daytona-hero.avif"
                     alt="Rolex"
                     className="rounded shadow-lg"
                   />
