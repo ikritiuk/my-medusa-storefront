@@ -347,49 +347,28 @@ const [desktopIndex, setDesktopIndex] = useState(0);
             </div>
           </div>
         </div>
-        {/* Mobile Carousel */}
         <div className="lg:hidden relative mt-8 px-4">
           <h2 className="text-lg font-semibold text-center mb-4">
             Trending Watches
           </h2>
-          <div className="overflow-hidden relative w-full">
-            <div
-              className="flex transition-transform duration-500"
-              style={{
-                transform: `translateX(-${mobileIndex * 100}%)`,
-                width: `${trendingWatches.length * 100}%`,
-              }}
-            >
-              {trendingWatches.map((watch, index) => (
-                <div key={index} className="flex-none w-full px-2">
-                  <Link href={watch.link}>
-                    <div className="relative">
-                      <img
-                        src={watch.image}
-                        alt={watch.name}
-                        className="rounded-lg shadow-lg object-cover w-full h-60"
-                      />
-                      <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
-                        {watch.name}
-                      </div>
+          <div className="flex overflow-x-auto space-x-4 scrollbar-hide">
+            {trendingWatches.map((watch, index) => (
+              <div key={index} className="flex-none w-80">
+                <Link href={watch.link}>
+                  <div className="relative">
+                    <img
+                      src={watch.image}
+                      alt={watch.name}
+                      className="rounded-lg shadow-lg object-cover w-full h-60"
+                    />
+                    <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
+                      {watch.name}
                     </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
-          <button
-            onClick={handlePrevMobile}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-70 z-10"
-          >
-            &larr;
-          </button>
-          <button
-            onClick={handleNextMobile}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-70 z-10"
-          >
-            &rarr;
-          </button>
         </div>
       </div>
     </div>
