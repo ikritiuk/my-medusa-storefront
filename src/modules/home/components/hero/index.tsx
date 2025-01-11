@@ -9,9 +9,18 @@ const Hero = () => {
       <div className="hidden lg:block h-[80vh] w-full border-b border-ui-border-base relative overflow-hidden">
         <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50 z-20">
           <div className="text-center text-white px-4">
-            <h1 className="text-3xl font-bold mb-2">Премиум часы</h1>
-            <p className="text-lg mb-4">Высококачественные материалы из Европы. Доставка во все регионы РФ.</p>
-            <Link href="/collections/rolex" className="inline-block bg-white text-black font-semibold px-6 py-2 rounded">Explore Now</Link>
+            <h1 className="text-3xl font-bold mb-2 opacity-0 translate-y-4 transition-all duration-1000 ease-in-out delay-200 animate-fade-slide-up">
+              Премиум часы
+            </h1>
+            <p className="text-lg mb-4 opacity-0 translate-y-4 transition-all duration-1000 ease-in-out delay-500 animate-fade-slide-up">
+              Высококачественные материалы из Европы. Доставка во все регионы РФ.
+            </p>
+            <Link
+              href="/collections/rolex"
+              className="inline-block bg-white text-black font-semibold px-6 py-2 rounded shadow-lg transform scale-95 opacity-0 transition-all duration-1000 ease-in-out delay-700 hover:scale-105 animate-fade-slide-up"
+            >
+              Explore Now
+            </Link>
           </div>
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
