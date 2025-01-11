@@ -239,14 +239,14 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.avif"
                   alt="Rolex"
-                  className="rounded shadow-lg transition-transform duration-500 hover:scale-105 hover:rotate-1"
+                  className="rounded shadow-lg transition-transform duration-500 hover:scale-105 hover:transform hover:origin-center"
                 />
               </Link>
             </div>
 
             {/* Grid with Swipeable Effect */}
             <div className="flex items-center justify-between w-full gap-4">
-              <div className="relative w-1/2 text-center">
+              <div className="relative w-1/2 text-center overflow-hidden rounded">
                 <div
                   className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Audemars Piguet
@@ -259,7 +259,7 @@ const Hero = () => {
                   />
                 </Link>
               </div>
-              <div className="relative w-1/2 text-center">
+              <div className="relative w-1/2 text-center overflow-hidden rounded">
                 <div
                   className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Patek Philippe
@@ -285,12 +285,12 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero-mobile.avif"
                   alt="Cartier"
-                  className="rounded shadow-lg transition-transform duration-500 hover:scale-105 hover:-rotate-1"
+                  className="rounded shadow-lg transition-transform duration-500 hover:scale-105 hover:transform hover:origin-center"
                 />
               </Link>
             </div>
             <div className="flex items-center justify-between w-full gap-4">
-              <div className="relative w-1/2 text-center">
+              <div className="relative w-1/2 text-center overflow-hidden rounded">
                 <div
                   className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Tag Hauer
@@ -303,7 +303,7 @@ const Hero = () => {
                   />
                 </Link>
               </div>
-              <div className="relative w-1/2 text-center">
+              <div className="relative w-1/2 text-center overflow-hidden rounded">
                 <div
                   className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Hublot
