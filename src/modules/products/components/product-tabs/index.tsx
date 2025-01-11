@@ -15,14 +15,6 @@ type ProductTabsProps = {
 const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
-      // {
-      //   label: "Информация о товаре",
-      //   component: <ProductInfoTab product={product} />,
-      // },
-      // {
-      //   label: "Доставка и возврат",
-      //   component: <ShippingInfoTab />,
-      // },
     ]
   }, [product])
 
