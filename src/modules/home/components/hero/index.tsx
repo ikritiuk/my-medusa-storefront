@@ -189,7 +189,7 @@ const Hero = () => {
             {/* Grid with Swipeable Effect */}
             <div className="flex items-center justify-between w-full gap-4">
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-70 text-white text-lg px-2 py-1 rounded opacity-80 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400">
                   Audemars Piguet
                 </div>
                 <Link href="/collections/piguet">
@@ -217,7 +217,7 @@ const Hero = () => {
 
           <div className="flex flex-col items-center gap-4">
             <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-lg px-3 py-1 rounded-full transition-transform duration-300 group-hover:scale-105">
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400">
                 Cartier
               </div>
               <Link href="/collections/cartier">
