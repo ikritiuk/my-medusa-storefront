@@ -87,7 +87,7 @@ const Hero = () => {
       <div className="hidden lg:block w-full border-b border-ui-border-base">
         <div className="flex flex-col justify-center items-center text-center gap-6">
           <div className="grid grid-cols-3 gap-6">
-            <div className="group relative cursor-pointer transition-transform hover:scale-110">
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/rolex">
                 <div className="relative">
                   <img
@@ -102,7 +102,7 @@ const Hero = () => {
                 </div>
               </Link>
             </div>
-            <div className="group relative cursor-pointer transition-transform hover:scale-110">
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/piguet">
                 <div className="relative">
                   <img
@@ -117,7 +117,7 @@ const Hero = () => {
                 </div>
               </Link>
             </div>
-            <div className="group relative cursor-pointer transition-transform hover:scale-110">
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/patek">
                 <div className="relative">
                   <img
@@ -140,7 +140,7 @@ const Hero = () => {
       <div className="hidden lg:block w-full border-b border-ui-border-base py-8">
         <div className="flex flex-col justify-center items-center text-center gap-6">
           <div className="grid grid-cols-3 gap-6">
-            <div className="group relative cursor-pointer transition-transform hover:scale-110">
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/cartier">
                 <div className="relative">
                   <img
@@ -155,7 +155,7 @@ const Hero = () => {
                 </div>
               </Link>
             </div>
-            <div className="group relative cursor-pointer transition-transform hover:scale-110">
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/tag-hauer">
                 <div className="relative">
                   <img
@@ -170,7 +170,7 @@ const Hero = () => {
                 </div>
               </Link>
             </div>
-            <div className="group relative cursor-pointer transition-transform hover:scale-110">
+            <div className="group relative cursor-pointer transition-transform hover:scale-105">
               <Link href="/collections/hublot">
                 <div className="relative">
                   <img
