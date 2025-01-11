@@ -187,7 +187,7 @@ const Hero = () => {
         <div className="relative w-full overflow-hidden">
           <div
             className="absolute inset-x-4 top-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center animate-fade-in">
-            Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ
+            Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ.
             <p className="text-lg mb-4">Доступно каждому, кто ценит качество.</p>
           </div>
           <Link href="/collections/rolex" className="w-full">
