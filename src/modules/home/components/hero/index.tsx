@@ -1,8 +1,15 @@
 "use client";
+import { useState } from "react";
 
 import Link from "next/link";
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleBrandClick = () => {
+    setIsVisible(false); // Hide the brand name on click
+  };
+
   return (
     <div className="relative bg-ui-bg-subtle">
       {/* Large screen (lg and up) */}
@@ -173,10 +180,16 @@ const Hero = () => {
 
           {/* Brand Images */}
           <div className="flex flex-col items-center gap-4">
+            {/* Brand Images */}
             <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
-                Rolex
-              </div>
+              {isVisible && (
+                <div
+                  className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10 cursor-pointer"
+                  onClick={handleBrandClick}
+                >
+                  Rolex
+                </div>
+              )}
               <Link href="/collections/rolex">
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.avif"
