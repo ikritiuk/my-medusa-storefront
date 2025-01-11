@@ -58,9 +58,10 @@ const Hero = () => {
           <div className="text-center text-white px-4">
             <h1 className="text-3xl font-bold mb-2">Премиум часы</h1>
             <p className="text-lg mb-4">Премиум часы
-              Изготовлены из премиальной стали 904L и оснащены лучшими механизмами на рынке.
-              Только самые популярные модели с непревзойденным качеством исполнения.
-              Эти часы подчеркнут безупречный стиль.</p>
+              Изготовлены из премиальной стали 904L и оснащены лучшими механизмами на рынке.</p>
+            <p className="text-lg mb-4">Только самые популярные модели с непревзойденным качеством исполнения</p>
+            <p className="text-lg mb-4">Эти часы подчеркнут безупречный стиль.</p>
+
             <Link href="/collections/rolex"
                   className="inline-block bg-white text-black font-semibold px-6 py-2 rounded">Подробнее</Link>
           </div>
