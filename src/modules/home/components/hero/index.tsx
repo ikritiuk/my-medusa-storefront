@@ -365,7 +365,7 @@ const Hero = () => {
         </div>
         <div className="lg:hidden relative mt-8 px-4">
           <h2 className="text-lg font-semibold text-center mb-4">
-            Trending Watches
+            Сейчас в тренде
           </h2>
           <div className="flex overflow-x-auto space-x-4 scrollbar-hide">
 
