@@ -1,9 +1,54 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
-const Hero = () => {
+const trendingWatches = [
+  {
+    name: "Rolex Daytona",
+    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.avif",
+    link: "/collections/rolex",
+  },
+  {
+    name: "Patek Philippe Nautilus",
+    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.avif",
+    link: "/collections/patek",
+  },
+  {
+    name: "Cartier Santos",
+    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.avif",
+    link: "/collections/cartier",
+  },
+  {
+    name: "Tag Heuer Carrera",
+    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.avif",
+    link: "/collections/tag-hauer",
+  },
+];
 
+const Hero = () => {
+const [desktopIndex, setDesktopIndex] = useState(0);
+  const [mobileIndex, setMobileIndex] = useState(0);
+
+  const handleNextDesktop = () => {
+    setDesktopIndex((prev) => (prev + 1) % trendingWatches.length);
+  };
+
+  const handlePrevDesktop = () => {
+    setDesktopIndex((prev) =>
+      prev === 0 ? trendingWatches.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextMobile = () => {
+    setMobileIndex((prev) => (prev + 1) % trendingWatches.length);
+  };
+
+  const handlePrevMobile = () => {
+    setMobileIndex((prev) =>
+      prev === 0 ? trendingWatches.length - 1 : prev - 1
+    );
+  };
   return (
     <div className="relative bg-ui-bg-subtle">
       {/* Large screen (lg and up) */}
@@ -12,7 +57,7 @@ const Hero = () => {
           <div className="text-center text-white px-4">
             <h1 className="text-3xl font-bold mb-2">Премиум часы</h1>
             <p className="text-lg mb-4">Высококачественные материалы из Европы. Доставка во все регионы РФ.</p>
-            <Link href="/collections/rolex" className="inline-block bg-white text-black font-semibold px-6 py-2 rounded">Explore Now</Link>
+            <Link href="/collections/rolex" className="inline-block bg-white text-black font-semibold px-6 py-2 rounded">Подробнее</Link>
           </div>
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
@@ -132,7 +177,50 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
+      {/* Desktop Carousel */}
+      <div className="hidden lg:block relative mt-8 px-4">
+        <h2 className="text-lg font-semibold text-center mb-4">
+          Trending Watches
+        </h2>
+        <div className="overflow-hidden relative w-full">
+          <div
+            className="flex transition-transform duration-500"
+            style={{
+              transform: `translateX(-${desktopIndex * 100}%)`,
+              width: `${trendingWatches.length * 100}%`,
+            }}
+          >
+            {trendingWatches.map((watch, index) => (
+              <div key={index} className="flex-none w-full px-2">
+                <Link href={watch.link}>
+                  <div className="relative">
+                    <img
+                      src={watch.image}
+                      alt={watch.name}
+                      className="rounded-lg shadow-lg object-cover w-full h-60"
+                    />
+                    <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
+                      {watch.name}
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+        <button
+          onClick={handlePrevDesktop}
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-70 z-10"
+        >
+          &larr;
+        </button>
+        <button
+          onClick={handleNextDesktop}
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-70 z-10"
+        >
+          &rarr;
+        </button>
+      </div>
       {/* Full-Width Image */}
       <div className="hidden lg:block w-full">
         <Link href="/collections/rolex">
@@ -143,6 +231,7 @@ const Hero = () => {
           />
         </Link>
       </div>
+
 
       {/* Mobile Layout */}
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
@@ -257,6 +346,50 @@ const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+        {/* Mobile Carousel */}
+        <div className="lg:hidden relative mt-8 px-4">
+          <h2 className="text-lg font-semibold text-center mb-4">
+            Trending Watches
+          </h2>
+          <div className="overflow-hidden relative w-full">
+            <div
+              className="flex transition-transform duration-500"
+              style={{
+                transform: `translateX(-${mobileIndex * 100}%)`,
+                width: `${trendingWatches.length * 100}%`,
+              }}
+            >
+              {trendingWatches.map((watch, index) => (
+                <div key={index} className="flex-none w-full px-2">
+                  <Link href={watch.link}>
+                    <div className="relative">
+                      <img
+                        src={watch.image}
+                        alt={watch.name}
+                        className="rounded-lg shadow-lg object-cover w-full h-60"
+                      />
+                      <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
+                        {watch.name}
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+          <button
+            onClick={handlePrevMobile}
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-70 z-10"
+          >
+            &larr;
+          </button>
+          <button
+            onClick={handleNextMobile}
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-70 z-10"
+          >
+            &rarr;
+          </button>
         </div>
       </div>
     </div>
