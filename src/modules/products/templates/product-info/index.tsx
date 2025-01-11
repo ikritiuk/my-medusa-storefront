@@ -19,7 +19,10 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             {product.collection.title}
           </Link>
         )}
-        <Heading level="h2" className="text-3xl leading-10 text-ui-fg-base">
+        <Heading
+          level="h2"
+          className="text-xl leading-7 text-ui-fg-base sm:text-3xl sm:leading-10"
+        >
           {product.title}
         </Heading>
 
