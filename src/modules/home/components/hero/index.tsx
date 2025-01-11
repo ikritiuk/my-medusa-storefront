@@ -10,7 +10,7 @@ const trendingWatches = [
     link: "/products/rolex-submariner-date-126619-lb-white-gold-black-dial-blue-bezel",
   },
   {
-    name: "Patek Philippe Yellow Gold",
+    name: "Audemars Piguet Yellow Gold",
     image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/audemars-piguet-royal-oak-15202ba-oo-1240ba-02-jumbo-40th-anniversary-extra-thin-yellow-gold-audemars-piguet-40258760081652_1280x-1720184726491.webp",
     link: "/products/audemars-piguet-royal-oak-extra-thin-yellow-gold",
   },
