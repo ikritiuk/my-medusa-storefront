@@ -56,7 +56,6 @@ const ProductPreview = ({
                   </svg>
                   Заказать в Telegram
                 </>
-              )}
             </Button>
             {price ? (
               <>
