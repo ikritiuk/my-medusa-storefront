@@ -256,16 +256,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* Floating Action Button */}
-        <div className="fixed bottom-4 right-4 z-50">
-          <Link
-            href="/collections"
-            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-2xl transition-transform duration-300 hover:scale-110"
-          >
-            Shop Now
-          </Link>
-        </div>
       </div>
     </div>
   );
