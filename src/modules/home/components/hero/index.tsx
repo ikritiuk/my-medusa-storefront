@@ -326,7 +326,7 @@ const Hero = () => {
           <div className="flex overflow-x-auto space-x-4 scrollbar-hide">
 
             {trendingWatches.map((watch, index) => (
-              <div key={index} className="flex-none w-80">
+              <div key={index} className="flex-none w-80 border border-gray-300 rounded-lg">
                 <Link href={watch.link}>
                   <div className="relative">
                     <img
