@@ -90,7 +90,7 @@ const Hero = () => {
               <Link href="/collections/cartier">
                 <div className="relative">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.webp"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.avif"
                     alt="Cartier"
                     className="rounded shadow-lg"
                   />
@@ -104,7 +104,7 @@ const Hero = () => {
               <Link href="/collections/tag-hauer">
                 <div className="relative">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.webp"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.avif"
                     alt="Tag Hauer"
                     className="rounded shadow-lg"
                   />
@@ -118,7 +118,7 @@ const Hero = () => {
               <Link href="/collections/hublot">
                 <div className="relative">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.jpg"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.avif"
                     alt="Hublot"
                     className="rounded shadow-lg"
                   />
