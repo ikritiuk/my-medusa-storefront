@@ -10,19 +10,20 @@ const trendingWatches = [
     link: "/products/rolex-submariner-date-126619-lb-white-gold-black-dial-blue-bezel",
   },
   {
-    name: "Patek Philippe Nautilus",
-    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.avif",
+    name: "Patek Philippe Yellow Gold",
+    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/patek-philippe-nautilus-5711-1a-014-stainless-steel-green-dial-patek-philippe-40297153462516_1280x-1720185629726.webp",
+    link: "/products/audemars-piguet-royal-oak-extra-thin-yellow-gold",
+  },
+  {
+    name: "Patek Philippe Nautilus Green Dial",
+    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/patek-philippe-nautilus-5711-1a-014-stainless-steel-green-dial-patek-philippe-40297153462516_1280x-1720185629726.webp",
     link: "/collections/patek",
   },
+
   {
-    name: "Cartier Santos",
-    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.avif",
-    link: "/collections/cartier",
-  },
-  {
-    name: "Tag Heuer Carrera",
-    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.avif",
-    link: "/collections/tag-hauer",
+    name: "Rolex Submariner Yellow Gold Blue Dial",
+    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/rolex-submariner-date-126613lb-stainless-steel-yellow-gold-blue-dial-2021-rolex-41593886769396_1280x-1720020948071.webp",
+    link: "/products/rolex-submariner-date-126613-lb-stainless-steel-yellow-gold-blue-dial",
   },
 ]
 
@@ -367,26 +368,24 @@ const Hero = () => {
             Trending Watches
           </h2>
           <div className="flex overflow-x-auto space-x-4 scrollbar-hide">
-            <div className="rounded-lg relative overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150 aspect-[9/16] w-full">
 
             {trendingWatches.map((watch, index) => (
-                <div key={index} className="flex-none w-80">
-                  <Link href={watch.link}>
-                    <div className="relative">
-                      <img
-                        src={watch.image}
-                        alt={watch.name}
-                        className="rounded-lg shadow-lg object-cover w-full h-60"
-                      />
-                      <div
-                        className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
-                        {watch.name}
-                      </div>
+              <div key={index} className="flex-none w-80">
+                <Link href={watch.link}>
+                  <div className="relative">
+                    <img
+                      src={watch.image}
+                      alt={watch.name}
+                      className="rounded-lg shadow-lg object-cover w-full h-60"
+                    />
+                    <div
+                      className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
+                      {watch.name}
                     </div>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
+              </div>
             ))}
-            </div>
           </div>
         </div>
       </div>
