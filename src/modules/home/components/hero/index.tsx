@@ -40,7 +40,7 @@ const Hero = () => {
               <Link href="/collections/rolex">
                 <div className="relative">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/rolex-daytona-hero.avif"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex-daytona.avif"
                     alt="Rolex"
                     className="rounded shadow-lg"
                   />
@@ -54,7 +54,7 @@ const Hero = () => {
               <Link href="/collections/piguet">
                 <div className="relative">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet.png"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet.avif"
                     alt="Audemars Piguet"
                     className="rounded shadow-lg"
                   />
@@ -68,7 +68,7 @@ const Hero = () => {
               <Link href="/collections/patek">
                 <div className="relative">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.png"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.avif"
                     alt="Patek Philippe"
                     className="rounded shadow-lg"
                   />
@@ -201,7 +201,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/patek">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.png"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/herp-patek2.webp"
                     alt="Patek Philippe"
                     className="rounded"
                   />
