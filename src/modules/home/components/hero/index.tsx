@@ -153,7 +153,7 @@ const Hero = () => {
           <Link href="/collections/rolex" className="w-full">
             <video
               src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.mp4"
-              poster="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex-preview.jpg"
+              poster="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex-preview.avif"
               className="w-full object-cover"
               autoPlay
               loop
@@ -176,7 +176,7 @@ const Hero = () => {
               </div>
               <Link href="/collections/rolex">
                 <img
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.jpg"
+                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.avif"
                   alt="Rolex"
                   className="rounded"
                 />
@@ -201,7 +201,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/patek">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/herp-patek2.webp"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.avif"
                     alt="Patek Philippe"
                     className="rounded"
                   />
@@ -241,7 +241,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/hublot">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.jpg"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.avif"
                     alt="Hublot"
                     className="rounded"
                   />
@@ -250,15 +250,15 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="w-full">
-          <Link href="/collections/rolex">
-            <img
-              src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/row-rolex.jpg"
-              alt="Full Width Image"
-              className="w-full h-auto mt-4 object-cover cursor-pointer"
-            />
-          </Link>
-        </div>
+        {/*<div className="w-full">*/}
+        {/*  <Link href="/collections/rolex">*/}
+        {/*    <img*/}
+        {/*      src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/row-rolex.jpg"*/}
+        {/*      alt="Full Width Image"*/}
+        {/*      className="w-full h-auto mt-4 object-cover cursor-pointer"*/}
+        {/*    />*/}
+        {/*  </Link>*/}
+        {/*</div>*/}
       </div>
     </div>
   );
