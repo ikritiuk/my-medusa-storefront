@@ -168,6 +168,9 @@ const Hero = () => {
           <div className="flex items-center justify-center h-auto py-4 px-4">
             <h2 className="text-lg font-semibold text-center max-w-[90%]">Популярные бренды</h2>
           </div>
+        </div>
+        <div className="flex flex-col items-center mb-6 gap-4">
+
           {/* Brand Images */}
           <div className="flex flex-col items-center gap-4">
             <div className="relative text-center w-full">
