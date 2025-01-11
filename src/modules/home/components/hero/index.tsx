@@ -202,7 +202,7 @@ const Hero = () => {
             {/* Grid with Swipeable Effect */}
             <div className="flex items-center justify-between w-full gap-4">
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Audemars Piguet
                 </div>
                 <Link href="/collections/piguet">
@@ -214,7 +214,7 @@ const Hero = () => {
                 </Link>
               </div>
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-colors duration-300 group-hover:bg-opacity-80">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Patek Philippe
                 </div>
                 <Link href="/collections/patek">
@@ -230,7 +230,7 @@ const Hero = () => {
 
           <div className="flex flex-col items-center gap-4">
             <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400">
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                 Cartier
               </div>
               <Link href="/collections/cartier">
@@ -243,7 +243,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center justify-between w-full gap-4">
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Tag Hauer
                 </div>
                 <Link href="/collections/tag-hauer">
@@ -255,7 +255,7 @@ const Hero = () => {
                 </Link>
               </div>
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Hublot
                 </div>
                 <Link href="/collections/hublot">
