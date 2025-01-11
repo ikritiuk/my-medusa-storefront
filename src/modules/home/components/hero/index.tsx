@@ -367,9 +367,9 @@ const Hero = () => {
             Trending Watches
           </h2>
           <div className="flex overflow-x-auto space-x-4 scrollbar-hide">
+            <div className="rounded-lg relative overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150 aspect-[9/16] w-full">
+
             {trendingWatches.map((watch, index) => (
-              <div
-                className="rounded-lg relative overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150 aspect-[9/16] w-full">
                 <div key={index} className="flex-none w-80">
                   <Link href={watch.link}>
                     <div className="relative">
@@ -385,8 +385,8 @@ const Hero = () => {
                     </div>
                   </Link>
                 </div>
-              </div>
             ))}
+            </div>
           </div>
         </div>
       </div>
