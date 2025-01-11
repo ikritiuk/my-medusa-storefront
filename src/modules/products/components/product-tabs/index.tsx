@@ -15,6 +15,8 @@ type ProductTabsProps = {
 const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
+      {
+      }
     ]
   }, [product])
 
