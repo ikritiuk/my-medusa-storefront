@@ -163,7 +163,7 @@ const Hero = () => {
             />
           </Link>
         </div>
-        <div className="flex flex-col items-center mb-6 gap-4">
+        <div className="flex flex-col items-center mb-6">
           {/* Title Section */}
           <div className="flex items-center justify-center h-auto py-4 px-4">
             <h2 className="text-lg font-semibold text-center max-w-[90%]">Популярные бренды</h2>
@@ -189,7 +189,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/piguet">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet.png"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet-mobile.avif"
                     alt="Audemars Piguet"
                     className="rounded"
                   />
@@ -201,7 +201,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/patek">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek.avif"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek-mobile.avif"
                     alt="Patek Philippe"
                     className="rounded"
                   />
@@ -216,7 +216,7 @@ const Hero = () => {
               </div>
               <Link href="/collections/cartier">
                 <img
-                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero.webp"
+                  src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero-mobile.avif"
                   alt="Cartier"
                   className="rounded"
                 />
@@ -229,7 +229,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/tag-hauer">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.webp"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero-mobile.avif"
                     alt="Tag Hauer"
                     className="rounded"
                   />
@@ -241,7 +241,7 @@ const Hero = () => {
                 </div>
                 <Link href="/collections/hublot">
                   <img
-                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero.avif"
+                    src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero-mobile.avif"
                     alt="Hublot"
                     className="rounded"
                   />
