@@ -84,7 +84,7 @@ const Hero = () => {
       <div className="hidden lg:block w-full border-b border-ui-border-base">
         <div className="flex flex-col justify-center items-center text-center gap-6">
           <div className="grid grid-cols-3 gap-6">
-            <div className="group relative cursor-pointer transition-transform hover:scale-105">
+            <div className="group relative cursor-pointer transition-transform hover:scale-110">
               <Link href="/collections/rolex">
                 <div className="relative">
                   <img
@@ -99,7 +99,7 @@ const Hero = () => {
                 </div>
               </Link>
             </div>
-            <div className="group relative cursor-pointer transition-transform hover:scale-105">
+            <div className="group relative cursor-pointer transition-transform hover:scale-110">
               <Link href="/collections/piguet">
                 <div className="relative">
                   <img
@@ -114,7 +114,7 @@ const Hero = () => {
                 </div>
               </Link>
             </div>
-            <div className="group relative cursor-pointer transition-transform hover:scale-105">
+            <div className="group relative cursor-pointer transition-transform hover:scale-110">
               <Link href="/collections/patek">
                 <div className="relative">
                   <img
@@ -137,7 +137,7 @@ const Hero = () => {
       <div className="hidden lg:block w-full border-b border-ui-border-base py-8">
         <div className="flex flex-col justify-center items-center text-center gap-6">
           <div className="grid grid-cols-3 gap-6">
-            <div className="group relative cursor-pointer transition-transform hover:scale-105">
+            <div className="group relative cursor-pointer transition-transform hover:scale-110">
               <Link href="/collections/cartier">
                 <div className="relative">
                   <img
@@ -152,7 +152,7 @@ const Hero = () => {
                 </div>
               </Link>
             </div>
-            <div className="group relative cursor-pointer transition-transform hover:scale-105">
+            <div className="group relative cursor-pointer transition-transform hover:scale-110">
               <Link href="/collections/tag-hauer">
                 <div className="relative">
                   <img
@@ -167,7 +167,7 @@ const Hero = () => {
                 </div>
               </Link>
             </div>
-            <div className="group relative cursor-pointer transition-transform hover:scale-105">
+            <div className="group relative cursor-pointer transition-transform hover:scale-110">
               <Link href="/collections/hublot">
                 <div className="relative">
                   <img
@@ -210,7 +210,7 @@ const Hero = () => {
             <video
               src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.mp4"
               poster="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex-preview.avif"
-              className="w-full object-cover transition-transform duration-500 hover:scale-105"
+              className="w-full object-cover transition-transform duration-500 hover:scale-110"
               autoPlay
               loop
               muted
@@ -239,7 +239,7 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.avif"
                   alt="Rolex"
-                  className="rounded shadow-lg transition-transform duration-500 hover:scale-105 hover:transform hover:origin-center"
+                  className="rounded shadow-lg transition-transform duration-500 hover:scale-110 hover:transform hover:origin-center"
                 />
               </Link>
             </div>
@@ -255,7 +255,7 @@ const Hero = () => {
                   <img
                     src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-piguet-mobile.avif"
                     alt="Audemars Piguet"
-                    className="rounded shadow-lg transition-transform duration-500 hover:scale-105"
+                    className="rounded shadow-lg transition-transform duration-500 hover:scale-110"
                   />
                 </Link>
               </div>
@@ -268,7 +268,7 @@ const Hero = () => {
                   <img
                     src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-patek-mobile.avif"
                     alt="Patek Philippe"
-                    className="rounded shadow-lg transition-transform duration-500 hover:scale-105"
+                    className="rounded shadow-lg transition-transform duration-500 hover:scale-110"
                   />
                 </Link>
               </div>
@@ -285,7 +285,7 @@ const Hero = () => {
                 <img
                   src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/cartier-hero-mobile.avif"
                   alt="Cartier"
-                  className="rounded shadow-lg transition-transform duration-500 hover:scale-105 hover:transform hover:origin-center"
+                  className="rounded shadow-lg transition-transform duration-500 hover:scale-110 hover:transform hover:origin-center"
                 />
               </Link>
             </div>
@@ -299,7 +299,7 @@ const Hero = () => {
                   <img
                     src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero-mobile.avif"
                     alt="Tag Hauer"
-                    className="rounded shadow-lg transition-transform duration-500 hover:scale-105"
+                    className="rounded shadow-lg transition-transform duration-500 hover:scale-110"
                   />
                 </Link>
               </div>
@@ -312,7 +312,7 @@ const Hero = () => {
                   <img
                     src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hublot-hero-mobile.avif"
                     alt="Hublot"
-                    className="rounded shadow-lg transition-transform duration-500 hover:scale-105"
+                    className="rounded shadow-lg transition-transform duration-500 hover:scale-110"
                   />
                 </Link>
               </div>
