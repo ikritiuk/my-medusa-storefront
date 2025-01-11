@@ -174,7 +174,7 @@ const Hero = () => {
           {/* Brand Images */}
           <div className="flex flex-col items-center gap-4">
             <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-gradient-to-r from-black via-gray-900 to-transparent text-white text-lg px-2 py-1 rounded shadow-lg">
+              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-transform duration-300 group-hover:translate-y-[-2px] group-hover:scale-105">
                 Rolex
               </div>
               <Link href="/collections/rolex">
@@ -189,7 +189,7 @@ const Hero = () => {
             {/* Grid with Swipeable Effect */}
             <div className="flex items-center justify-between w-full gap-4">
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-70 text-white text-lg px-2 py-1 rounded opacity-80 transition-opacity duration-300 group-hover:opacity-100">
                   Audemars Piguet
                 </div>
                 <Link href="/collections/piguet">
@@ -201,7 +201,7 @@ const Hero = () => {
                 </Link>
               </div>
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded">
+                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-colors duration-300 group-hover:bg-opacity-80">
                   Patek Philippe
                 </div>
                 <Link href="/collections/patek">
@@ -217,7 +217,7 @@ const Hero = () => {
 
           <div className="flex flex-col items-center gap-4">
             <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-gradient-to-l from-black via-gray-900 to-transparent text-white text-lg px-2 py-1 rounded shadow-lg">
+              <div className="absolute top-2 left-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-lg px-3 py-1 rounded-full transition-transform duration-300 group-hover:scale-105">
                 Cartier
               </div>
               <Link href="/collections/cartier">
