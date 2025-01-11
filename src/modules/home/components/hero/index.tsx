@@ -28,28 +28,6 @@ const trendingWatches = [
 ]
 
 const Hero = () => {
-  const [desktopIndex, setDesktopIndex] = useState(0)
-  const [mobileIndex, setMobileIndex] = useState(0)
-
-  const handleNextDesktop = () => {
-    setDesktopIndex((prev) => (prev + 1) % trendingWatches.length)
-  }
-
-  const handlePrevDesktop = () => {
-    setDesktopIndex((prev) =>
-      prev === 0 ? trendingWatches.length - 1 : prev - 1,
-    )
-  }
-
-  const handleNextMobile = () => {
-    setMobileIndex((prev) => (prev + 1) % trendingWatches.length)
-  }
-
-  const handlePrevMobile = () => {
-    setMobileIndex((prev) =>
-      prev === 0 ? trendingWatches.length - 1 : prev - 1,
-    )
-  }
   return (
     <div className="relative bg-ui-bg-subtle">
       {/* Large screen (lg and up) */}
