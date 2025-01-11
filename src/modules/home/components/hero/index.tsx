@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from "react"
+import Link from "next/link"
 
 const trendingWatches = [
   {
-    name: "Rolex Daytona",
-    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/hero-rolex.avif",
-    link: "/collections/rolex",
+    name: "Rolex Submariner Date Black Dial Blue Bezel",
+    image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/rolex-submariner-date-126619lb-white-gold-black-dial-blue-bezel-2023-rolex-41374317052148_1280x-1720021169543.jpg",
+    link: "https://www.luxury24.shop/products/rolex-submariner-date-126619-lb-white-gold-black-dial-blue-bezel",
   },
   {
     name: "Patek Philippe Nautilus",
@@ -24,31 +24,31 @@ const trendingWatches = [
     image: "https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.avif",
     link: "/collections/tag-hauer",
   },
-];
+]
 
 const Hero = () => {
-const [desktopIndex, setDesktopIndex] = useState(0);
-  const [mobileIndex, setMobileIndex] = useState(0);
+  const [desktopIndex, setDesktopIndex] = useState(0)
+  const [mobileIndex, setMobileIndex] = useState(0)
 
   const handleNextDesktop = () => {
-    setDesktopIndex((prev) => (prev + 1) % trendingWatches.length);
-  };
+    setDesktopIndex((prev) => (prev + 1) % trendingWatches.length)
+  }
 
   const handlePrevDesktop = () => {
     setDesktopIndex((prev) =>
-      prev === 0 ? trendingWatches.length - 1 : prev - 1
-    );
-  };
+      prev === 0 ? trendingWatches.length - 1 : prev - 1,
+    )
+  }
 
   const handleNextMobile = () => {
-    setMobileIndex((prev) => (prev + 1) % trendingWatches.length);
-  };
+    setMobileIndex((prev) => (prev + 1) % trendingWatches.length)
+  }
 
   const handlePrevMobile = () => {
     setMobileIndex((prev) =>
-      prev === 0 ? trendingWatches.length - 1 : prev - 1
-    );
-  };
+      prev === 0 ? trendingWatches.length - 1 : prev - 1,
+    )
+  }
   return (
     <div className="relative bg-ui-bg-subtle">
       {/* Large screen (lg and up) */}
@@ -57,7 +57,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
           <div className="text-center text-white px-4">
             <h1 className="text-3xl font-bold mb-2">Премиум часы</h1>
             <p className="text-lg mb-4">Высококачественные материалы из Европы. Доставка во все регионы РФ.</p>
-            <Link href="/collections/rolex" className="inline-block bg-white text-black font-semibold px-6 py-2 rounded">Подробнее</Link>
+            <Link href="/collections/rolex"
+                  className="inline-block bg-white text-black font-semibold px-6 py-2 rounded">Подробнее</Link>
           </div>
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
@@ -90,7 +91,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                     alt="Rolex"
                     className="rounded shadow-lg"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div
+                    className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-white text-lg font-semibold">Rolex</span>
                   </div>
                 </div>
@@ -104,7 +106,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                     alt="Audemars Piguet"
                     className="rounded shadow-lg"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div
+                    className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-white text-lg font-semibold">Audemars Piguet</span>
                   </div>
                 </div>
@@ -118,7 +121,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                     alt="Patek Philippe"
                     className="rounded shadow-lg"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div
+                    className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-white text-lg font-semibold">Patek Philippe</span>
                   </div>
                 </div>
@@ -140,7 +144,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                     alt="Cartier"
                     className="rounded shadow-lg"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div
+                    className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-white text-lg font-semibold">Cartier</span>
                   </div>
                 </div>
@@ -154,7 +159,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                     alt="Tag Hauer"
                     className="rounded shadow-lg"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div
+                    className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-white text-lg font-semibold">Tag Hauer</span>
                   </div>
                 </div>
@@ -168,7 +174,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                     alt="Hublot"
                     className="rounded shadow-lg"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div
+                    className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-white text-lg font-semibold">Hublot</span>
                   </div>
                 </div>
@@ -199,7 +206,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                       alt={watch.name}
                       className="rounded-lg shadow-lg object-cover w-full h-60"
                     />
-                    <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
+                    <div
+                      className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
                       {watch.name}
                     </div>
                   </div>
@@ -237,7 +245,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
       <div className="sm:md:block lg:hidden w-full border-b border-ui-border-base relative overflow-hidden">
         {/* Fancy Mobile Video Section */}
         <div className="relative w-full overflow-hidden">
-          <div className="absolute inset-x-4 top-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center animate-fade-in">
+          <div
+            className="absolute inset-x-4 top-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center animate-fade-in">
             Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ
           </div>
           <Link href="/collections/rolex" className="w-full">
@@ -265,7 +274,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
           <div className="flex flex-col items-center gap-4">
             {/* Brand Images */}
             <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
+              <div
+                className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                 Rolex
               </div>
               <Link href="/collections/rolex">
@@ -280,7 +290,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
             {/* Grid with Swipeable Effect */}
             <div className="flex items-center justify-between w-full gap-4">
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
+                <div
+                  className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Audemars Piguet
                 </div>
                 <Link href="/collections/piguet">
@@ -292,7 +303,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                 </Link>
               </div>
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
+                <div
+                  className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Patek Philippe
                 </div>
                 <Link href="/collections/patek">
@@ -308,7 +320,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
 
           <div className="flex flex-col items-center gap-4">
             <div className="relative text-center w-full">
-              <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
+              <div
+                className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                 Cartier
               </div>
               <Link href="/collections/cartier">
@@ -321,7 +334,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
             </div>
             <div className="flex items-center justify-between w-full gap-4">
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
+                <div
+                  className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Tag Hauer
                 </div>
                 <Link href="/collections/tag-hauer">
@@ -333,7 +347,8 @@ const [desktopIndex, setDesktopIndex] = useState(0);
                 </Link>
               </div>
               <div className="relative w-1/2 text-center">
-                <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
+                <div
+                  className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Hublot
                 </div>
                 <Link href="/collections/hublot">
@@ -353,26 +368,30 @@ const [desktopIndex, setDesktopIndex] = useState(0);
           </h2>
           <div className="flex overflow-x-auto space-x-4 scrollbar-hide">
             {trendingWatches.map((watch, index) => (
-              <div key={index} className="flex-none w-80">
-                <Link href={watch.link}>
-                  <div className="relative">
-                    <img
-                      src={watch.image}
-                      alt={watch.name}
-                      className="rounded-lg shadow-lg object-cover w-full h-60"
-                    />
-                    <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
-                      {watch.name}
+              <div
+                className="rounded-lg relative overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150 aspect-[9/16] w-full">
+                <div key={index} className="flex-none w-80">
+                  <Link href={watch.link}>
+                    <div className="relative">
+                      <img
+                        src={watch.image}
+                        alt={watch.name}
+                        className="rounded-lg shadow-lg object-cover w-full h-60"
+                      />
+                      <div
+                        className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg">
+                        {watch.name}
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
