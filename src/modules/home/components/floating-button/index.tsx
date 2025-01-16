@@ -6,7 +6,7 @@ const FloatingButton = () => {
   return (
     <div className="fixed bottom-8 inset-x-0 flex justify-center z-50">
       <button
-        onClick={() => window.open("https://t.me/+X-jZyQk1Md9kOGVk", "_blank")}
+        onClick={() => window.open("https://t.me/luxury24info", "_blank")}
         className="px-4 py-3 md:px-6 md:py-4 bg-black text-white text-center rounded-lg shadow-lg hover:bg-gray-900 transition-transform transform hover:scale-105 md:text-lg"
         aria-label="Order on Telegram"
       >
