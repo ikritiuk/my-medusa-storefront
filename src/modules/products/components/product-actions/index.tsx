@@ -99,7 +99,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         }}
         disabled={!inStock || !variant}
         variant="primary"
-        className={`w-full h-12 flex items-center justify-center gap-x-2 text-lg font-semibold 
+        className={`w-full h-12 flex items-center justify-center gap-x-2 text-lg font-semibold border-none
         ${!inStock || !variant ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#0088cc] hover:bg-[#0077b5] transition-colors'} 
         text-white rounded-lg`}
       >
