@@ -38,11 +38,19 @@ const Hero = () => {
             <p className="text-lg mb-4">Премиум часы
               Изготовлены из премиальной стали 904L и оснащены лучшими механизмами на рынке.</p>
             <p className="text-lg mb-4">Эти часы подчеркнут Ваш безупречный стиль.</p>
-            <p className="text-lg mb-4">Только самые популярные модели с непревзойденным качеством исполнения</p>
+            <p className="text-lg mb-4">Только самые популярные модели с непревзойденным качеством исполнения.</p>
             <p className="text-lg mb-4">Качество, доступное каждому, по выгодной цене.</p>
 
-            <Link href="/collections/rolex"
-                  className="inline-block bg-white text-black font-semibold px-6 py-2 rounded">Подробнее</Link>
+            <p className="text-3xl font-bold text-yellow-400 mt-6 mb-6 tracking-wide">
+              Цены от 25 000 рублей
+            </p>
+
+            <Link
+              href="/collections/rolex"
+              className="inline-block bg-white text-black font-semibold px-6 py-2 rounded"
+            >
+              Подробнее
+            </Link>
           </div>
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
