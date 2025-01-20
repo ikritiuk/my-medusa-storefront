@@ -87,7 +87,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
                   window.open(finalUrl, '_blank');
                 }}
                 disabled={!inStock}
-                className={`w-full flex items-center justify-center gap-x-2 text-lg font-semibold border-none
+                className={`w-full flex items-center justify-center gap-x-2 text-lg font-semibold shadow-none border-none
                 ${!inStock ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#0088cc] hover:bg-[#0077b5] transition-colors'} 
                 text-white rounded-lg py-3`}
               >
