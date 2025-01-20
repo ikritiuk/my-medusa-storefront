@@ -195,8 +195,9 @@ const Hero = () => {
         <div className="relative w-full overflow-hidden">
           <div
             className="absolute inset-x-4 top-4 bg-black bg-opacity-50 text-white text-lg px-4 py-2 rounded z-20 text-center animate-fade-in">
-            Премиум часы из высококачественных материалов из Европы. Доставка во все регионы РФ.
-            <p className="text-lg mb-4">Качество, доступное каждому, по выгодной цене.</p>
+            <p className="text-xl font-extrabold leading-relaxed mb-4">
+              Премиум часы из высококачественных материалов из Европы.
+            </p>            <p className="text-lg mb-4">Качество, доступное каждому, по выгодной цене.</p>
             <p className="text-2xl font-bold text-[#D4AF37] mt-4">
               Цены от 25 000 рублей
             </p>
