@@ -144,7 +144,7 @@ const Hero = () => {
               </Link>
             </div>
             <div className="group relative cursor-pointer transition-transform hover:scale-105">
-              <Link href="/collections/tag-hauer">
+              <Link href="/collections/tag-heuer">
                 <div className="relative">
                   <img
                     src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero.avif"
@@ -291,7 +291,7 @@ const Hero = () => {
                   className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-lg px-2 py-1 rounded transition-all duration-300 group-hover:shadow-lg group-hover:text-yellow-400 z-10">
                   Tag Hauer
                 </div>
-                <Link href="/collections/tag-hauer">
+                <Link href="/collections/tag-heuer">
                   <img
                     src="https://medusajs-server.fra1.cdn.digitaloceanspaces.com/th-hero-mobile.avif"
                     alt="Tag Hauer"
