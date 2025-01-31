@@ -86,7 +86,7 @@ const FaqTemplate = () => {
           </div>
         </div>
       </div>
-      <FloatingButton/>
+      {/*<FloatingButton/>*/}
     </div>
   )
 }

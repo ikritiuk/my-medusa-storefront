@@ -20,7 +20,7 @@ const StoreTemplate = () => {
         setSortBy={setSortBy}
       />
       <InfiniteProducts params={params} sortBy={sortBy} />
-      <FloatingButton/>
+      {/*<FloatingButton/>*/}
     </div>
   )
 }

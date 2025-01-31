@@ -81,7 +81,7 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
       >
         <span ref={ref}></span>
       </div>
-      <FloatingButton/>
+      {/*<FloatingButton/>*/}
     </div>
   )
 }
