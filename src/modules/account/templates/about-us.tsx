@@ -125,7 +125,7 @@ const AboutUsPage = () => {
           </div>
         </div>
       </div>
-      <FloatingButton/>
+      {/*<FloatingButton/>*/}
     </div>
   )
 }
